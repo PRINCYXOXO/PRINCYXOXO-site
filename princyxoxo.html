@@ -452,7 +452,7 @@
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
-      <span class="song-title">Now Playing...</span>
+      <span class="song-title">lost in the fire</span>
     </div>
     <button id="playBtn" onclick="toggleAudio()">▶ play</button>
   </div>
@@ -471,11 +471,10 @@
       }
 
       if (isPlaying) {
-        // Resume playing seamlessly
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
-        }).catch(() => {
-          // If browser blocks auto-resume, user clicks play to continue
+        }).catch((error) => {
+          console.warn('Autoplay prevented by browser, click play to start:', error);
           btn.textContent = '▶ play';
         });
       }
@@ -489,9 +488,13 @@
     // 3. Play/Pause toggle button
     function toggleAudio() {
       if (audio.paused) {
-        audio.play();
-        btn.textContent = '❚❚ pause';
-        localStorage.setItem('musicPlaying', 'true');
+        audio.play().then(() => {
+          btn.textContent = '❚❚ pause';
+          localStorage.setItem('musicPlaying', 'true');
+        }).catch((error) => {
+          alert("Could not play audio. Please ensure 'song.mp3' exists in your folder.");
+          console.error("Audio playback error:", error);
+        });
       } else {
         audio.pause();
         btn.textContent = '▶ play';
