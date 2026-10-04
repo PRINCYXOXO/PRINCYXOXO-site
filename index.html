@@ -9,10 +9,10 @@
   <link rel="icon" type="image/png" href="crown2.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   <style>
-body {
+    body {
       background-color: #fceef2;
       background-image: url('Untitled77_20261004220524.png');
       background-repeat: repeat;
@@ -21,15 +21,14 @@ body {
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-  /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
-    cursor: url('crown.png'), auto;
-  }
+      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
+      cursor: url('crown.png'), auto;
+    }
 
-  /* Make sure links show a cute pointer cursor when hovering */
-  a, button {
-    cursor: url('heart.png'), pointer;
-  }
-    
+    /* Make sure links show a cute pointer cursor when hovering */
+    a, button {
+      cursor: url('heart.png'), pointer;
+    }
 
     header {
       background-color: #d23f77;
@@ -48,15 +47,30 @@ body {
       align-items: center;
     }
 
-header h1 {
-  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-  font-size: 52px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: -1.5px;
-  text-transform: lowercase;
-}
+    header h1 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 52px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1.5px;
+      text-transform: lowercase;
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Space between silhouette and text */
+      
+      /* ✨ Tiny drop shadow cast from the right side ✨ */
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+    }
 
+    /* Silhouette Image Styling */
+    .header-silhouette {
+      height: 65px; /* Adjust height to match your header title size */
+      width: auto;
+      display: inline-block;
+      
+      /* Subtle drop shadow on the silhouette icon as well */
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+    }
 
     .tagline {
       font-size: 28px;
@@ -65,14 +79,12 @@ header h1 {
       opacity: 0.9;
     }
 
-
     nav {
       background-color: #f0a3c2;
       border-bottom: 1px solid #d23f77;
       text-align: center;
       padding: 10px 0;
     }
-
 
     nav a {
       color: #5c0e2e;
@@ -84,11 +96,9 @@ header h1 {
       margin: 0 15px;
     }
 
-
     nav a:hover {
       color: #ffffff;
     }
-
 
     .wrapper {
       max-width: 1000px;
@@ -98,12 +108,10 @@ header h1 {
       gap: 30px;
     }
 
-
     aside {
       width: 250px;
       flex-shrink: 0;
     }
-
 
     .sidebar-box {
       background-color: #f8c5d8;
@@ -113,7 +121,6 @@ header h1 {
       border-radius: 2px;
     }
 
-
     .sidebar-box h2 {
       font-size: 22px;
       color: #d23f77;
@@ -122,14 +129,12 @@ header h1 {
       text-transform: lowercase;
     }
 
-
     .sidebar-box p {
       font-size: 12px;
       line-height: 1.5;
       color: #5c0e2e;
       margin: 0;
     }
-
 
     .form-box {
       background-color: #ffffff;
@@ -138,7 +143,6 @@ header h1 {
       border-radius: 2px;
     }
 
-
     .form-box h3 {
       font-size: 14px;
       color: #d23f77;
@@ -146,7 +150,6 @@ header h1 {
       margin-top: 0;
       text-align: center;
     }
-
 
     .form-box input, .form-box textarea {
       width: 100%;
@@ -160,7 +163,6 @@ header h1 {
       font-family: inherit;
     }
 
-
     .form-box button {
       width: 100%;
       background-color: #d23f77;
@@ -173,16 +175,13 @@ header h1 {
       cursor: pointer;
     }
 
-
     .form-box button:hover {
       background-color: #b02e60;
     }
 
-
     main {
       flex-grow: 1;
     }
-
 
     .ticker {
       background-color: #ffffff;
@@ -196,7 +195,6 @@ header h1 {
       justify-content: space-between;
     }
 
-
     article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
@@ -205,7 +203,6 @@ header h1 {
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-
     article h2 {
       font-size: 28px;
       color: #d23f77;
@@ -213,7 +210,6 @@ header h1 {
       text-transform: lowercase;
       font-weight: bold;
     }
-
 
     .file-under {
       font-size: 11px;
@@ -224,13 +220,11 @@ header h1 {
       margin-bottom: 15px;
     }
 
-
     article p {
       font-size: 14px;
       line-height: 1.6;
       color: #444444;
     }
-
 
     .signature {
       display: block;
@@ -242,19 +236,16 @@ header h1 {
       margin-top: 15px;
     }
 
-
     /* Custom Pink Variations for Rules */
     .rule-pink-1 {
       color: #d23f77;
       font-weight: bold;
     }
 
-
     .rule-pink-2 {
       color: #b02e60;
       font-weight: bold;
     }
-
 
     .rule-pink-3 {
       color: #5c0e2e;
@@ -315,14 +306,14 @@ header h1 {
 </head>
 <body>
 
-
   <header>
     <div class="banner-container">
-      <h1>princyxoxo</h1>
+      <h1>
+        <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
+      </h1>
       <p class="tagline">...you know you love me</p>
     </div>
   </header>
-
 
   <nav>
     <a href="index.html">Home</a>
@@ -334,7 +325,6 @@ header h1 {
     <a href="more.html">More</a>
   </nav>
 
-
   <div class="wrapper">
     <aside>
       <div class="sidebar-box">
@@ -342,12 +332,10 @@ header h1 {
         <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
 
-
       <div class="sidebar-box">
         <h2>gossip</h2>
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
-
 
       <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
@@ -360,49 +348,38 @@ header h1 {
       </div>
     </aside>
 
-
     <main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
         <span>Main • Exclusive Spotting</span>
       </div>
 
-
       <!-- 👑 THE FEED ZONE: HOME PAGE MAIN ARTICLE -->
       <section id="blastFeed">
 
-
         <article>
-          <h2>Welcome to the center of your world!</h3>
+          <h2>Welcome to the center of your world!</h2>
           <div class="file-under">Filed under: Live Feed > Exclusive > Welcome</div>
           
           <p>Welcome to PrincyXOXO—the official digital notice board for the inner circle, by the inner circle. If you’re reading this, you’ve somehow managed to find your way to the only destination that matters. Consider this your daily debrief, your digital lounge, and the ultimate record of everything that happens behind closed doors, after hours, and off the record.</p>
           
           <p>We aren't just watching the culture; we are the culture. Bookmark this page, refresh often, and never assume you're out of sight.</p>          
 
-
           <br><hr style="border: 0; border-top: 1px dashed #f0a3c2; margin: 20px 0;"><br>
-
 
           <p>♡ <span class="rule-pink-1">Total Anonymity Guaranteed:</span> Your identity is sealed. When you hit Send to Princy, your message lands on my screen with zero trace. Spill freely—your secrets are safe with me.</p>
 
-
           <p>♡ <span class="rule-pink-2">Receipts Over Rumors:</span> Speculation is cute, but proof is divine. If you’ve got screenshots, timestamps, or witnesses, send them through.</p>
 
-
           <p>♡ <span class="rule-pink-3">The Princy Veto:</span> I read every single drop of tea that comes through this portal, but only the absolute best gets broadcasted. Make it iconic, make it sharp, and keep it relevant.</p>
-
 
           <br>
           <h2>♡ GOT TEA ? ♡</h2>
 
-
           <p>Sitting on something big? Don't let it sit in your drafts. Use the Submit Gossip box on the left menu right now. Whether it's a quiet whisper, a public fallout, or a shady sighting, Princy is always listening.</p>
-
 
           <span class="signature">You know you love me, xoxo Princy</span>
         </article>
-
 
       </section>
     </main>
