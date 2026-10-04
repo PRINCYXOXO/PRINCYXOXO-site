@@ -54,6 +54,23 @@
       margin: 0;
       letter-spacing: -1.5px;
       text-transform: lowercase;
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Space between silhouette and text */
+      
+      /* ✨ Plain white text with a tiny drop shadow coming from the right side ✨ */
+      color: #ffffff;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Silhouette Image Styling */
+    .header-silhouette {
+      height: 65px; /* Matches the header title size */
+      width: auto;
+      display: inline-block;
+      
+      /* Matching subtle drop shadow on the silhouette icon */
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
     .tagline {
@@ -273,7 +290,9 @@
 
   <header>
     <div class="banner-container">
-      <h1>princyxoxo</h1>
+      <h1>
+        <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
+      </h1>
       <p class="tagline">...you know you love me</p>
     </div>
   </header>
