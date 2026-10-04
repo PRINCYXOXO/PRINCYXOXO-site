@@ -48,13 +48,30 @@
     }
 
     header h1 {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 52px;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -1.5px;
-      text-transform: lowercase;
-    }
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+  font-size: 52px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1.5px;
+  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between silhouette and text */
+  
+  /* White text with a right-hand drop shadow */
+  color: #ffffff;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Silhouette image styling */
+.header-silhouette {
+  height: 60px; /* Adjust height to match header text */
+  width: auto;
+  display: inline-block;
+  
+  /* Matching right-hand drop shadow on the silhouette icon */
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+}
 
     .tagline {
       font-size: 28px;
@@ -271,9 +288,11 @@
 </head>
 <body>
 
-  <header>
+<header>
     <div class="banner-container">
-      <h1>princyxoxo</h1>
+      <h1>
+        <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
+      </h1>
       <p class="tagline">...you know you love me</p>
     </div>
   </header>
