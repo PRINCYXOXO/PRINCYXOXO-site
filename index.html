@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
   <style>
-    /* 2007 Retro Gossip Girl Theme Colors & Fonts */
     body {
-      background-color: #fceef2; /* Light Pastel Pink */
+      background-color: #fceef2;
       color: #333333;
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
     }
 
-    /* Top Pink Header Banner */
     header {
-      background-color: #d23f77; /* Hot Pink */
+      background-color: #d23f77;
       color: #ffffff;
       padding: 30px 40px;
       border-bottom: 4px solid #b02e60;
@@ -47,9 +45,8 @@
       opacity: 0.9;
     }
 
-    /* Navigation Menu Bar */
     nav {
-      background-color: #f0a3c2; /* Medium Accent Pink */
+      background-color: #f0a3c2;
       border-bottom: 1px solid #d23f77;
       text-align: center;
       padding: 10px 0;
@@ -69,7 +66,6 @@
       color: #ffffff;
     }
 
-    /* Layout Structure */
     .wrapper {
       max-width: 1000px;
       margin: 30px auto;
@@ -78,7 +74,6 @@
       gap: 30px;
     }
 
-    /* Left Sidebar */
     aside {
       width: 250px;
       flex-shrink: 0;
@@ -107,7 +102,6 @@
       margin: 0;
     }
 
-    /* Submission Form */
     .form-box {
       background-color: #ffffff;
       border: 2px solid #d23f77;
@@ -151,7 +145,6 @@
       background-color: #b02e60;
     }
 
-    /* Main Gossip Feed Column */
     main {
       flex-grow: 1;
     }
@@ -168,7 +161,6 @@
       justify-content: space-between;
     }
 
-    /* Gossip Post Card */
     article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
@@ -188,7 +180,7 @@
       font-size: 11px;
       color: #777777;
       text-transform: uppercase;
-      border-b: 1px solid #fceef2;
+      border-bottom: 1px solid #fceef2;
       padding-bottom: 8px;
       margin-bottom: 15px;
     }
@@ -207,11 +199,27 @@
       font-style: italic;
       font-size: 14px;
     }
+
+    /* Secret Publisher Box Hidden by default */
+    #publisherDesk {
+      display: none;
+      background-color: #333333;
+      color: #ffffff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border: 3px solid #d23f77;
+    }
+    #publisherDesk h3 { margin-top: 0; text-transform: uppercase; font-size: 14px; color: #f0a3c2;}
+    #publisherDesk input, #publisherDesk textarea {
+      width: 100%; box-sizing: border-box; margin-bottom: 10px; padding: 6px; font-family: inherit; font-size: 12px;
+    }
+    #publisherDesk button {
+      background-color: #d23f77; color: white; border: none; padding: 8px 15px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 12px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- TOP BANNER -->
   <header>
     <div class="banner-container">
       <h1>princyxoxo</h1>
@@ -219,7 +227,6 @@
     </div>
   </header>
 
-  <!-- NAVIGATION BAR -->
   <nav>
     <a href="#">Home</a>
     <a href="#">Gossip</a>
@@ -230,10 +237,7 @@
     <a href="#">More</a>
   </nav>
 
-  <!-- CONTENT CONTAINER -->
   <div class="wrapper">
-    
-    <!-- LEFT SIDEBAR -->
     <aside>
       <div class="sidebar-box">
         <h2>welcome</h2>
@@ -245,55 +249,110 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
+      <!-- PUBLIC BOX FOR VISITORS (Sends straight to your alt email address!) -->
       <div class="form-box">
-        <h3>Submit a Tip</h3>
-        <form id="tipForm">
-          <input id="tipLocation" type="text" required placeholder="Where was it?">
-          <textarea id="tipContent" required rows="3" placeholder="Give us the details..."></textarea>
-          <button type="submit">Blast It</button>
+        <h3>Submit Gossip</h3>
+        <form action="https://formspree.io/f/testacc78999@gmail.com" method="POST" id="gossipForm">
+          <input type="text" name="subject" required placeholder="Who is this about?">
+          <textarea name="message" required rows="3" placeholder="Give us the dirty details..."></textarea>
+          <button type="submit">Send to Princy</button>
         </form>
       </div>
     </aside>
 
-    <!-- CENTER FEED -->
     <main>
+      <!-- SECRET CONTROL DESK -->
+      <section id="publisherDesk">
+        <h3>👑 Queen B Publisher Desk</h3>
+        <input id="pubTitle" type="text" placeholder="Gossip Headline / Target Name">
+        <textarea id="pubContent" rows="3" placeholder="Write your official scandalous narrative here..."></textarea>
+        <button onclick="publishNewBlast()">Publish Live Blast</button>
+      </section>
+
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
         <span>Main • Exclusive Spotting</span>
       </div>
 
+      <!-- THE FEED ZONE -->
       <section id="blastFeed">
+        
+        <!-- FIRST BLAST -->
         <article>
           <h2>serena van der woodsen</h2>
           <div class="file-under">Filed under: Serena > Exclusive > Spotting</div>
           <p>S was seen rushing down the steps with a packed suitcase. Did B finally banish her from the kingdom, or is she running away from her own dark secrets?</p>
           <span class="signature">xoxo, PRINCYXOXO</span>
         </article>
+
       </section>
     </main>
-
   </div>
 
   <script>
-    document.getElementById('tipForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const locationInput = document.getElementById('tipLocation');
-      const contentInput = document.getElementById('tipContent');
-      const feed = document.getElementById('blastFeed');
+    // CONFIGURATION KEYS (Pre-loaded with your exact master key!)
+    const GITHUB_USER = "PRINCYXOXO";
+    const GITHUB_REPO = "PRINCYXOXO-site";
+    const GITHUB_TOKEN = "ghp_t96bage8sJkPw0tR6BUAZK221BVJ7s1zbA0X"; 
 
-      const newCard = document.createElement('article');
-      newCard.innerHTML = `
-        <h2>Spotted at ${locationInput.value}</h2>
-        <div class="file-under">Filed under: Live Feed > Community > Anonymous Tip</div>
-        <p>${contentInput.value}</p>
-        <span class="signature">xoxo, PRINCYXOXO</span>
+    // Secret Key Listener: Pressing 'p' on your keyboard opens the prompt challenge
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'p' || e.key === 'P') {
+        const password = prompt("Enter your Master Identity Code:");
+        if (password === "crown") {
+          document.getElementById('publisherDesk').style.display = "block";
+          alert("Access Granted, Princy. The desk is yours.");
+        } else {
+          alert("Access Denied. You aren't Gossip Girl.");
+        }
+      }
+    });
+
+    // Automating saving straight back to Github files
+    async function publishNewBlast() {
+      const title = document.getElementById('pubTitle').value;
+      const content = document.getElementById('pubContent').value;
+      if(!title || !content) return alert("Fill in the fields!");
+
+      const newPostHTML = `
+        <!-- NEW POST -->
+        <article>
+          <h2>${title.toLowerCase()}</h2>
+          <div class="file-under">Filed under: Live Feed > Exclusive > Blast</div>
+          <p>${content}</p>
+          <span class="signature">xoxo, PRINCYXOXO</span>
+        </article>
       `;
 
-      feed.insertBefore(newCard, feed.firstChild);
-      locationInput.value = '';
-      contentInput.value = '';
-    });
+      const url = `https://github.com{GITHUB_USER}/${GITHUB_REPO}/contents/index.html`;
+      const res = await fetch(url, { headers: { 'Authorization': `token ${GITHUB_TOKEN}` } });
+      const fileData = await res.json();
+      
+      let currentCode = decodeURIComponent(escape(atob(fileData.content)));
+
+      const insertionPoint = '<section id="blastFeed">';
+      currentCode = currentCode.replace(insertionPoint, insertionPoint + "\n" + newPostHTML);
+
+      const updateRes = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${GITHUB_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `👑 Princy posted a new blast: ${title}`,
+          content: btoa(unescape(encodeURIComponent(currentCode))),
+          sha: fileData.sha
+        })
+      });
+
+      if(updateRes.ok) {
+        alert("Blast successfully launched into code files! Netlify will update live in 10 seconds.");
+        location.reload();
+      } else {
+        alert("Error saving back to GitHub code files.");
+      }
+    }
   </script>
 </body>
 </html>
