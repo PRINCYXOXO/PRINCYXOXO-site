@@ -199,6 +199,56 @@
       font-style: italic;
       font-size: 14px;
     }
+
+    /* 💖 STUDENT CARD STYLING 💖 */
+    .student-card {
+      background-color: #fff0f5;
+      border: 2px solid #d23f77;
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 4px 8px rgba(210, 63, 119, 0.15);
+      margin: 15px 0;
+    }
+
+    .pfp-container {
+      border: 2px dotted #d23f77;
+      border-radius: 12px;
+      padding: 4px;
+      background-color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .pfp-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-details {
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 26px;
+      font-weight: bold;
+      color: #d23f77;
+      margin: 0 0 10px 0;
+    }
+
+    .card-details p {
+      margin: 6px 0;
+      font-size: 13px;
+      color: #5c0e2e;
+    }
+
+    .tilted-text {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -210,7 +260,7 @@
     </div>
   </header>
 
-<nav>
+  <nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
     <a href="posts.html">Posts</a>
@@ -218,7 +268,7 @@
     <a href="princyxoxo.html">princyxoxo</a>
     <a href="links.html">Links</a>
     <a href="more.html">More</a>
-</nav>
+  </nav>
 
   <div class="wrapper">
     <aside>
@@ -232,7 +282,7 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- Visitor Submit Gossip Form (Perfectly Active) -->
+      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -249,10 +299,28 @@
         <span>Main • Exclusive Spotting</span>
       </div>
 
-      <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
 
-        <!-- Add your posts here -->
+        <article>
+          <h2>about princy</h2>
+          <div class="file-under">Filed Under: Identity • Student ID</div>
+
+          <!-- 💳 STUDENT ID CARD BOX -->
+          <div class="student-card">
+            <div class="pfp-container">
+              <img src="bunny.png" alt="Princy Profile" class="pfp-img">
+            </div>
+            <div class="card-details">
+              <h3 class="card-title">♡ PrincyXOXO ♡</h3>
+              <p><strong>Location :</strong> <span class="tilted-text">Where the action is</span></p>
+              <p><strong>Status:</strong> Watching • Recording • Broadcasting</p>
+              <p><strong>Favorite Drink:</strong> Iced matcha with double espresso</p>
+              <p><strong>Motto:</strong> "If you didn't want it posted, you shouldn’t have done it in public."</p>
+            </div>
+          </div>
+
+          <span class="signature">You know you love me, xoxo Princy</span>
+        </article>
 
       </section>
     </main>
@@ -260,4 +328,3 @@
 
 </body>
 </html>
-.
