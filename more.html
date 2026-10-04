@@ -18,14 +18,13 @@
       margin: 0;
       padding: 0;
       /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
-  cursor: url('crown.png'), auto;
-}
+      cursor: url('crown.png'), auto;
+    }
 
-/* Make sure links show a cute pointer cursor when hovering */
-a, button {
-  cursor: url('heart.png'), pointer;
-}
-    
+    /* Make sure links show a cute pointer cursor when hovering */
+    a, button {
+      cursor: url('heart.png'), pointer;
+    }
 
     header {
       background-color: #d23f77;
@@ -223,7 +222,7 @@ a, button {
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-.faq-main-title {
+    .faq-main-title {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
       font-size: 38px;
       color: #d23f77;
@@ -310,7 +309,6 @@ a, button {
     .music-player button:hover {
       background-color: #b02e60;
     }
-    
   </style>
 </head>
 <body>
@@ -365,8 +363,8 @@ a, button {
       <section id="blastFeed">
 
         <!-- 💖 FAQ BIG BOX 💖 -->
-<div class="faq-container">
-        <h2 class="faq-main-title">♡ Frequently Asked Questions ♡</h2>
+        <div class="faq-container">
+          <h2 class="faq-main-title">♡ Frequently Asked Questions ♡</h2>
 
           <div class="faq-item">
             <div class="faq-question">Q: Who is Princy?</div>
@@ -401,6 +399,19 @@ a, button {
 
       </section>
     </main>
+  </div>
+
+  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
+  <div class="music-player">
+    <div class="player-info">
+      <span class="music-icon">♫</span>
+      <span class="song-title">lost in the fire</span>
+    </div>
+    <button id="playBtn" onclick="toggleAudio()">▶ play</button>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 
   <script>
@@ -445,6 +456,6 @@ a, button {
       }
     }
   </script>
-  
+
 </body>
 </html>
