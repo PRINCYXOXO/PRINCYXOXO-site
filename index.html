@@ -199,27 +199,6 @@
       font-style: italic;
       font-size: 14px;
     }
-
-    /* Secret Publisher Box Hidden by default */
-    #publisherDesk {
-      display: none;
-      background-color: #333333;
-      color: #ffffff;
-      padding: 20px;
-      margin-bottom: 25px;
-      border: 3px solid #d23f77;
-    }
-    #publisherDesk h3 { margin-top: 0; text-transform: uppercase; font-size: 14px; color: #f0a3c2;}
-    #publisherDesk input, #publisherDesk textarea {
-      width: 100%; box-sizing: border-box; margin-bottom: 10px; padding: 6px; font-family: inherit; font-size: 12px;
-      background-color: #ffffff; color: #333333; border: 1px solid #ccc;
-    }
-    #publisherDesk button {
-      background-color: #d23f77; color: white; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 12px; width: 100%;
-    }
-    #publisherDesk button:hover {
-      background-color: #b02e60;
-    }
   </style>
 </head>
 <body>
@@ -253,7 +232,6 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- PUBLIC BOX FOR VISITORS -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io" method="POST" id="gossipForm">
@@ -265,106 +243,15 @@
     </aside>
 
     <main>
-      <!-- SECRET QUEEN B CONTROL DESK -->
-      <section id="publisherDesk">
-        <h3>👑 Queen B Publisher Desk</h3>
-        <input id="pubTitle" type="text" placeholder="Gossip Headline / Target Name">
-        <textarea id="pubContent" rows="3" placeholder="Write your official scandalous narrative here..."></textarea>
-        <button type="button" onclick="publishNewBlast()">Publish Live Blast</button>
-      </section>
-
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
         <span>Main • Exclusive Spotting</span>
       </div>
 
-      <!-- THE FEED ZONE -->
       <section id="blastFeed">
       </section>
     </main>
   </div>
 
-  <script>
-    // CONFIGURATION MANAGEMENT LAYER
-    const GITHUB_USER = "PRINCYXOXO";
-    const GITHUB_REPO = "PRINCYXOXO-site";
-    
-    // Fallback variable checker mechanism
-    let GITHUB_TOKEN = "";
-
-    // Secret Key Listener: Pressing 'p' opens the secure challenge box
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'p' || e.key === 'P') {
-        const password = prompt("Enter your Master Identity Code:");
-        if (password === "promqueenscrown") {
-          // Ask for the token securely since browser code blocks backend files access directly
-          const systemKey = prompt("Enter your Master Token Key (Starts with ghp_):");
-          if(systemKey && systemKey.startsWith("ghp_")) {
-            GITHUB_TOKEN = systemKey.trim();
-            document.getElementById('publisherDesk').style.display = "block";
-            alert("Access Granted, Princy. The desk is yours.");
-          } else {
-            alert("Invalid key credentials verification profile setup.");
-          }
-        } else {
-          alert("Access Denied. You aren't Princy.");
-        }
-      }
-    });
-
-    // Automating saving straight back to Github files
-    async function publishNewBlast() {
-      const title = document.getElementById('pubTitle').value;
-      const content = document.getElementById('pubContent').value;
-      
-      if (!title || !content) {
-        alert("Please fill out both fields before launching a blast!");
-        return;
-      }
-
-      const newPostHTML = `
-        <!-- NEW POST -->
-        <article>
-          <h2>${title.toLowerCase()}</h2>
-          <div class="file-under">Filed under: Live Feed > Exclusive > Blast</div>
-          <p>${content}</p>
-          <span class="signature">xoxo, PRINCYXOXO</span>
-        </article>
-      `;
-
-      try {
-        const url = `https://github.com{GITHUB_USER}/${GITHUB_REPO}/contents/index.html`;
-        
-        // Fetch current repository file metadata content structure configuration
-        const res = await fetch(url, { 
-          headers: { 
-            'Authorization': `token ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
-          } 
-        });
-        
-        if (!res.ok) throw new Error("Connection failed! Your master key token might be invalid or deleted. Regenerate it on GitHub.");
-        const fileData = await res.json();
-        
-        // Decode current layout content safely
-        let currentCode = decodeURIComponent(escape(atob(fileData.content)));
-
-        // Inject new blast card right under the feed line block
-        const insertionPoint = '<section id="blastFeed">';
-        currentCode = currentCode.replace(insertionPoint, insertionPoint + "\n" + newPostHTML);
-
-        // Put back onto your repository files timeline logs
-        const updateRes = await fetch(url, {
-          method: 'PUT',
-          headers: {
-            'Authorization': `token ${GITHUB_TOKEN}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            message: `👑 Princy launched live blast: ${title}`,
-            content: btoa(unescape(encodeURIComponent(currentCode))),
-            sha: fileData.sha
-          })
-        });
-
-        if (updateRes.ok) {
+</body>
+</html>
