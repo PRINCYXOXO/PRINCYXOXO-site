@@ -79,7 +79,7 @@
     <label>Scandalous Narrative</label>
     <textarea id="pubContent" rows="5" placeholder="Type your narrative here..."></textarea>
     
-    <button onclick="publishLiveBlast()">Publish Live Blast</button>
+    <button type="button" onclick="publishLiveBlast()">Publish Live Blast</button>
   </div>
 
   <script>
@@ -93,7 +93,6 @@
         return;
       }
 
-      // We send the gossip to GitHub Actions using a secure "repository dispatch" event
       try {
         const url = `https://github.com`;
         const res = await fetch(url, {
@@ -109,13 +108,12 @@
           })
         });
 
-        // GitHub dispatches return a 204 status code when successful!
         if (res.status === 204 || res.ok) {
           alert("XOXO! Blast has been transmitted to the publisher queue. It will appear live on your site in about 30 seconds!");
           document.getElementById('pubTitle').value = "";
           document.getElementById('pubContent').value = "";
         } else {
-          alert("Failed to queue blast. Double check that your token is correct and hasn't been posted publicly!");
+          alert("Failed to queue blast. Make sure your token is correct, active, and has 'repo' permissions checked.");
         }
       } catch (err) {
         alert("Error: " + err.message);
