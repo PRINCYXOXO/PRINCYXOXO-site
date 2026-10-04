@@ -271,56 +271,6 @@
       font-style: italic;
     }
 
-    /* 🎧 PLAYLIST & MOOD CARD 🎧 */
-    .mood-card {
-      background-color: #fff5f8;
-      border: 1px dashed #d23f77;
-      border-radius: 10px;
-      padding: 15px 20px;
-      margin-bottom: 25px;
-    }
-
-    .mood-title {
-      font-size: 16px;
-      color: #d23f77;
-      font-weight: bold;
-      margin: 0 0 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .playlist-item {
-      font-size: 13px;
-      color: #5c0e2e;
-      margin: 6px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* 🎀 WEB BADGES BAR 🎀 */
-    .badge-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      padding: 15px 0;
-      border-top: 1px dotted #f0a3c2;
-    }
-
-    .web-badge {
-      background-color: #d23f77;
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: bold;
-      padding: 4px 8px;
-      border-radius: 3px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border: 1px solid #b02e60;
-      box-shadow: 1px 1px 0px #5c0e2e;
-    }
-
     /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
@@ -448,13 +398,16 @@
   </div>
 
   <!-- 🎵 FLOATING MINI MUSIC PLAYER 🎵 -->
-  <audio id="bgMusic" loop src="song.mp3"></audio>
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
       <span class="song-title">lost in the fire</span>
     </div>
     <button id="playBtn" onclick="toggleAudio()">▶ play</button>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 
   <script>
@@ -471,10 +424,11 @@
       }
 
       if (isPlaying) {
+        // Resume playing seamlessly
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
-        }).catch((error) => {
-          console.warn('Autoplay prevented by browser, click play to start:', error);
+        }).catch(() => {
+          // If browser blocks auto-resume, user clicks play to continue
           btn.textContent = '▶ play';
         });
       }
@@ -488,13 +442,9 @@
     // 3. Play/Pause toggle button
     function toggleAudio() {
       if (audio.paused) {
-        audio.play().then(() => {
-          btn.textContent = '❚❚ pause';
-          localStorage.setItem('musicPlaying', 'true');
-        }).catch((error) => {
-          alert("Could not play audio. Please ensure 'song.mp3' exists in your folder.");
-          console.error("Audio playback error:", error);
-        });
+        audio.play();
+        btn.textContent = '❚❚ pause';
+        localStorage.setItem('musicPlaying', 'true');
       } else {
         audio.pause();
         btn.textContent = '▶ play';
