@@ -252,7 +252,7 @@
       <!-- PUBLIC BOX FOR VISITORS (Sends straight to your Formspree!) -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
-        <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
+        <form action="https://formspree.io" method="POST" id="gossipForm">
           <input type="text" name="subject" required placeholder="Who is this about?">
           <textarea name="message" required rows="3" placeholder="Give us the dirty details..."></textarea>
           <button type="submit">Send to Princy</button>
@@ -294,7 +294,8 @@
           document.getElementById('publisherDesk').style.display = "block";
           alert("Access Granted, Princy. The desk is yours.");
         } else {
-          alert("Access Denied. You aren't Gossip Girl.");
+          // Updated custom warning identity block text here!
+          alert("Access Denied. You aren't Princy.");
         }
       }
     });
@@ -331,7 +332,7 @@
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          message: `👑 Princy posted a new blast: ${title}`,
+          message: `👑 Princy dropped a new bomb: ${title}`,
           content: btoa(unescape(encodeURIComponent(currentCode))),
           sha: fileData.sha
         })
