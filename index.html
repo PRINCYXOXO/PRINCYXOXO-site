@@ -4,58 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
+  <!-- Tailwind CSS for styling -->
   <script src="https://tailwindcss.com"></script>
+  <!-- Retro Serif Font to match the classic blog look -->
   <link href="https://googleapis.com" rel="stylesheet">
   <style>
-    body { font-family: 'Playfair Display', serif; }
+    body { font-family: 'Georgia', serif; }
   </style>
 </head>
-<body class="bg-neutral-950 text-neutral-200 min-h-screen">
+<body class="bg-[#fceef2] text-neutral-800 min-h-screen">
 
-  <!-- Header Area -->
-  <header class="text-center py-12 border-b border-neutral-800 tracking-widest">
-    <h1 class="text-5xl font-light uppercase text-neutral-100 tracking-wider">princyxoxo</h1>
-    <p class="text-xs uppercase mt-2 text-amber-600 tracking-[0.3em]">The Scandalous Lives of My Inner Circle</p>
+  <!-- TOP BANNER (Classic 2007 Gossip Girl Pink Banner) -->
+  <header class="bg-[#d23f77] text-white pt-6 pb-8 px-8 border-b-4 border-[#b02e60] shadow-md relative overflow-hidden">
+    <!-- Faint background repeating text simulation -->
+    <div class="absolute inset-0 opacity-10 text-6xl font-bold tracking-tighter uppercase whitespace-nowrap pointer-events-none select-none">
+      princyxoxo princyxoxo princyxoxo princyxoxo
+    </div>
+    
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10">
+      <!-- Title -->
+      <div class="text-left">
+        <h1 class="text-5xl font-bold tracking-tight lowercase">princyxoxo</h1>
+      </div>
+      <!-- Tagline -->
+      <div class="text-right mt-2 md:mt-0">
+        <p class="text-3xl font-light italic opacity-90">...you know you love me</p>
+      </div>
+    </div>
   </header>
 
-  <main class="max-w-xl mx-auto px-4 py-8">
+  <!-- NAVIGATION BAR -->
+  <nav class="bg-[#f0a3c2] border-b border-[#d23f77] text-sm text-[#5c0e2e] font-semibold shadow-sm">
+    <div class="max-w-5xl mx-auto flex flex-wrap justify-center space-x-6 py-2 px-4 uppercase tracking-wider">
+      <a href="#" class="hover:text-white transition">Home</a>
+      <a href="#" class="hover:text-white transition">Gossip</a>
+      <a href="#" class="hover:text-white transition">Posts</a>
+      <a href="#" class="hover:text-white transition">Pics</a>
+      <a href="#" class="hover:text-white transition">Parties</a>
+      <a href="#" class="hover:text-white transition">Links</a>
+      <a href="#" class="hover:text-white transition">More</a>
+    </div>
+  </nav>
+
+  <!-- MAIN BLOG CONTENT -->
+  <div class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
     
-    <!-- ANONYMOUS TIP BOX -->
-    <section class="bg-neutral-900 border border-neutral-800 p-6 rounded-md mb-12 shadow-2xl">
-      <h2 class="text-lg font-semibold mb-4 text-amber-600">Spotted something? Send a tip.</h2>
-      <form id="tipForm" class="space-y-4">
-        <div>
-          <label class="block text-[10px] uppercase tracking-widest mb-1 text-neutral-400">Location</label>
-          <input id="tipLocation" type="text" required class="w-full bg-neutral-950 border border-neutral-800 rounded p-2 text-neutral-200 text-xs focus:outline-none focus:border-amber-600" placeholder="e.g., The school cafeteria, the party">
-        </div>
-        <div>
-          <label class="block text-[10px] uppercase tracking-widest mb-1 text-neutral-400">The Gossip</label>
-          <textarea id="tipContent" required rows="3" class="w-full bg-neutral-950 border border-neutral-800 rounded p-3 text-neutral-200 text-xs focus:outline-none focus:border-amber-600" placeholder="Give Princy the dirty details..."></textarea>
-        </div>
-        <button type="submit" class="w-full bg-amber-700 hover:bg-amber-600 text-neutral-950 font-bold py-2 rounded text-xs uppercase tracking-widest transition">Send Blast</button>
-      </form>
-    </section>
-
-    <!-- THE SCANDAL FEED -->
-    <section id="blastFeed" class="space-y-6">
-      
-      <!-- Default Post 1 -->
-      <article class="bg-neutral-900 border border-neutral-800 p-6 rounded-md shadow-lg">
-        <div class="flex justify-between items-center mb-3 text-[10px] uppercase text-neutral-500 tracking-wider">
-          <span>Spotted: The Courtyard</span>
-          <span>1 hour ago</span>
-        </div>
-        <p class="text-neutral-300 leading-relaxed text-sm mb-4 italic">
-          Spotted: Someone left a cryptic note in a locker before third period. Looks like a certain secret is finally about to burst into the open.
+    <!-- LEFT SIDEBAR (Welcome & Info Panel) -->
+    <aside class="space-y-6 md:col-span-1">
+      <!-- Welcome Panel -->
+      <div class="bg-[#f8c5d8] border border-[#d23f77] p-4 rounded-sm shadow-sm">
+        <h2 class="text-2xl font-bold text-[#d23f77] tracking-tight lowercase mb-2">welcome</h2>
+        <p class="text-xs text-[#5c0e2e] leading-relaxed">
+          Welcome to PrincyXOXO!<br>
+          — The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!
         </p>
-        <span class="block text-right font-semibold text-amber-600 text-xs">xoxo, PRINCYXOXO</span>
-      </article>
+      </div>
 
-    </section>
-  </main>
+      <!-- Gossip Info Panel -->
+      <div class="bg-[#f8c5d8] border border-[#d23f77] p-4 rounded-sm shadow-sm">
+        <h2 class="text-2xl font-bold text-[#d23f77] tracking-tight lowercase mb-2">gossip</h2>
+        <p class="text-xs text-[#5c0e2e] leading-relaxed">
+          The latest and greatest 411 on all the 'in' people.
+        </p>
+      </div>
 
+      <!-- ANONYMOUS TIP BOX CONTAINER (Moved into sidebar) -->
+      <div class="bg-white border-2 border-[#d23f77] p-4 rounded-sm shadow-md">
+        <h3 class="text-md font-bold text-[#d23f77] mb-3 uppercase tracking-wide text-center">Submit a Tip</h3>
+        <form id="tipForm" class="space-y-3">
+          <input id="tipLocation" type="text" required class="w-full bg-[#fff5f8] border border-[#f0a3c2] rounded p-2 text-xs focus:outline-none focus:border-[#d23f77]" placeholder="Where was it?">
+          <textarea id="tipContent" required rows="3" class="w-full bg-[#fff5f8] border border-[#f0a3c2] rounded p-2 text-xs focus:outline-none focus:border-[#d23f77]" placeholder="Give us the details..."></textarea>
+          <button type="submit" class="w-full bg-[#d23f77] hover:bg-[#b02e60] text-white font-bold py-1.5 rounded text-xs uppercase tracking-wider transition">Blast It</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- CENTER FEED (The Gossip Blasts Area) -->
+    <main class="md:col-span-3 space-y-6">
+      
+      <!-- Sub-ticker indicator line -->
+      <div class="bg-white border border-[#f0a3c2] px-4 py-2 text-xs text-[#d23f77] font-semibold italic flex justify-between items-center rounded-sm">
+        <span>Reason #643 Why We Love This Site</span>
+        <span class="hidden sm:inline">Main • Exclusive Spotting</span>
+      </div>
+
+      <!-- Gossip Posts Container -->
+      <section id="blastFeed" class="space-y-6">
+        
+        <!-- Classic Layout Post -->
+        <article class="bg-white border-2 border-[#f0a3c2] p-6 rounded-sm shadow-sm relative">
+          <!-- Big Bold Subject Header -->
+          <h2 class="text-3xl font-bold text-[#d23f77] lowercase tracking-tight mb-1">serena van der woodsen</h2>
+          <div class="text-[11px] text-gray-500 uppercase tracking-wider border-b border-[#fceef2] pb-2 mb-4">
+            Filed under: Serena > Exclusive > Spotting
+          </div>
+          
+          <!-- Post Text -->
+          <p class="text-gray-700 leading-relaxed text-md mb-4 font-sans">
+            S was seen rushing down the steps with a packed suitcase. Did B finally banish her from the kingdom, or is she running away from her own dark secrets? 
+          </p>
+          <span class="block text-right font-bold text-[#d23f77] text-sm italic">xoxo, PRINCYXOXO</span>
+        </article>
+
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Interactive JavaScript logic to inject new tips into the feed -->
   <script>
-    // This handles temporary browser-only submissions for now
     document.getElementById('tipForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -63,14 +120,15 @@
       const contentInput = document.getElementById('tipContent');
       const feed = document.getElementById('blastFeed');
 
+      // Generates a dynamic new post card that matches the classic layout
       const newCard = `
-        <article class="bg-neutral-900 border border-neutral-800 p-6 rounded-md shadow-lg">
-          <div class="flex justify-between items-center mb-3 text-[10px] uppercase text-neutral-500 tracking-wider">
-            <span>Spotted: ${locationInput.value}</span>
-            <span>Just Now</span>
+        <article class="bg-white border-2 border-[#f0a3c2] p-6 rounded-sm shadow-sm relative animate-fade-in">
+          <h2 class="text-3xl font-bold text-[#d23f77] lowercase tracking-tight mb-1">Spotted at ${locationInput.value}</h2>
+          <div class="text-[11px] text-gray-500 uppercase tracking-wider border-b border-[#fceef2] pb-2 mb-4">
+            Filed under: Live Feed > Community > Anonymous Tip
           </div>
-          <p class="text-neutral-300 leading-relaxed text-sm mb-4 italic">${contentInput.value}</p>
-          <span class="block text-right font-semibold text-amber-600 text-xs">xoxo, PRINCYXOXO</span>
+          <p class="text-gray-700 leading-relaxed text-md mb-4 font-sans">${contentInput.value}</p>
+          <span class="block text-right font-bold text-[#d23f77] text-sm italic">xoxo, PRINCYXOXO</span>
         </article>
       `;
 
