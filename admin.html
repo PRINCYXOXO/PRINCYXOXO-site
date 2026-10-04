@@ -14,7 +14,7 @@
     .desk-container {
       max-width: 600px;
       margin: 0 auto;
-      background-color: #f8c5d8; /* Light Pink Panel Background */
+      background-color: #f8c5d8;
       border: 3px solid #d23f77;
       padding: 30px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -93,51 +93,29 @@
         return;
       }
 
-      const newPostHTML = `
-        <!-- NEW POST -->
-        <article>
-          <h2>${title.toLowerCase()}</h2>
-          <div class="file-under">Filed under: Live Feed > Exclusive > Blast</div>
-          <p>${content}</p>
-          <span class="signature">xoxo, PRINCYXOXO</span>
-        </article>
-      `;
-
+      // We send the gossip to GitHub Actions using a secure "repository dispatch" event
       try {
         const url = `https://github.com`;
-        const res = await fetch(url, { 
-          headers: { 
-            'Authorization': `token ${token}`,
-            'Accept': 'application/vnd.github.v3+json'
-          } 
-        });
-        
-        if (!res.ok) throw new Error("Connection failed! Your token key might be incorrect or expired.");
-        const fileData = await res.json();
-        
-        let currentCode = decodeURIComponent(escape(atob(fileData.content)));
-        const insertionPoint = '<section id="blastFeed">';
-        currentCode = currentCode.replace(insertionPoint, insertionPoint + "\n" + newPostHTML);
-
-        const updateRes = await fetch(url, {
-          method: 'PUT',
+        const res = await fetch(url, {
+          method: 'POST',
           headers: {
             'Authorization': `token ${token}`,
+            'Accept': 'application/vnd.github.v3+json',
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            message: `👑 Princy launched live blast: ${title}`,
-            content: btoa(unescape(encodeURIComponent(currentCode))),
-            sha: fileData.sha
+            event_type: 'publish_blast',
+            client_payload: { title: title, content: content }
           })
         });
 
-        if (updateRes.ok) {
-          alert("XOXO! Blast is officially live! Your site layout will refresh in 10 seconds.");
+        // GitHub dispatches return a 204 status code when successful!
+        if (res.status === 204 || res.ok) {
+          alert("XOXO! Blast has been transmitted to the publisher queue. It will appear live on your site in about 30 seconds!");
           document.getElementById('pubTitle').value = "";
           document.getElementById('pubContent').value = "";
         } else {
-          alert("Failed to save changes back to GitHub. Check token clearance.");
+          alert("Failed to queue blast. Double check that your token is correct and hasn't been posted publicly!");
         }
       } catch (err) {
         alert("Error: " + err.message);
