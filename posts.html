@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   <style>
-body {
+    body {
       background-color: #fceef2;
       background-image: url('Untitled77_20261004220524.png');
       background-repeat: repeat;
@@ -17,15 +17,14 @@ body {
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-  /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
-    cursor: url('crown.png'), auto;
-  }
+      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
+      cursor: url('crown.png'), auto;
+    }
 
-  /* Make sure links show a cute pointer cursor when hovering */
-  a, button {
-    cursor: url('heart.png'), pointer;
-  }
-    
+    /* Make sure links show a cute pointer cursor when hovering */
+    a, button {
+      cursor: url('heart.png'), pointer;
+    }
 
     header {
       background-color: #d23f77;
@@ -44,14 +43,14 @@ body {
       align-items: center;
     }
 
-header h1 {
-  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-  font-size: 52px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: -1.5px;
-  text-transform: lowercase;
-}
+    header h1 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 52px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1.5px;
+      text-transform: lowercase;
+    }
 
     .tagline {
       font-size: 28px;
@@ -264,7 +263,6 @@ header h1 {
     .music-player button:hover {
       background-color: #b02e60;
     }
-    
   </style>
 </head>
 <body>
@@ -276,7 +274,7 @@ header h1 {
     </div>
   </header>
 
-<nav>
+  <nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
     <a href="posts.html">Posts</a>
@@ -284,9 +282,7 @@ header h1 {
     <a href="princyxoxo.html">princyxoxo</a>
     <a href="links.html">Links</a>
     <a href="more.html">More</a>
-</nav>
-
-
+  </nav>
 
   <div class="wrapper">
     <aside>
@@ -303,7 +299,7 @@ header h1 {
       <!-- Visitor Submit Gossip Form (Perfectly Active) -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
-        <form action="https://formspree.io" method="POST" id="gossipForm">
+        <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
           <input type="text" name="subject" required placeholder="Who is this about?">
           <textarea name="message" required rows="3" placeholder="Give us the dirty details..."></textarea>
           <button type="submit">Send to Princy</button>
@@ -330,6 +326,19 @@ header h1 {
 
       </section>
     </main>
+  </div>
+
+  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
+  <div class="music-player">
+    <div class="player-info">
+      <span class="music-icon">♫</span>
+      <span class="song-title">lost in the fire</span>
+    </div>
+    <button id="playBtn" onclick="toggleAudio()">▶ play</button>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 
   <script>
@@ -374,6 +383,6 @@ header h1 {
       }
     }
   </script>
-  
+
 </body>
 </html>
