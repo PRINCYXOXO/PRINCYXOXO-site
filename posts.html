@@ -214,6 +214,57 @@ header h1 {
       font-style: italic;
       font-size: 14px;
     }
+
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      border: 2px solid #d23f77;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .player-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #5c0e2e;
+      font-weight: bold;
+    }
+
+    .music-icon {
+      color: #d23f77;
+      font-size: 14px;
+    }
+
+    .song-title {
+      font-style: italic;
+    }
+
+    .music-player button {
+      background-color: #d23f77;
+      color: #ffffff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .music-player button:hover {
+      background-color: #b02e60;
+    }
+    
   </style>
 </head>
 <body>
