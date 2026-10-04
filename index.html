@@ -4,114 +4,276 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
-  <!-- Tailwind CSS for styling -->
-  <script src="https://tailwindcss.com"></script>
-  <!-- Retro Serif Font to match the classic blog look -->
-  <link href="https://googleapis.com" rel="stylesheet">
   <style>
-    body { font-family: 'Georgia', serif; }
+    /* 2007 Retro Gossip Girl Theme Colors & Fonts */
+    body {
+      background-color: #fceef2; /* Light Pastel Pink */
+      color: #333333;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Top Pink Header Banner */
+    header {
+      background-color: #d23f77; /* Hot Pink */
+      color: #ffffff;
+      padding: 30px 40px;
+      border-bottom: 4px solid #b02e60;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .banner-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 45px;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: -1px;
+      text-transform: lowercase;
+    }
+
+    .tagline {
+      font-size: 28px;
+      font-style: italic;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Navigation Menu Bar */
+    nav {
+      background-color: #f0a3c2; /* Medium Accent Pink */
+      border-bottom: 1px solid #d23f77;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #5c0e2e;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Layout Structure */
+    .wrapper {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 30px;
+    }
+
+    /* Left Sidebar */
+    aside {
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-box {
+      background-color: #f8c5d8;
+      border: 1px solid #d23f77;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 2px;
+    }
+
+    .sidebar-box h2 {
+      font-size: 22px;
+      color: #d23f77;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: lowercase;
+    }
+
+    .sidebar-box p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #5c0e2e;
+      margin: 0;
+    }
+
+    /* Submission Form */
+    .form-box {
+      background-color: #ffffff;
+      border: 2px solid #d23f77;
+      padding: 15px;
+      border-radius: 2px;
+    }
+
+    .form-box h3 {
+      font-size: 14px;
+      color: #d23f77;
+      text-transform: uppercase;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .form-box input, .form-box textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff5f8;
+      border: 1px solid #f0a3c2;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      border-radius: 2px;
+      font-family: inherit;
+    }
+
+    .form-box button {
+      width: 100%;
+      background-color: #d23f77;
+      color: white;
+      border: none;
+      padding: 8px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .form-box button:hover {
+      background-color: #b02e60;
+    }
+
+    /* Main Gossip Feed Column */
+    main {
+      flex-grow: 1;
+    }
+
+    .ticker {
+      background-color: #ffffff;
+      border: 1px solid #f0a3c2;
+      padding: 8px 15px;
+      font-size: 11px;
+      color: #d23f77;
+      font-style: italic;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Gossip Post Card */
+    article {
+      background-color: #ffffff;
+      border: 2px solid #f0a3c2;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    article h2 {
+      font-size: 28px;
+      color: #d23f77;
+      margin: 0 0 5px 0;
+      text-transform: lowercase;
+    }
+
+    .file-under {
+      font-size: 11px;
+      color: #777777;
+      text-transform: uppercase;
+      border-b: 1px solid #fceef2;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444444;
+    }
+
+    .signature {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      color: #d23f77;
+      font-style: italic;
+      font-size: 14px;
+    }
   </style>
 </head>
-<body class="bg-[#fceef2] text-neutral-800 min-h-screen">
+<body>
 
-  <!-- TOP BANNER (Classic 2007 Gossip Girl Pink Banner) -->
-  <header class="bg-[#d23f77] text-white pt-6 pb-8 px-8 border-b-4 border-[#b02e60] shadow-md relative overflow-hidden">
-    <!-- Faint background repeating text simulation -->
-    <div class="absolute inset-0 opacity-10 text-6xl font-bold tracking-tighter uppercase whitespace-nowrap pointer-events-none select-none">
-      princyxoxo princyxoxo princyxoxo princyxoxo
-    </div>
-    
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10">
-      <!-- Title -->
-      <div class="text-left">
-        <h1 class="text-5xl font-bold tracking-tight lowercase">princyxoxo</h1>
-      </div>
-      <!-- Tagline -->
-      <div class="text-right mt-2 md:mt-0">
-        <p class="text-3xl font-light italic opacity-90">...you know you love me</p>
-      </div>
+  <!-- TOP BANNER -->
+  <header>
+    <div class="banner-container">
+      <h1>princyxoxo</h1>
+      <p class="tagline">...you know you love me</p>
     </div>
   </header>
 
   <!-- NAVIGATION BAR -->
-  <nav class="bg-[#f0a3c2] border-b border-[#d23f77] text-sm text-[#5c0e2e] font-semibold shadow-sm">
-    <div class="max-w-5xl mx-auto flex flex-wrap justify-center space-x-6 py-2 px-4 uppercase tracking-wider">
-      <a href="#" class="hover:text-white transition">Home</a>
-      <a href="#" class="hover:text-white transition">Gossip</a>
-      <a href="#" class="hover:text-white transition">Posts</a>
-      <a href="#" class="hover:text-white transition">Pics</a>
-      <a href="#" class="hover:text-white transition">Parties</a>
-      <a href="#" class="hover:text-white transition">Links</a>
-      <a href="#" class="hover:text-white transition">More</a>
-    </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gossip</a>
+    <a href="#">Posts</a>
+    <a href="#">Pics</a>
+    <a href="#">Parties</a>
+    <a href="#">Links</a>
+    <a href="#">More</a>
   </nav>
 
-  <!-- MAIN BLOG CONTENT -->
-  <div class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+  <!-- CONTENT CONTAINER -->
+  <div class="wrapper">
     
-    <!-- LEFT SIDEBAR (Welcome & Info Panel) -->
-    <aside class="space-y-6 md:col-span-1">
-      <!-- Welcome Panel -->
-      <div class="bg-[#f8c5d8] border border-[#d23f77] p-4 rounded-sm shadow-sm">
-        <h2 class="text-2xl font-bold text-[#d23f77] tracking-tight lowercase mb-2">welcome</h2>
-        <p class="text-xs text-[#5c0e2e] leading-relaxed">
-          Welcome to PrincyXOXO!<br>
-          — The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!
-        </p>
+    <!-- LEFT SIDEBAR -->
+    <aside>
+      <div class="sidebar-box">
+        <h2>welcome</h2>
+        <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
 
-      <!-- Gossip Info Panel -->
-      <div class="bg-[#f8c5d8] border border-[#d23f77] p-4 rounded-sm shadow-sm">
-        <h2 class="text-2xl font-bold text-[#d23f77] tracking-tight lowercase mb-2">gossip</h2>
-        <p class="text-xs text-[#5c0e2e] leading-relaxed">
-          The latest and greatest 411 on all the 'in' people.
-        </p>
+      <div class="sidebar-box">
+        <h2>gossip</h2>
+        <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- ANONYMOUS TIP BOX CONTAINER (Moved into sidebar) -->
-      <div class="bg-white border-2 border-[#d23f77] p-4 rounded-sm shadow-md">
-        <h3 class="text-md font-bold text-[#d23f77] mb-3 uppercase tracking-wide text-center">Submit a Tip</h3>
-        <form id="tipForm" class="space-y-3">
-          <input id="tipLocation" type="text" required class="w-full bg-[#fff5f8] border border-[#f0a3c2] rounded p-2 text-xs focus:outline-none focus:border-[#d23f77]" placeholder="Where was it?">
-          <textarea id="tipContent" required rows="3" class="w-full bg-[#fff5f8] border border-[#f0a3c2] rounded p-2 text-xs focus:outline-none focus:border-[#d23f77]" placeholder="Give us the details..."></textarea>
-          <button type="submit" class="w-full bg-[#d23f77] hover:bg-[#b02e60] text-white font-bold py-1.5 rounded text-xs uppercase tracking-wider transition">Blast It</button>
+      <div class="form-box">
+        <h3>Submit a Tip</h3>
+        <form id="tipForm">
+          <input id="tipLocation" type="text" required placeholder="Where was it?">
+          <textarea id="tipContent" required rows="3" placeholder="Give us the details..."></textarea>
+          <button type="submit">Blast It</button>
         </form>
       </div>
     </aside>
 
-    <!-- CENTER FEED (The Gossip Blasts Area) -->
-    <main class="md:col-span-3 space-y-6">
-      
-      <!-- Sub-ticker indicator line -->
-      <div class="bg-white border border-[#f0a3c2] px-4 py-2 text-xs text-[#d23f77] font-semibold italic flex justify-between items-center rounded-sm">
+    <!-- CENTER FEED -->
+    <main>
+      <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
-        <span class="hidden sm:inline">Main • Exclusive Spotting</span>
+        <span>Main • Exclusive Spotting</span>
       </div>
 
-      <!-- Gossip Posts Container -->
-      <section id="blastFeed" class="space-y-6">
-        
-        <!-- Classic Layout Post -->
-        <article class="bg-white border-2 border-[#f0a3c2] p-6 rounded-sm shadow-sm relative">
-          <!-- Big Bold Subject Header -->
-          <h2 class="text-3xl font-bold text-[#d23f77] lowercase tracking-tight mb-1">serena van der woodsen</h2>
-          <div class="text-[11px] text-gray-500 uppercase tracking-wider border-b border-[#fceef2] pb-2 mb-4">
-            Filed under: Serena > Exclusive > Spotting
-          </div>
-          
-          <!-- Post Text -->
-          <p class="text-gray-700 leading-relaxed text-md mb-4 font-sans">
-            S was seen rushing down the steps with a packed suitcase. Did B finally banish her from the kingdom, or is she running away from her own dark secrets? 
-          </p>
-          <span class="block text-right font-bold text-[#d23f77] text-sm italic">xoxo, PRINCYXOXO</span>
+      <section id="blastFeed">
+        <article>
+          <h2>serena van der woodsen</h2>
+          <div class="file-under">Filed under: Serena > Exclusive > Spotting</div>
+          <p>S was seen rushing down the steps with a packed suitcase. Did B finally banish her from the kingdom, or is she running away from her own dark secrets?</p>
+          <span class="signature">xoxo, PRINCYXOXO</span>
         </article>
-
       </section>
     </main>
 
   </div>
 
-  <!-- Interactive JavaScript logic to inject new tips into the feed -->
   <script>
     document.getElementById('tipForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -120,19 +282,15 @@
       const contentInput = document.getElementById('tipContent');
       const feed = document.getElementById('blastFeed');
 
-      // Generates a dynamic new post card that matches the classic layout
-      const newCard = `
-        <article class="bg-white border-2 border-[#f0a3c2] p-6 rounded-sm shadow-sm relative animate-fade-in">
-          <h2 class="text-3xl font-bold text-[#d23f77] lowercase tracking-tight mb-1">Spotted at ${locationInput.value}</h2>
-          <div class="text-[11px] text-gray-500 uppercase tracking-wider border-b border-[#fceef2] pb-2 mb-4">
-            Filed under: Live Feed > Community > Anonymous Tip
-          </div>
-          <p class="text-gray-700 leading-relaxed text-md mb-4 font-sans">${contentInput.value}</p>
-          <span class="block text-right font-bold text-[#d23f77] text-sm italic">xoxo, PRINCYXOXO</span>
-        </article>
+      const newCard = document.createElement('article');
+      newCard.innerHTML = `
+        <h2>Spotted at ${locationInput.value}</h2>
+        <div class="file-under">Filed under: Live Feed > Community > Anonymous Tip</div>
+        <p>${contentInput.value}</p>
+        <span class="signature">xoxo, PRINCYXOXO</span>
       `;
 
-      feed.insertAdjacentHTML('afterbegin', newCard);
+      feed.insertBefore(newCard, feed.firstChild);
       locationInput.value = '';
       contentInput.value = '';
     });
