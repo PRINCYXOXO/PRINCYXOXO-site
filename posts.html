@@ -42,7 +42,6 @@
       margin: 0;
       padding: 0;
       cursor: url('crown.png'), auto;
-      overflow-x: hidden; /* Prevents unwanted horizontal scrolling on mobile */
     }
 
     a, button {
@@ -52,7 +51,7 @@
     header {
       background-color: #d23f77;
       color: #ffffff;
-      padding: 30px 20px;
+      padding: 30px 40px;
       border-bottom: 4px solid #b02e60;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -131,11 +130,7 @@
       background-color: #f0a3c2;
       border-bottom: 1px solid #d23f77;
       text-align: center;
-      padding: 10px 15px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+      padding: 10px 0;
     }
 
     nav a {
@@ -145,15 +140,14 @@
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 1px;
-      padding: 6px 10px;
+      margin: 0 15px;
       display: inline-block;
-      transition: color 0.2s ease, background-color 0.2s ease;
-      border-radius: 3px;
+      padding: 4px 0;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
       color: #ffffff;
-      background-color: rgba(210, 63, 119, 0.2);
     }
 
     .wrapper {
@@ -214,7 +208,7 @@
       border: 1px solid #f0a3c2;
       padding: 8px;
       margin-bottom: 10px;
-      font-size: 14px; /* Set to 14px+ to prevent iOS auto-zoom */
+      font-size: 12px;
       border-radius: 2px;
       font-family: inherit;
     }
@@ -224,7 +218,7 @@
       background-color: #d23f77;
       color: white;
       border: none;
-      padding: 10px;
+      padding: 8px;
       font-weight: bold;
       text-transform: uppercase;
       font-size: 12px;
@@ -249,7 +243,6 @@
       margin-bottom: 20px;
       display: flex;
       justify-content: space-between;
-      gap: 10px;
     }
 
     article {
@@ -329,7 +322,7 @@
       background-color: #d23f77;
       color: #ffffff;
       border: none;
-      padding: 6px 12px;
+      padding: 5px 10px;
       font-size: 11px;
       font-weight: bold;
       text-transform: uppercase;
@@ -341,14 +334,10 @@
       background-color: #b02e60;
     }
 
-    /* 📱 RESPONSIVE BREAKPOINTS 📱 */
+    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
     @media (max-width: 768px) {
       header {
         padding: 20px 15px;
-      }
-
-      header::after {
-        font-size: 45px;
       }
 
       .banner-container {
@@ -358,8 +347,9 @@
       }
 
       header h1 {
-        font-size: 40px;
+        font-size: 36px;
         justify-content: center;
+        flex-wrap: wrap;
       }
 
       .header-silhouette {
@@ -367,23 +357,41 @@
       }
 
       .tagline {
-        font-size: 20px;
+        font-size: 18px;
+      }
+
+      /* Contain watermark overflow on smaller screens */
+      header::after {
+        font-size: 24px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* Flex layout for nav links so they align cleanly without awkward line wraps */
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+        padding: 12px 10px;
+      }
+
+      nav a {
+        margin: 0;
+        padding: 4px 6px;
+        font-size: 12px;
       }
 
       .wrapper {
         flex-direction: column;
+        margin: 15px auto;
         padding: 0 15px;
-        margin: 20px auto;
+        gap: 20px;
       }
 
-      /* Move sidebar below main content on mobile screens so posts show first */
       aside {
         width: 100%;
-        order: 2;
-      }
-
-      main {
-        order: 1;
       }
 
       .ticker {
@@ -400,35 +408,19 @@
         font-size: 22px;
       }
 
-      /* Adjust Music Player for Mobile Screens */
+      /* Sticky bottom bar format for floating music player on mobile */
       .music-player {
-        bottom: 0;
-        right: 0;
-        left: 0;
-        border-radius: 0;
-        border-width: 2px 0 0 0;
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
         justify-content: space-between;
-        padding: 8px 15px;
+        padding: 8px 12px;
       }
 
-      /* Add bottom padding to body so fixed music player doesn't cover footer content */
-      body {
-        padding-bottom: 50px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      nav a {
-        font-size: 11px;
-        padding: 5px 8px;
-      }
-
-      header h1 {
-        font-size: 32px;
-      }
-
-      .header-silhouette {
-        height: 36px;
+      /* Prevent iOS safari from auto-zooming on form fields */
+      .form-box input, 
+      .form-box textarea {
+        font-size: 16px;
       }
     }
   </style>
