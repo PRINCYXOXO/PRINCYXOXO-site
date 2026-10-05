@@ -38,25 +38,24 @@
       overflow: hidden;
     }
 
-    /* 🏙️ CITY SKYLINE OVERLAY (LAYER 1) 🏙️ */
+    /* 🏙️️ WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
     header::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 100%; /* Spans full height behind princyxoxo text */
       background-image: url('skyline.png');
       background-repeat: repeat-x;
-      background-position: bottom center;
-      background-size: contain; /* Scales image height to fit header */
-      opacity: 0.25; /* Soft background blend */
-      filter: brightness(0) invert(1); /* Converts dark/black PNG silhouettes into bright white */
+      background-position: center center; /* Centers skyline behind princyxoxo */
+      background-size: cover; /* Fills the entire header height & width */
+      opacity: 0.3; /* Subtle transparency so text stays legible */
       pointer-events: none;
       z-index: 1;
     }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY (LAYER 2) 💋 */
+    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
