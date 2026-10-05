@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO</title>
+  <title>PRINCYXOXO - More</title>
 
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
@@ -39,25 +39,24 @@
       overflow: hidden;
     }
 
-    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
-   header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Replace 'skyline.png' with your image file path */
-  background-image: url('skyline.png'); 
-  background-repeat: repeat-x;
-  background-position: center bottom;
-  background-size: auto 100%;
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 1;
-}
+    /* 🏙 WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('skyline.png'); 
+      background-repeat: repeat-x;
+      background-position: center bottom;
+      background-size: auto 100%;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
+    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -67,7 +66,7 @@
       font-family: 'Bodoni Moda', serif;
       font-size: 80px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.30);
+      color: rgba(255, 255, 255, 0.30); /* 💖 Increased opacity for visibility */
       white-space: nowrap;
       pointer-events: none;
       z-index: 2;
@@ -227,46 +226,52 @@
       justify-content: space-between;
     }
 
-    article {
+    /* 💖 FAQ BOX STYLING 💖 */
+    .faq-container {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
       padding: 25px;
-      margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    article h2 {
-      font-size: 28px;
+    .faq-main-title {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 38px;
       color: #d23f77;
-      margin: 0 0 5px 0;
+      text-align: center;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      letter-spacing: -1px;
       text-transform: lowercase;
     }
 
-    .file-under {
-      font-size: 11px;
-      color: #777777;
-      text-transform: uppercase;
-      border-bottom: 1px solid #fceef2;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
+    .faq-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #fceef2;
     }
 
-    article p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444444;
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
 
-    .signature {
-      display: block;
-      text-align: right;
-      font-weight: bold;
+    .faq-question {
+      font-size: 18px;
       color: #d23f77;
-      font-style: italic;
-      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
     }
 
-    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
+    .faq-answer {
+      font-size: 13px;
+      color: #5c0e2e;
+      line-height: 1.5;
+      margin: 0;
+      padding-left: 5px;
+    }
+
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -350,7 +355,6 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -364,22 +368,48 @@
     <main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
-        <span>Main • Exclusive Spotting</span>
+        <span>More • FAQ</span>
       </div>
 
-      <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
-        <article>
-          <h2>spotted at the Met</h2>
-          <div class="file-under">Filed under: Exclusive • Gossip</div>
-          <p>Spotted: Someone looking fabulous as usual. Stay tuned for all the details later tonight.</p>
-          <span class="signature">xoxo, Princy</span>
-        </article>
+        <!-- 💖 FAQ BIG BOX 💖 -->
+        <div class="faq-container">
+          <h2 class="faq-main-title">♡ Frequently Asked Questions ♡</h2>
+
+          <div class="faq-item">
+            <div class="faq-question">Q: Who is Princy?</div>
+            <p class="faq-answer">♡ A: Someone in your inner circle who sees everything and tells all. You’ll never guess, so don’t bother trying.</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Q: How do I submit a tip or spotted photo?</div>
+            <p class="faq-answer">♡ A: Use the "Submit Gossip" box in the sidebar on any page! Send in who it’s about, what happened, and any receipts you have.</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Q: Are tip submissions actually anonymous?</div>
+            <p class="faq-answer">♡ A: 100%. Your secret is safe with Princy—the tea gets posted, but your name stays hidden.</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Q: Can I request to have a post or picture taken down?</div>
+            <p class="faq-answer">♡ A: Unless proven entirely false, posts stay up. If you didn't want it posted, you shouldn't have done it in public!</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Q: How do I know if a rumor on the site is true?</div>
+            <p class="faq-answer">♡ A: Princy doesn't post without verification. If it's on the feed, there's always truth to it.</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Q: How can I get featured in a post?</div>
+            <p class="faq-answer">♡ A: Do something worth talking about... or wait for someone to submit some gossip about you.</p>
+          </div>
+        </div>
       </section>
     </main>
   </div>
 
-  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
@@ -409,7 +439,6 @@
           btn.textContent = '❚❚ pause';
         }).catch(() => {
           btn.textContent = '▶ play';
-          localStorage.setItem('musicPlaying', 'false');
         });
       }
     });
@@ -420,12 +449,9 @@
 
     function toggleAudio() {
       if (audio.paused) {
-        audio.play().then(() => {
-          btn.textContent = '❚❚ pause';
-          localStorage.setItem('musicPlaying', 'true');
-        }).catch((err) => {
-          console.error('Audio playback failed:', err);
-        });
+        audio.play();
+        btn.textContent = '❚❚ pause';
+        localStorage.setItem('musicPlaying', 'true');
       } else {
         audio.pause();
         btn.textContent = '▶ play';
