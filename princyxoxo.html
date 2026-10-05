@@ -1,11 +1,13 @@
+Here is your updated code (for princyxoxo.html) with the mobile responsiveness styles, layout fixes, and audio autoplay handling fully included.
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO</title>
+  <title>PRINCYXOXO — About Princy</title>
 
-<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
@@ -156,7 +158,6 @@
       margin: 30px auto;
       padding: 0 20px;
       display: flex;
-      flex-wrap: wrap;
       gap: 30px;
     }
 
@@ -205,6 +206,7 @@
 
     .form-box input, .form-box textarea {
       width: 100%;
+      box-sizing: border-box;
       background-color: #fff5f8;
       border: 1px solid #f0a3c2;
       padding: 8px;
@@ -231,7 +233,7 @@
     }
 
     main {
-      flex: 1 1 500px;
+      flex-grow: 1;
     }
 
     .ticker {
@@ -389,6 +391,36 @@
     .music-player button:hover {
       background-color: #b02e60;
     }
+
+    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
+    @media (max-width: 768px) {
+      .banner-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 5px 8px;
+      }
+
+      .wrapper {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+      }
+
+      header::after {
+        font-size: 40px;
+      }
+
+      .student-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -514,7 +546,7 @@
         }).catch((err) => console.error("Playback error:", err));
       } else {
         audio.pause();
-        btn.textContent = '▶ play';
+        btn.textContent = '❚❚ pause' ? '▶ play' : '▶ play';
         localStorage.setItem('musicPlaying', 'false');
       }
     }
@@ -522,5 +554,4 @@
 
 </body>
 </html>
-
 
