@@ -67,7 +67,7 @@
       font-family: 'Bodoni Moda', serif;
       font-size: 80px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.22); /* 💖 Increased opacity */
+      color: rgba(255, 255, 255, 0.30);
       white-space: nowrap;
       pointer-events: none;
       z-index: 2;
@@ -80,7 +80,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      z-index: 3; /* Keeps main title and tagline crisp on top */
+      z-index: 3;
     }
 
     header h1 {
@@ -92,20 +92,16 @@
       text-transform: lowercase;
       display: flex;
       align-items: center;
-      gap: 10px; /* Space between silhouette and text */
-      
-      /* ✨ Plain white text with a tiny drop shadow coming from the right side ✨ */
+      gap: 10px;
       color: #ffffff;
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
     /* Silhouette Image Styling */
     .header-silhouette {
-      height: 65px; /* Matches the header title size */
+      height: 65px;
       width: auto;
       display: inline-block;
-      
-      /* Matching subtle drop shadow on the silhouette icon */
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
@@ -381,7 +377,7 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- Visitor Submit Gossip Form (Perfectly Active) -->
+      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -398,11 +394,14 @@
         <span>Main • Exclusive Spotting</span>
       </div>
 
-      <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
+      <!-- 👑 THE FEED ZONE -->
       <section id="blastFeed">
-
-        <!-- Add your links content here -->
-
+        <article>
+          <h2>spotted on the steps</h2>
+          <div class="file-under">Filed Under: Sightings • Upper East Side</div>
+          <p>Spotted: B and S making amends over iced lattes, or was it just for the cameras? Word on the street is someone has secrets that won't stay buried for long.</p>
+          <span class="signature">You know you love me, princyxoxo</span>
+        </article>
       </section>
     </main>
   </div>
@@ -424,7 +423,6 @@
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
 
-    // 1. Restore previous play time and state
     window.addEventListener('DOMContentLoaded', () => {
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
@@ -434,22 +432,18 @@
       }
 
       if (isPlaying) {
-        // Resume playing seamlessly
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
         }).catch(() => {
-          // If browser blocks auto-resume, user clicks play to continue
           btn.textContent = '▶ play';
         });
       }
     });
 
-    // 2. Continuously save current playback time
     audio.addEventListener('timeupdate', () => {
       localStorage.setItem('musicTime', audio.currentTime);
     });
 
-    // 3. Play/Pause toggle button
     function toggleAudio() {
       if (audio.paused) {
         audio.play();
