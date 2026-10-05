@@ -45,31 +45,26 @@
       align-items: center;
     }
 
-header h1 {
-  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-  font-size: 52px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: -1.5px;
-  text-transform: lowercase;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between silhouette and text */
-  
-  /* White text with a right-hand drop shadow */
-  color: #ffffff;
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
-}
+    header h1 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 52px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1.5px;
+      text-transform: lowercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    }
 
-/* Silhouette image styling */
-.header-silhouette {
-  height: 60px; /* Adjust height to match header text */
-  width: auto;
-  display: inline-block;
-  
-  /* Matching right-hand drop shadow on the silhouette icon */
-  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
-}
+    .header-silhouette {
+      height: 60px;
+      width: auto;
+      display: inline-block;
+      filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+    }
 
     .tagline {
       font-size: 28px;
@@ -233,7 +228,6 @@ header h1 {
       font-size: 14px;
     }
 
-    /* 💖 STUDENT CARD STYLING 💖 */
     .student-card {
       background-color: #fff0f5;
       background-image: radial-gradient(#f0a3c2 1.5px, transparent 1.5px);
@@ -292,7 +286,6 @@ header h1 {
       font-style: italic;
     }
 
-    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -345,7 +338,7 @@ header h1 {
 </head>
 <body>
 
-<header>
+  <header>
     <div class="banner-container">
       <h1>
         <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
@@ -376,7 +369,6 @@ header h1 {
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -394,12 +386,10 @@ header h1 {
       </div>
 
       <section id="blastFeed">
-
         <article>
           <h2>about princy</h2>
           <div class="file-under">Filed Under: Identity • Student ID</div>
 
-          <!-- 💳 STUDENT ID CARD BOX -->
           <div class="student-card">
             <div class="pfp-container">
               <img src="Untitled8_20261004213234.png" alt="Princy Profile" class="pfp-img">
@@ -415,12 +405,10 @@ header h1 {
 
           <span class="signature">You know you love me, xoxo Princy</span>
         </article>
-
       </section>
     </main>
   </div>
 
-  <!-- 🎵 FLOATING MINI MUSIC PLAYER 🎵 -->
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
@@ -437,7 +425,6 @@ header h1 {
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
 
-    // 1. Restore previous play time and state
     window.addEventListener('DOMContentLoaded', () => {
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
@@ -447,22 +434,18 @@ header h1 {
       }
 
       if (isPlaying) {
-        // Resume playing seamlessly
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
         }).catch(() => {
-          // If browser blocks auto-resume, user clicks play to continue
           btn.textContent = '▶ play';
         });
       }
     });
 
-    // 2. Continuously save current playback time
     audio.addEventListener('timeupdate', () => {
       localStorage.setItem('musicTime', audio.currentTime);
     });
 
-    // 3. Play/Pause toggle button
     function toggleAudio() {
       if (audio.paused) {
         audio.play();
@@ -475,7 +458,6 @@ header h1 {
       }
     }
   </script>
-  
+
 </body>
 </html>
-.
