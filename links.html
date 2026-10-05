@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO</title>
+  <title>PRINCYXOXO — Links</title>
 
-<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
@@ -25,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  
   <style>
     body {
       background-color: #fceef2;
@@ -81,7 +83,7 @@
       font-family: 'Bodoni Moda', serif;
       font-size: 80px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.30); /* 💖 Increased opacity for visibility */
+      color: rgba(255, 255, 255, 0.30);
       white-space: nowrap;
       pointer-events: none;
       z-index: 2;
@@ -94,7 +96,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      z-index: 3; /* Keeps main title and tagline crisp on top */
+      z-index: 3;
     }
 
     header h1 {
@@ -106,20 +108,16 @@
       text-transform: lowercase;
       display: flex;
       align-items: center;
-      gap: 10px; /* Space between silhouette and text */
-      
-      /* ✨ Plain white text with a tiny drop shadow coming from the right side ✨ */
+      gap: 10px;
       color: #ffffff;
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
     /* Silhouette Image Styling */
     .header-silhouette {
-      height: 65px; /* Matches the header title size */
+      height: 65px;
       width: auto;
       display: inline-block;
-      
-      /* Matching subtle drop shadow on the silhouette icon */
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
@@ -145,6 +143,7 @@
       font-size: 12px;
       letter-spacing: 1px;
       margin: 0 15px;
+      display: inline-block;
     }
 
     nav a:hover {
@@ -255,7 +254,9 @@
     }
 
     article h2 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
       font-size: 28px;
+      font-weight: 700;
       color: #d23f77;
       margin: 0 0 5px 0;
       text-transform: lowercase;
@@ -334,6 +335,31 @@
     .music-player button:hover {
       background-color: #b02e60;
     }
+
+    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
+    @media (max-width: 768px) {
+      .banner-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 5px 8px;
+      }
+
+      .wrapper {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+      }
+
+      header::after {
+        font-size: 40px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -370,7 +396,7 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-      <!-- Visitor Submit Gossip Form (Perfectly Active) -->
+      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -413,7 +439,6 @@
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
 
-    // 1. Restore previous play time and state
     window.addEventListener('DOMContentLoaded', () => {
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
@@ -423,22 +448,18 @@
       }
 
       if (isPlaying) {
-        // Resume playing seamlessly
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
         }).catch(() => {
-          // If browser blocks auto-resume, user clicks play to continue
           btn.textContent = '▶ play';
         });
       }
     });
 
-    // 2. Continuously save current playback time
     audio.addEventListener('timeupdate', () => {
       localStorage.setItem('musicTime', audio.currentTime);
     });
 
-    // 3. Play/Pause toggle button
     function toggleAudio() {
       if (audio.paused) {
         audio.play();
