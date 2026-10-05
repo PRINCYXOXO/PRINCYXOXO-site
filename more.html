@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO - More</title>
 
-  <!-- 👑 WEBSITE FAVICON ICON 👑 --->
+  <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +49,9 @@
       background-image: url('skyline.png');
       background-repeat: repeat-x;
       background-position: bottom center;
-      background-size: auto 60px; /* Forces skyline to 60px height along the bottom */
-      opacity: 0.35; /* Increased opacity so skyline is clearly visible */
+      background-size: contain; /* Scales image height to fit header */
+      opacity: 0.25; /* Soft background blend */
+      filter: brightness(0) invert(1); /* Converts dark/black PNG silhouettes into bright white */
       pointer-events: none;
       z-index: 1;
     }
@@ -78,7 +79,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      z-index: 3; /* Keeps main title and tagline sharp on top of all layers */
+      z-index: 3;
     }
 
     header h1 {
