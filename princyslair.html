@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO - More</title>
+  <title>PRINCYXOXO — Links</title>
 
-<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
@@ -21,7 +22,7 @@
   
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
@@ -36,9 +37,11 @@
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
+      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
       cursor: url('crown.png'), auto;
     }
 
+    /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
@@ -61,7 +64,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url('skyline.png'); 
+      background-image: url('skyline.png');
       background-repeat: repeat-x;
       background-position: center bottom;
       background-size: auto 100%;
@@ -107,14 +110,15 @@
       align-items: center;
       gap: 10px;
       color: #ffffff;
-      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
+    /* Silhouette Image Styling */
     .header-silhouette {
-      height: 60px;
+      height: 65px;
       width: auto;
       display: inline-block;
-      filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
     .tagline {
@@ -139,6 +143,7 @@
       font-size: 12px;
       letter-spacing: 1px;
       margin: 0 15px;
+      display: inline-block;
     }
 
     nav a:hover {
@@ -240,6 +245,48 @@
       justify-content: space-between;
     }
 
+    article {
+      background-color: #ffffff;
+      border: 2px solid #f0a3c2;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    article h2 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #d23f77;
+      margin: 0 0 5px 0;
+      text-transform: lowercase;
+    }
+
+    .file-under {
+      font-size: 11px;
+      color: #777777;
+      text-transform: uppercase;
+      border-bottom: 1px solid #fceef2;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444444;
+    }
+
+    .signature {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      color: #d23f77;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -288,6 +335,31 @@
     .music-player button:hover {
       background-color: #b02e60;
     }
+
+    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
+    @media (max-width: 768px) {
+      .banner-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 5px 8px;
+      }
+
+      .wrapper {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+      }
+
+      header::after {
+        font-size: 40px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -324,6 +396,7 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
+      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -337,15 +410,19 @@
     <main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
-        <span>More</span>
+        <span>Main • Exclusive Spotting</span>
       </div>
 
+      <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
-        <!-- Add your content here -->
+
+        <!-- Add your links content here -->
+
       </section>
     </main>
   </div>
 
+  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
