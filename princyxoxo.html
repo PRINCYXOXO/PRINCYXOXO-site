@@ -11,7 +11,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #fceef2;
       background-image: url('Untitled77_20261004220524.png');
@@ -28,13 +33,12 @@
       cursor: url('heart.png'), pointer;
     }
 
-    
- header {
+    header {
       background-color: #d23f77;
       color: #ffffff;
       padding: 30px 40px;
       border-bottom: 4px solid #b02e60;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
     }
@@ -82,7 +86,6 @@
       z-index: 3;
     }
 
-    
     header h1 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
       font-size: 52px;
@@ -126,6 +129,8 @@
       font-size: 12px;
       letter-spacing: 1px;
       margin: 0 15px;
+      display: inline-block;
+      padding: 4px 0;
     }
 
     nav a:hover {
@@ -137,6 +142,7 @@
       margin: 30px auto;
       padding: 0 20px;
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
     }
 
@@ -185,7 +191,6 @@
 
     .form-box input, .form-box textarea {
       width: 100%;
-      box-sizing: border-box;
       background-color: #fff5f8;
       border: 1px solid #f0a3c2;
       padding: 8px;
@@ -198,7 +203,7 @@
     .form-box button {
       width: 100%;
       background-color: #d23f77;
-      color: white;
+      color: #ffffff;
       border: none;
       padding: 8px;
       font-weight: bold;
@@ -212,7 +217,7 @@
     }
 
     main {
-      flex-grow: 1;
+      flex: 1 1 500px;
     }
 
     .ticker {
@@ -232,7 +237,7 @@
       border: 2px solid #f0a3c2;
       padding: 25px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     article h2 {
@@ -294,10 +299,8 @@
     }
 
     .pfp-img {
-      width: 110px;
-      height: 110px;
-      max-width: 110px;
-      max-height: 110px;
+      width: 100px;
+      height: 100px;
       border-radius: 10px;
       object-fit: cover;
       display: block;
@@ -332,7 +335,7 @@
       border: 2px solid #d23f77;
       padding: 10px 15px;
       border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       display: flex;
       align-items: center;
       gap: 12px;
@@ -452,7 +455,7 @@
       <span class="music-icon">♫</span>
       <span class="song-title">to my crush</span>
     </div>
-    <button id="playBtn" onclick="toggleAudio()">▶ play</button>
+    <button id="playBtn">▶ play</button>
     <audio id="bgMusic" loop>
       <source src="music.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -467,15 +470,17 @@
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
 
-      if (savedTime) {
+      if (savedTime && !isNaN(savedTime)) {
         audio.currentTime = parseFloat(savedTime);
       }
 
       if (isPlaying) {
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
-        }).catch(() => {
+        }).catch((err) => {
+          console.warn("Autoplay blocked by browser settings:", err);
           btn.textContent = '▶ play';
+          localStorage.setItem('musicPlaying', 'false');
         });
       }
     });
@@ -484,11 +489,14 @@
       localStorage.setItem('musicTime', audio.currentTime);
     });
 
+    btn.addEventListener('click', toggleAudio);
+
     function toggleAudio() {
       if (audio.paused) {
-        audio.play();
-        btn.textContent = '❚❚ pause';
-        localStorage.setItem('musicPlaying', 'true');
+        audio.play().then(() => {
+          btn.textContent = '❚❚ pause';
+          localStorage.setItem('musicPlaying', 'true');
+        }).catch((err) => console.error("Playback error:", err));
       } else {
         audio.pause();
         btn.textContent = '▶ play';
