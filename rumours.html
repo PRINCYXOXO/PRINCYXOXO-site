@@ -40,21 +40,22 @@
     }
 
     /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('skyline.png');
-      background-repeat: repeat-x;
-      background-position: center bottom;
-      background-size: auto 100%;
-      opacity: 0.4;
-      pointer-events: none;
-      z-index: 1;
-    }
+   header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Replace 'skyline.png' with your image file path */
+  background-image: url('skyline.png'); 
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: auto 100%;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
 
     /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
