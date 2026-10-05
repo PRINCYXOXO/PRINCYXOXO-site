@@ -359,47 +359,43 @@ header h1 {
   </div>
 
   <script>
-    const audio = document.getElementById('bgMusic');
-    const btn = document.getElementById('playBtn');
+  const audio = document.getElementById('bgMusic');
+  const btn = document.getElementById('playBtn');
 
-    // 1. Restore previous play time and state
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTime = localStorage.getItem('musicTime');
-      const isPlaying = localStorage.getItem('musicPlaying') === 'true';
+  // Force clear outdated local memory on reload
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTime = localStorage.getItem('musicTime');
+    const isPlaying = localStorage.getItem('musicPlaying') === 'true';
 
-      if (savedTime) {
-        audio.currentTime = parseFloat(savedTime);
-      }
-
-      if (isPlaying) {
-        // Resume playing seamlessly
-        audio.play().then(() => {
-          btn.textContent = '❚❚ pause';
-        }).catch(() => {
-          // If browser blocks auto-resume, user clicks play to continue
-          btn.textContent = '▶ play';
-        });
-      }
-    });
-
-    // 2. Continuously save current playback time
-    audio.addEventListener('timeupdate', () => {
-      localStorage.setItem('musicTime', audio.currentTime);
-    });
-
-    // 3. Play/Pause toggle button
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-        btn.textContent = '❚❚ pause';
-        localStorage.setItem('musicPlaying', 'true');
-      } else {
-        audio.pause();
-        btn.textContent = '▶ play';
-        localStorage.setItem('musicPlaying', 'false');
-      }
+    if (savedTime) {
+      audio.currentTime = parseFloat(savedTime);
     }
-  </script>
+
+    if (isPlaying) {
+      audio.play().then(() => {
+        btn.textContent = '❚❚ pause';
+      }).catch(() => {
+        btn.textContent = '▶ play';
+      });
+    }
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('musicTime', audio.currentTime);
+  });
+
+  function toggleAudio() {
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = '❚❚ pause';
+      localStorage.setItem('musicPlaying', 'true');
+    } else {
+      audio.pause();
+      btn.textContent = '▶ play';
+      localStorage.setItem('musicPlaying', 'false');
+    }
+  }
+</script>
 
 </body>
 </html>
