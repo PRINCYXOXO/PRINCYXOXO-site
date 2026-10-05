@@ -38,22 +38,22 @@
       overflow: hidden;
     }
 
-    /* 🏙️️ WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
+    /* 🏙 WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
     header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('skyline.png');
-  background-repeat: repeat-x;
-  background-position: center bottom; /* Keeps skyline anchored behind text */
-  background-size: auto 100%; /* Keeps original proportions & spans entire header height */
-  opacity: 0.4; /* Adjust brightness here */
-  pointer-events: none;
-  z-index: 1;
-}
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('skyline.png');
+      background-repeat: repeat-x;
+      background-position: center bottom;
+      background-size: auto 100%;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
 
     /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
     header::after {
@@ -65,7 +65,7 @@
       font-family: 'Bodoni Moda', serif;
       font-size: 80px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.22); /* 💖 Increased opacity for visibility */
       white-space: nowrap;
       pointer-events: none;
       z-index: 2;
