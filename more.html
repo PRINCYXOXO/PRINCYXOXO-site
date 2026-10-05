@@ -35,10 +35,10 @@
       border-bottom: 4px solid #b02e60;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       position: relative;
-      overflow: hidden; /* Keeps background layers inside header */
+      overflow: hidden;
     }
 
-    /* 🏙️ CITY SKYLINE OVERLAY 🏙️ */
+    /* 🏙️ CITY SKYLINE OVERLAY (LAYER 1) 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -49,13 +49,13 @@
       background-image: url('skyline.png');
       background-repeat: repeat-x;
       background-position: bottom center;
-      background-size: contain;
-      opacity: 0.15; /* Soft transparency blend */
+      background-size: auto 60px; /* Forces skyline to 60px height along the bottom */
+      opacity: 0.35; /* Increased opacity so skyline is clearly visible */
       pointer-events: none;
       z-index: 1;
     }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
+    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY (LAYER 2) 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -65,10 +65,10 @@
       font-family: 'Bodoni Moda', serif;
       font-size: 80px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.08); /* 8% white transparency */
+      color: rgba(255, 255, 255, 0.08);
       white-space: nowrap;
       pointer-events: none;
-      z-index: 1;
+      z-index: 2;
     }
 
     .banner-container {
@@ -78,7 +78,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      z-index: 2; /* Keeps title and tagline sharply above watermark and skyline */
+      z-index: 3; /* Keeps main title and tagline sharp on top of all layers */
     }
 
     header h1 {
