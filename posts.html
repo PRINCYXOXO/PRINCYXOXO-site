@@ -1,3 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRINCYXOXO — Links</title>
+
+  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
+  <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
+  <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
+  <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
+
+  <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
+  <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
+  <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
+  <meta name="theme-color" content="#d23f77">
+  
+  <!-- 👑 WEBSITE FAVICON ICON 👑 -->
+  <link rel="icon" type="image/png" href="crown2.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #fceef2;
+      background-image: url('Untitled77_20261004220524.png');
+      background-repeat: repeat;
+      background-size: 100px auto;
+      color: #333333;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
+      cursor: url('crown.png'), auto;
+    }
+
+    /* Make sure links show a cute pointer cursor when hovering */
+    a, button {
+      cursor: url('heart.png'), pointer;
+    }
+
+    header {
+      background-color: #d23f77;
+      color: #ffffff;
+      padding: 30px 40px;
+      border-bottom: 4px solid #b02e60;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 🏙 WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('skyline.png');
+      background-repeat: repeat-x;
+      background-position: center bottom;
+      background-size: auto 100%;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
+    header::after {
+      content: "princyxoxo princyxoxo princyxoxo princyxoxo";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Bodoni Moda', serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.30);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .banner-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    header h1 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 52px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -1.5px;
+      text-transform: lowercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Silhouette Image Styling */
+    .header-silhouette {
+      height: 65px;
+      width: auto;
+      display: inline-block;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+    }
+
+    .tagline {
+      font-size: 28px;
+      font-style: italic;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #f0a3c2;
+      border-bottom: 1px solid #d23f77;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #5c0e2e;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 0 15px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 30px;
+    }
+
+    aside {
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-box {
+      background-color: #f8c5d8;
+      border: 1px solid #d23f77;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 2px;
+    }
+
+    .sidebar-box h2 {
+      font-size: 22px;
+      color: #d23f77;
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-transform: lowercase;
+    }
+
+    .sidebar-box p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #5c0e2e;
+      margin: 0;
+    }
+
+    .form-box {
+      background-color: #ffffff;
+      border: 2px solid #d23f77;
+      padding: 15px;
+      border-radius: 2px;
+    }
+
+    .form-box h3 {
+      font-size: 14px;
+      color: #d23f77;
+      text-transform: uppercase;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .form-box input, .form-box textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #fff5f8;
+      border: 1px solid #f0a3c2;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      border-radius: 2px;
+      font-family: inherit;
+    }
+
+    .form-box button {
+      width: 100%;
+      background-color: #d23f77;
+      color: white;
+      border: none;
+      padding: 8px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .form-box button:hover {
+      background-color: #b02e60;
+    }
+
+    main {
+      flex-grow: 1;
+    }
+
+    .ticker {
+      background-color: #ffffff;
+      border: 1px solid #f0a3c2;
+      padding: 8px 15px;
+      font-size: 11px;
+      color: #d23f77;
+      font-style: italic;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    article {
+      background-color: #ffffff;
+      border: 2px solid #f0a3c2;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    article h2 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #d23f77;
+      margin: 0 0 5px 0;
+      text-transform: lowercase;
+    }
+
+    .file-under {
+      font-size: 11px;
+      color: #777777;
+      text-transform: uppercase;
+      border-bottom: 1px solid #fceef2;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444444;
+    }
+
+    .signature {
+      display: block;
+      text-align: right;
+      font-weight: bold;
+      color: #d23f77;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      border: 2px solid #d23f77;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .player-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #5c0e2e;
+      font-weight: bold;
+    }
+
+    .music-icon {
+      color: #d23f77;
+      font-size: 14px;
+    }
+
+    .song-title {
+      font-style: italic;
+    }
+
+    .music-player button {
+      background-color: #d23f77;
+      color: #ffffff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .music-player button:hover {
+      background-color: #b02e60;
+    }
+
+    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
+    @media (max-width: 768px) {
+      .banner-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 5px 8px;
+      }
+
+      .wrapper {
+        flex-direction: column;
+      }
+
+      aside {
+        width: 100%;
+      }
+
+      header::after {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
 <body>
 
   <header>
@@ -35,7 +399,7 @@
       <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
-        <form action="https://formspree.io" method="POST" id="gossipForm">
+        <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
           <input type="text" name="subject" required placeholder="Who is this about?">
           <textarea name="message" required rows="3" placeholder="Give us the dirty details..."></textarea>
           <button type="submit">Send to Princy</button>
@@ -51,14 +415,8 @@
 
       <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
-        <article>
-          <h2>Welcome to the Posts Feed</h2>
-          <div class="file-under">Filed under: Live Feed > Archives > Posts</div>
-          <p>This is where all official announcements and major blasts land. Keep checking back to stay ahead of the curve.</p>
-          <span class="signature">xoxo, PRINCYXOXO</span>
-        </article>
-        
-        <!-- Add your links content or additional posts here -->
+
+        <!-- Add your links content here -->
 
       </section>
     </main>
@@ -116,3 +474,6 @@
   </script>
 
 </body>
+</html>
+
+
