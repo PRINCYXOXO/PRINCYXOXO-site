@@ -1,424 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO - Posts</title>
-
-  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
-  <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
-  <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
-  <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
-
-  <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
-  <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
-  <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
-  <meta name="theme-color" content="#d23f77">
-
-  <!-- Website Favicon -->
-  <link rel="icon" type="image/png" href="crown2.png">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
-
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #fceef2;
-      background-image: url('Untitled77_20261004220524.png');
-      background-repeat: repeat;
-      background-size: 100px auto;
-      color: #333333;
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-      cursor: url('crown.png'), auto;
-    }
-
-    a, button {
-      cursor: url('heart.png'), pointer;
-    }
-
-    header {
-      background-color: #d23f77;
-      color: #ffffff;
-      padding: 30px 40px;
-      border-bottom: 4px solid #b02e60;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* White Skyline Overlay */
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url('skyline.png');
-      background-repeat: repeat-x;
-      background-position: center bottom;
-      background-size: auto 100%;
-      opacity: 0.4;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Watermark Text */
-    header::after {
-      content: "princyxoxo princyxoxo princyxoxo princyxoxo";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Bodoni Moda', serif;
-      font-size: 80px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.3);
-      white-space: nowrap;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .banner-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 3;
-    }
-
-    header h1 {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 52px;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -1.5px;
-      text-transform: lowercase;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #ffffff;
-      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .header-silhouette {
-      height: 60px;
-      width: auto;
-      display: inline-block;
-      filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
-    }
-
-    .tagline {
-      font-size: 28px;
-      font-style: italic;
-      margin: 0;
-      opacity: 0.9;
-    }
-
-    nav {
-      background-color: #f0a3c2;
-      border-bottom: 1px solid #d23f77;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: #5c0e2e;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin: 0 15px;
-      display: inline-block;
-      padding: 4px 0;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-    }
-
-    .wrapper {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 30px;
-    }
-
-    aside {
-      width: 250px;
-      flex-shrink: 0;
-    }
-
-    .sidebar-box {
-      background-color: #f8c5d8;
-      border: 1px solid #d23f77;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 2px;
-    }
-
-    .sidebar-box h2 {
-      font-size: 22px;
-      color: #d23f77;
-      margin-top: 0;
-      margin-bottom: 8px;
-      text-transform: lowercase;
-    }
-
-    .sidebar-box p {
-      font-size: 12px;
-      line-height: 1.5;
-      color: #5c0e2e;
-      margin: 0;
-    }
-
-    .form-box {
-      background-color: #ffffff;
-      border: 2px solid #d23f77;
-      padding: 15px;
-      border-radius: 2px;
-    }
-
-    .form-box h3 {
-      font-size: 14px;
-      color: #d23f77;
-      text-transform: uppercase;
-      margin-top: 0;
-      text-align: center;
-    }
-
-    .form-box input, 
-    .form-box textarea {
-      width: 100%;
-      background-color: #fff5f8;
-      border: 1px solid #f0a3c2;
-      padding: 8px;
-      margin-bottom: 10px;
-      font-size: 12px;
-      border-radius: 2px;
-      font-family: inherit;
-    }
-
-    .form-box button {
-      width: 100%;
-      background-color: #d23f77;
-      color: white;
-      border: none;
-      padding: 8px;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      transition: background-color 0.2s ease;
-    }
-
-    .form-box button:hover {
-      background-color: #b02e60;
-    }
-
-    main {
-      flex-grow: 1;
-    }
-
-    .ticker {
-      background-color: #ffffff;
-      border: 1px solid #f0a3c2;
-      padding: 8px 15px;
-      font-size: 11px;
-      color: #d23f77;
-      font-style: italic;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    article {
-      background-color: #ffffff;
-      border: 2px solid #f0a3c2;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    article h2 {
-      font-size: 28px;
-      color: #d23f77;
-      margin: 0 0 5px 0;
-      text-transform: lowercase;
-    }
-
-    .file-under {
-      font-size: 11px;
-      color: #777777;
-      text-transform: uppercase;
-      border-bottom: 1px solid #fceef2;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-    }
-
-    article p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444444;
-    }
-
-    .signature {
-      display: block;
-      text-align: right;
-      font-weight: bold;
-      color: #d23f77;
-      font-style: italic;
-      font-size: 14px;
-    }
-
-    /* Fixed Audio Player */
-    .music-player {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ffffff;
-      border: 2px solid #d23f77;
-      padding: 10px 15px;
-      border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 1000;
-    }
-
-    .player-info {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: #5c0e2e;
-      font-weight: bold;
-    }
-
-    .music-icon {
-      color: #d23f77;
-      font-size: 14px;
-    }
-
-    .song-title {
-      font-style: italic;
-    }
-
-    .music-player button {
-      background-color: #d23f77;
-      color: #ffffff;
-      border: none;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: bold;
-      text-transform: uppercase;
-      border-radius: 2px;
-      transition: background-color 0.2s ease;
-    }
-
-    .music-player button:hover {
-      background-color: #b02e60;
-    }
-
-    /* 📱 RESPONSIVE BREAKPOINT MATCHING IMAGE 1 📱 */
-    @media (max-width: 768px) {
-      header {
-        padding: 20px 15px;
-      }
-
-      .banner-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 4px;
-      }
-
-      header h1 {
-        font-size: 38px;
-        justify-content: center;
-      }
-
-      .header-silhouette {
-        height: 48px;
-      }
-
-      .tagline {
-        font-size: 20px;
-        margin-top: 2px;
-        display: block;
-        width: 100%;
-      }
-
-      header::after {
-        font-size: 28px;
-      }
-
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px 12px;
-        padding: 10px 8px;
-      }
-
-      nav a {
-        margin: 0;
-        padding: 2px 4px;
-        font-size: 11px;
-      }
-
-      .wrapper {
-        flex-direction: column;
-        margin: 20px auto;
-        padding: 0 15px 80px 15px;
-      }
-
-      aside {
-        width: 100%;
-      }
-
-      .ticker {
-        flex-direction: column;
-        gap: 4px;
-        text-align: center;
-      }
-
-      .music-player {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        left: auto;
-        width: auto;
-        z-index: 1000;
-      }
-
-      .form-box input, 
-      .form-box textarea {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head>
 <body>
 
   <header>
     <div class="banner-container">
       <h1>
-        <img src="silhouette.png" alt="Silhouette" class="header-silhouette">princyxoxo
+        <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
       </h1>
       <p class="tagline">...you know you love me</p>
     </div>
@@ -447,9 +32,10 @@
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
+      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
-        <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
+        <form action="https://formspree.io" method="POST" id="gossipForm">
           <input type="text" name="subject" required placeholder="Who is this about?">
           <textarea name="message" required rows="3" placeholder="Give us the dirty details..."></textarea>
           <button type="submit">Send to Princy</button>
@@ -460,9 +46,10 @@
     <main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
-        <span>Posts • Recent Blasts</span>
+        <span>Main • Exclusive Spotting</span>
       </div>
 
+      <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
         <article>
           <h2>Welcome to the Posts Feed</h2>
@@ -470,16 +57,20 @@
           <p>This is where all official announcements and major blasts land. Keep checking back to stay ahead of the curve.</p>
           <span class="signature">xoxo, PRINCYXOXO</span>
         </article>
+        
+        <!-- Add your links content or additional posts here -->
+
       </section>
     </main>
   </div>
 
+  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
       <span class="song-title">to my crush</span>
     </div>
-    <button id="playBtn" aria-label="Toggle background audio">▶ play</button>
+    <button id="playBtn" onclick="toggleAudio()">▶ play</button>
     <audio id="bgMusic" loop>
       <source src="music.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -487,45 +78,41 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const audio = document.getElementById('bgMusic');
-      const btn = document.getElementById('playBtn');
+    const audio = document.getElementById('bgMusic');
+    const btn = document.getElementById('playBtn');
 
+    window.addEventListener('DOMContentLoaded', () => {
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
 
-      if (savedTime && !isNaN(parseFloat(savedTime))) {
+      if (savedTime) {
         audio.currentTime = parseFloat(savedTime);
       }
 
       if (isPlaying) {
         audio.play().then(() => {
           btn.textContent = '❚❚ pause';
-        }).catch((err) => {
-          console.warn("Autoplay blocked by browser settings:", err);
+        }).catch(() => {
           btn.textContent = '▶ play';
-          localStorage.setItem('musicPlaying', 'false');
         });
       }
-
-      audio.addEventListener('timeupdate', () => {
-        localStorage.setItem('musicTime', audio.currentTime);
-      });
-
-      btn.addEventListener('click', () => {
-        if (audio.paused) {
-          audio.play().then(() => {
-            btn.textContent = '❚❚ pause';
-            localStorage.setItem('musicPlaying', 'true');
-          }).catch((err) => console.error("Playback error:", err));
-        } else {
-          audio.pause();
-          btn.textContent = '▶ play';
-          localStorage.setItem('musicPlaying', 'false');
-        }
-      });
     });
+
+    audio.addEventListener('timeupdate', () => {
+      localStorage.setItem('musicTime', audio.currentTime);
+    });
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = '❚❚ pause';
+        localStorage.setItem('musicPlaying', 'true');
+      } else {
+        audio.pause();
+        btn.textContent = '▶ play';
+        localStorage.setItem('musicPlaying', 'false');
+      }
+    }
   </script>
 
 </body>
-</html>
