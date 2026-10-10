@@ -5,11 +5,6 @@
   <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO — Links</title>
-
-<!-- Real Lightbox2 Library Scripts Loaded Correctly -->
-<link rel="stylesheet" href="https://cloudflare.com">
-<script src="https://cloudflare.com" defer></script>
-
   
   <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
@@ -365,6 +360,65 @@
         font-size: 40px;
       }
     }
+
+    /* 1. This darkens the background and blurs the website behind the photo */
+.lightbox {
+  display: none; /* Keeps it hidden until you click an image */
+  position: fixed;
+  z-index: 9999; /* Makes sure it floats on top of the music player */
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* 0.4 makes it a tiny bit darker without clashing */
+  backdrop-filter: blur(4px); /* Adds a soft blur effect to your background site */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 2. Keeps the pop-up photo nicely sized and gives it cute rounded edges */
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 16px; /* Cute rounded corners for the opened image */
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Turns standard text into perfectly round, cute navigation arrows */
+.lightbox-arrow {
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  border: none;
+  width: 50px; height: 50px;
+  border-radius: 50%; /* This makes them perfect circles */
+  font-size: 20px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s ease;
+}
+.lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+/* 4. Positions the close cross in the top right corner */
+.lightbox-close {
+  position: absolute;
+  top: 25px; right: 25px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  border: none;
+  width: 35px; height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #ff6b6b; /* Soft pink/red tint when you hover over the cross */
+}
+
   </style>
 </head>
 <body>
@@ -426,9 +480,10 @@
           <h2>PrincyXOXO</h2>
           <div class="file-under">Filed under: Live Feed > Archives > Princy's Lair</div>
           <p>Felt cute, might delete later :3.</p>
-          <a href="feltcute.gif" data-lightbox="gossip-gallery" data-title="Felt cute, might delete later :3">
-            <img src="feltcute.gif" alt="Gossip site teaser animation" style="max-height: 300px; max-width: 100%; width: auto; height: 100%; border-radius: 8px; margin: 10px 0; object-fit: contain; display: block; cursor: pointer;">
-          </a>
+<a href="feltcute.gif" class="gallery-item">
+  <img src="feltcute.gif" alt="Gossip site teaser animation" style="max-height: 300px; max-width: 100%; width: auto; height: 100%; border-radius: 8px; margin: 10px 0; object-fit: contain; display: block; cursor: pointer;">
+</a>
+
           <span class="signature">xoxo, PRINCYXOXO</span>
         </article>
 
@@ -437,9 +492,10 @@
           <h2>PrincyXOXO: Spotted in the Wild</h2>
           <div class="file-under">Filed under: Live Feed > Archives > Princy's Lair</div>
           <p>P and H hanging out at the beach.</p>
-          <a href="1086141635183523245.jpe" data-lightbox="gossip-gallery" data-title="Spotted out late last night!">
-            <img src="1086141635183523245.jpe" alt="Princy photograph" style="max-height: 300px; max-width: 100%; width: auto; height: 100%; border-radius: 8px; margin: 10px 0; object-fit: contain; display: block; cursor: pointer;">
-          </a>
+<a href="1086141635183523245.jpe" class="gallery-item">
+  <img src="1086141635183523245.jpe" alt="Princy photograph" style="max-height: 300px; max-width: 100%; width: auto; height: 100%; border-radius: 8px; margin: 10px 0; object-fit: contain; display: block; cursor: pointer;">
+</a>
+
           <span class="signature">xoxo, PRINCYXOXO</span>
         </article>
 
@@ -499,17 +555,68 @@
     }
   </script>
 
-            <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof lightbox !== 'undefined') {
-      lightbox.option({
-        'wrapAround': true,       // Lets you click "next" on the last picture to cycle back to the first one
-        'fadeDuration': 300,      // Background dim speed in milliseconds
-        'imageFadeDuration': 200  // Image appearance speed in milliseconds
-      });
-    }
+<script>
+              const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('close-btn');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+let currentIndex = 0;
+const images = Array.from(galleryItems).map(item => item.getAttribute('href'));
+
+// 1. THIS IS WHAT KEEPS THE MUSIC PLAYING:
+galleryItems.forEach((item, index) => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault(); // <-- This line stops the page from reloading/switching tabs!
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex];
+    lightbox.style.display = 'flex'; // Reveals the hidden pop-up
   });
+});
+
+// 2. Closes the pop-up when clicking the close cross
+closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; });
+
+// 3. Closes the pop-up if you click anywhere on the dark background
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) { lightbox.style.display = 'none'; }
+});
+
+// 4. Moves to the previous image when clicking the left arrow
+prevBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+  lightboxImg.src = images[currentIndex];
+});
+
+// 5. Moves to the next image when clicking the right arrow
+nextBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+  lightboxImg.src = images[currentIndex];
+});
+
 </script>
+
+  <!-- The Lightbox Pop-up Container -->
+<div id="lightbox" class="lightbox">
+  <!-- Cute Cross Close Button -->
+  <button class="lightbox-close" id="close-btn">&times;</button>
+  
+  <!-- Left Navigation Arrow -->
+  <button class="lightbox-arrow left-arrow" id="prev-btn">&#10094;</button>
+  
+  <!-- The Enlarged Image Container -->
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="Enlarged view">
+  </div>
+  
+  <!-- Right Navigation Arrow -->
+  <button class="lightbox-arrow right-arrow" id="next-btn">&#10095;</button>
+</div>
+
 
 </body>
 </html>
