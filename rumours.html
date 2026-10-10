@@ -425,6 +425,55 @@
       background-color: #b02e60;
     }
 
+    /* 📱 MOBILE RESPONSIVENESS OVERRIDES 📱 */
+@media (max-width: 768px) {
+  /* 1. Header Changes: Stack title and tagline vertically */
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  header h1 {
+    font-size: 36px; /* Smaller font for smaller screens */
+    justify-content: center;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  /* 2. Navigation Changes: Wrap links onto new lines naturally */
+  nav {
+    padding: 10px;
+  }
+  
+  nav a {
+    margin: 5px 10px;
+  }
+
+  /* 3. Main Layout Changes: Stack the Sidebar (aside) and Main Feed vertically */
+  .wrapper {
+    flex-direction: column;
+    margin: 15px auto;
+  }
+
+  aside {
+    width: 100%; /* Take full width on mobile */
+  }
+
+  main {
+    width: 100%;
+  }
+
+  /* 4. Ticker Adjustments */
+  .ticker {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
+
   </style>
 </head>
 <body>
