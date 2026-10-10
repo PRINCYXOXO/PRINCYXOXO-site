@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO — About Princy</title>
+  <title>PRINCYXOXO — Links</title>
 
   <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
@@ -22,16 +22,12 @@
   
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       background-color: #fceef2;
       background-image: url('Untitled77_20261004220524.png');
@@ -41,9 +37,11 @@
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
+      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
       cursor: url('crown.png'), auto;
     }
 
+    /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
@@ -53,12 +51,12 @@
       color: #ffffff;
       padding: 30px 40px;
       border-bottom: 4px solid #b02e60;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       position: relative;
       overflow: hidden;
     }
 
-    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
+    /* 🏙 WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -75,7 +73,7 @@
       z-index: 1;
     }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
+    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -112,14 +110,15 @@
       align-items: center;
       gap: 10px;
       color: #ffffff;
-      text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
+    /* Silhouette Image Styling */
     .header-silhouette {
-      height: 60px;
+      height: 65px;
       width: auto;
       display: inline-block;
-      filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
     .tagline {
@@ -145,7 +144,6 @@
       letter-spacing: 1px;
       margin: 0 15px;
       display: inline-block;
-      padding: 4px 0;
     }
 
     nav a:hover {
