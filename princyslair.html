@@ -374,6 +374,58 @@
       .next-btn { right: 10px; }
       .lightbox-close { top: -40px; right: 10px; }
     }
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  padding: 10px 15px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 999;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Georgia', serif;
+  font-size: 13px;
+  color: #5c0e2e;
+}
+
+.music-icon {
+  color: #d23f77;
+  font-size: 16px;
+  animation: spin 3s linear infinite; /* Optional: deletes or leaves for cute rotation */
+}
+
+.song-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#playBtn {
+  background-color: #d23f77;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+#playBtn:hover {
+  background-color: #b02e60;
+}
+
   </style>
 </head>
 <body>
