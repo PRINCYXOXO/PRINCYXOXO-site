@@ -10,22 +10,22 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
-  <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
-  <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
+  <meta property="og:image" content="https://vercel.app">
+  <meta property="og:url" content="https://vercel.app">
 
   <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
   <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
-  <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
+  <meta name="twitter:image" content="https://vercel.app">
   <meta name="theme-color" content="#d23f77">
   
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
     body {
@@ -286,139 +286,94 @@
       font-size: 14px;
     }
 
-    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
-    .music-player {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ffffff;
-      border: 2px solid #d23f77;
-      padding: 10px 15px;
-      border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 1000;
-    }
-
-    .player-info {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: #5c0e2e;
-      font-weight: bold;
-    }
-
-    .music-icon {
-      color: #d23f77;
-      font-size: 14px;
-    }
-
-    .song-title {
-      font-style: italic;
-    }
-
-    .music-player button {
-      background-color: #d23f77;
-      color: #ffffff;
-      border: none;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 2px;
-    }
-
-    .music-player button:hover {
-      background-color: #b02e60;
-    }
-
-    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
-    @media (max-width: 768px) {
-      .banner-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-      }
-
-      nav a {
-        margin: 5px 8px;
-      }
-
-      .wrapper {
-        flex-direction: column;
-      }
-
-      aside {
-        width: 100%;
-      }
-
-      header::after {
-        font-size: 40px;
-      }
-    }
-
     /* 1. This darkens the background and blurs the website behind the photo */
-.lightbox {
-  display: none; /* Keeps it hidden until you click an image */
-  position: fixed;
-  z-index: 9999; /* Makes sure it floats on top of the music player */
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* 0.4 makes it a tiny bit darker without clashing */
-  backdrop-filter: blur(4px); /* Adds a soft blur effect to your background site */
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
+    .lightbox {
+      display: none; /* Keeps it hidden until you click an image */
+      position: fixed;
+      z-index: 9999; /* Makes sure it floats on top of the music player */
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Perfect darkened background */
+      backdrop-filter: blur(4px); /* Adds a soft blur effect to your background site */
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-/* 2. Keeps the pop-up photo nicely sized and gives it cute rounded edges */
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 80vh;
-  border-radius: 16px; /* Cute rounded corners for the opened image */
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
-}
+    /* Container to keep content, arrows, and close button grouped */
+    .lightbox-content-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
 
-/* 3. Turns standard text into perfectly round, cute navigation arrows */
-.lightbox-arrow {
-  background: rgba(255, 255, 255, 0.7);
-  color: #333;
-  border: none;
-  width: 50px; height: 50px;
-  border-radius: 50%; /* This makes them perfect circles */
-  font-size: 20px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s ease;
-}
-.lightbox-arrow:hover {
-  background: rgba(255, 255, 255, 1);
-  transform: scale(1.1);
-}
+    /* 2. Keeps the pop-up photo nicely sized and gives it cute rounded edges */
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 16px; /* Cute rounded corners for the opened image */
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+    }
 
-/* 4. Positions the close cross in the top right corner */
-.lightbox-close {
-  position: absolute;
-  top: 25px; right: 25px;
-  background: rgba(255, 255, 255, 0.7);
-  color: #333;
-  border: none;
-  width: 35px; height: 35px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s ease;
-}
-.lightbox-close:hover {
-  background: rgba(255, 255, 255, 1);
-  color: #ff6b6b; /* Soft pink/red tint when you hover over the cross */
-}
+    /* 3. Turns standard text into perfectly round, cute white navigation arrows */
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      border: none;
+      width: 50px; height: 50px;
+      border-radius: 50%; /* This makes them perfect circles */
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 10001;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    .prev-btn {
+      left: -70px;
+    }
+    
+    .next-btn {
+      right: -70px;
+    }
 
+    .lightbox-arrow:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    /* 4. Positions the close cross in the top right corner (Pink style) */
+    .lightbox-close {
+      position: absolute;
+      top: -45px; right: -25px;
+      background: none;
+      color: #ff69b4; /* Cute pink cross */
+      border: none;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      z-index: 10002;
+    }
+    .lightbox-close:hover {
+      transform: scale(1.2);
+      color: #b02e60;
+    }
+
+    /* Hide arrow overlays if screens get too narrow to show them on the sides */
+    @media (max-width: 768px) {
+      .prev-btn { left: 10px; }
+      .next-btn { right: 10px; }
+      .lightbox-close { top: -40px; right: 10px; }
+    }
   </style>
 </head>
 <body>
@@ -426,6 +381,7 @@
   <header>
     <div class="banner-container">
       <h1>
+
         <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
       </h1>
       <p class="tagline">...you know you love me</p>
@@ -517,6 +473,27 @@
     </audio>
   </div>
 
+  <!-- 🌟 LIGHTBOX MODAL HTML STRUCTURE 🌟 -->
+  <div class="lightbox" id="lightboxModal">
+    <div class="lightbox-content-wrapper">
+      <!-- Left Navigation Arrow -->
+      <button class="lightbox-arrow prev-btn">&#8249;</button>
+      
+      <!-- Centered Content Window Wrapper -->
+      <div class="lightbox-content">
+        <!-- Image tag where selected image opens -->
+        <img id="lightboxImg" src="" alt="">
+      </div>
+      
+      <!-- Right Navigation Arrow -->
+      <button class="lightbox-arrow next-btn">&#8250;</button>
+      
+      <!-- Pink Close Cross Button -->
+      <button class="lightbox-close" id="closeLightbox">×</button>
+    </div>
+  </div>
+
+  <!-- 🎼 MUSIC PLAYER SCRIPT 🎼 -->
   <script>
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
@@ -555,68 +532,63 @@
     }
   </script>
 
-<script>
-              const galleryItems = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.getElementById('close-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
+  <!-- 📸 LIGHTBOX CONTROLLER SCRIPT 📸 -->
+  <script>
+    const galleryLinks = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeLightbox');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
 
-let currentIndex = 0;
-const images = Array.from(galleryItems).map(item => item.getAttribute('href'));
+    let currentIndex = 0;
 
-// 1. THIS IS WHAT KEEPS THE MUSIC PLAYING:
-galleryItems.forEach((item, index) => {
-  item.addEventListener('click', (e) => {
-    e.preventDefault(); // <-- This line stops the page from reloading/switching tabs!
-    currentIndex = index;
-    lightboxImg.src = images[currentIndex];
-    lightbox.style.display = 'flex'; // Reveals the hidden pop-up
-  });
-});
+    // Handle image click events smoothly
+    galleryLinks.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // ✋ Keeps page on /princyslair.html instead of opening image raw file!
+            currentIndex = index;
+            updateLightboxContent();
+            lightbox.style.display = 'flex'; // Activates modal layout center alignment
+        });
+    });
 
-// 2. Closes the pop-up when clicking the close cross
-closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; });
+    // Grabs accurate media details
+    function updateLightboxContent() {
+        const currentLink = galleryLinks[currentIndex];
+        const targetImg = currentLink.querySelector('img');
+        
+        if (targetImg) {
+            lightboxImg.src = targetImg.src;
+            lightboxImg.alt = targetImg.alt || '';
+        }
+    }
 
-// 3. Closes the pop-up if you click anywhere on the dark background
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) { lightbox.style.display = 'none'; }
-});
+    // Close Button Event
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
 
-// 4. Moves to the previous image when clicking the left arrow
-prevBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-  lightboxImg.src = images[currentIndex];
-});
+    // Close when clicking the dark background overlay shadow
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
 
-// 5. Moves to the next image when clicking the right arrow
-nextBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-  lightboxImg.src = images[currentIndex];
-});
+    // Previous Arrow Event
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents background clicks from closing modal
+        currentIndex = (currentIndex === 0) ? galleryLinks.length - 1 : currentIndex - 1;
+        updateLightboxContent();
+    });
 
-</script>
-
-  <!-- The Lightbox Pop-up Container -->
-<div id="lightbox" class="lightbox">
-  <!-- Cute Cross Close Button -->
-  <button class="lightbox-close" id="close-btn">&times;</button>
-  
-  <!-- Left Navigation Arrow -->
-  <button class="lightbox-arrow left-arrow" id="prev-btn">&#10094;</button>
-  
-  <!-- The Enlarged Image Container -->
-  <div class="lightbox-content">
-    <img id="lightbox-img" src="" alt="Enlarged view">
-  </div>
-  
-  <!-- Right Navigation Arrow -->
-  <button class="lightbox-arrow right-arrow" id="next-btn">&#10095;</button>
-</div>
-
-
+    // Next Arrow Event
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents background clicks from closing modal
+        currentIndex = (currentIndex === galleryLinks.length - 1) ? 0 : currentIndex + 1;
+        updateLightboxContent();
+    });
+  </script>
 </body>
 </html>
