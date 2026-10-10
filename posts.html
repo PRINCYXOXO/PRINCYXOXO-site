@@ -335,70 +335,93 @@
       margin-top: 15px;
     }
 
+
     /* 🔍 LIGHTBOX STYLING 🔍 */
     .lightbox {
       display: none;
       position: fixed;
-      z-index: 2000;
+      z-index: 9999;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+    }
+
+    .lightbox-content-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 90%;
+      max-height: 90%;
     }
 
     .lightbox-content {
-      max-width: 85%;
+      max-width: 100%;
       max-height: 80vh;
-      border: 3px solid #d23f77;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border-radius: 16px;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
       background-color: #fff;
+      display: block;
     }
 
     .lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      color: #ffffff;
-      font-size: 40px;
+      top: -45px;
+      right: -25px;
+      color: #ff69b4;
+      font-size: 32px;
       font-weight: bold;
       cursor: pointer;
-      user-select: none;
+      background: none;
+      border: none;
+      transition: transform 0.2s ease;
+      z-index: 10002;
     }
 
     .lightbox-close:hover {
-      color: #d23f77;
+      transform: scale(1.2);
+      color: #b02e60;
     }
 
     .lightbox-prev, .lightbox-next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      color: #ffffff;
-      font-size: 40px;
+      color: #333;
+      font-size: 24px;
       font-weight: bold;
-      padding: 10px 20px;
+      width: 50px;
+      height: 50px;
       cursor: pointer;
       user-select: none;
-      background-color: rgba(210, 63, 119, 0.5);
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      z-index: 10001;
     }
 
     .lightbox-prev:hover, .lightbox-next:hover {
-      background-color: #d23f77;
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.1);
     }
 
     .lightbox-prev {
-      left: 30px;
+      left: -70px;
     }
 
     .lightbox-next {
-      right: 30px;
+      right: -70px;
     }
-
 
     /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
@@ -416,7 +439,6 @@
       z-index: 1000;
     }
 
-
     .player-info {
       display: flex;
       align-items: center;
@@ -426,14 +448,13 @@
       font-weight: bold;
     }
 
-
     .music-icon {
       color: #d23f77;
       font-size: 14px;
     }
 
-
     .song-title {
+
       font-style: italic;
     }
 
@@ -544,13 +565,10 @@
       </div>
 
 
-      <!-- 👑 THE FEED ZONE: POST HERE -->
+    <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
 
-
-
-
-
+  
 
       </section>
     </main>
@@ -558,12 +576,13 @@
 
   <!-- 🔍 LIGHTBOX HTML CONTAINER 🔍 -->
   <div id="lightbox" class="lightbox">
-    <span class="lightbox-close" id="lightboxClose">&times;</span>
-    <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
-    <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
-    <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+      <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
+      <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+      <button class="lightbox-close" id="closeLightbox">×</button>
+    </div>
   </div>
-
 
   <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
@@ -578,21 +597,18 @@
     </audio>
   </div>
 
-
+  <!-- 🎼 PLAYBACK CONTROLLER SCRIPT 🎼 -->
   <script>
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
-
 
     window.addEventListener('DOMContentLoaded', () => {
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
 
-
       if (savedTime) {
         audio.currentTime = parseFloat(savedTime);
       }
-
 
       if (isPlaying) {
         audio.play().then(() => {
@@ -603,11 +619,9 @@
       }
     });
 
-
     audio.addEventListener('timeupdate', () => {
       localStorage.setItem('musicTime', audio.currentTime);
     });
-
 
     function toggleAudio() {
       if (audio.paused) {
@@ -620,49 +634,63 @@
         localStorage.setItem('musicPlaying', 'false');
       }
     }
+  </script>
 
-    // 🔍 LIGHTBOX JAVASCRIPT FUNCTIONALITY 🔍
+  <!-- 📸 CORRRECTED GALLERY LINK LIGHTBOX CONTROLLER SCRIPT 📸 -->
+  <script>
+    const galleryLinks = document.querySelectorAll('.gallery-item');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightboxPrev = document.getElementById('lightboxPrev');
-    const lightboxNext = document.getElementById('lightboxNext');
+    const closeBtn = document.getElementById('closeLightbox');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
 
-    let galleryImages = [];
     let currentIndex = 0;
 
-    function openLightbox(imagesArray, index) {
-      galleryImages = imagesArray;
-      currentIndex = index;
-      lightboxImg.src = galleryImages[currentIndex];
-      lightbox.style.display = 'flex';
+    // Connect page elements to the overlay system
+    galleryLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // ✋ Keeps page on /princyslair.html instead of changing pages
+        currentIndex = index;
+        updateLightboxContent();
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    function updateLightboxContent() {
+      const currentLink = galleryLinks[currentIndex];
+      if (!currentLink) return;
+      
+      const targetImg = currentLink.querySelector('img');
+      if (targetImg) {
+        lightboxImg.src = targetImg.src;
+        lightboxImg.alt = targetImg.alt || '';
+      }
     }
 
-    function closeLightbox() {
+    closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
-    }
-
-    function showPrevImage() {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentIndex];
-    }
-
-    function showNextImage() {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentIndex];
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', showPrevImage);
-    lightboxNext.addEventListener('click', showNextImage);
+    });
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) {
-        closeLightbox();
+        lightbox.style.display = 'none';
       }
     });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (galleryLinks.length === 0) return;
+      currentIndex = (currentIndex === 0) ? galleryLinks.length - 1 : currentIndex - 1;
+      updateLightboxContent();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (galleryLinks.length === 0) return;
+      currentIndex = (currentIndex === galleryLinks.length - 1) ? 0 : currentIndex + 1;
+      updateLightboxContent();
+    });
   </script>
-
-
 </body>
 </html>
