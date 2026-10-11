@@ -31,6 +31,83 @@
   
   <style>
 
+    /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION 📟 */
+.spotted-toast {
+  position: fixed;
+  bottom: -150px; /* Hidden off-screen initially */
+  right: 25px;
+  width: 260px;
+  background-color: #fff5f8;
+  border: 2px solid #d23f77;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 25px rgba(210, 63, 119, 0.35);
+  z-index: 10008;
+  transition: bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: 'Georgia', serif;
+}
+
+.spotted-toast.show {
+  bottom: 25px; /* Slides up neatly above the music player */
+}
+
+.spotted-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #f0a3c2;
+  padding-bottom: 6px;
+}
+
+.spotted-icon {
+  font-size: 16px;
+}
+
+.spotted-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #d23f77;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+.spotted-body p {
+  font-size: 12px;
+  color: #5c0e2e;
+  margin: 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* 🎀 PINK CLOSE BUTTON FOR TOAST 🎀 */
+.spotted-close-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background-color: #d23f77;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.spotted-close-btn:hover {
+  transform: scale(1.15);
+  background-color: #b02e60;
+}
+    
     /* 🎀 PINK SYMBOL CURSOR TRAIL STYLING 🎀 */
 .cursor-sparkle {
   position: fixed;
@@ -967,6 +1044,37 @@ main {
       }, 1000);
     });
   </script>
+
+  <!-- 📟 SPOTTED! FLIP-PHONE SMS TOAST NOTIFICATION 📟 -->
+<div id="spottedToast" class="spotted-toast">
+  <button id="closeSpotted" class="spotted-close-btn" title="Close">×</button>
+  <div class="spotted-header">
+    <span class="spotted-icon">💬</span>
+    <span class="spotted-title">New Gossip Alert!</span>
+  </div>
+  <div class="spotted-body">
+    <p>Spotted: Someone sitting at this screen for way too long...</p>
+  </div>
+</div>
+
+  <script>
+  // 📟 SPOTTED TOAST 3-MINUTE TIMER SCRIPT 📟
+  const spottedToast = document.getElementById('spottedToast');
+  const closeSpottedBtn = document.getElementById('closeSpotted');
+
+  // Trigger after 3 minutes (180,000 milliseconds)
+  // Tip: Change 180000 to 5000 (5 seconds) temporarily if you want to test it instantly!
+  setTimeout(() => {
+    spottedToast.classList.add('show');
+  }, 180000);
+
+  // Close / dismiss notification
+  closeSpottedBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    spottedToast.classList.remove('show');
+  });
+</script>
   
 </body>
 </html>
