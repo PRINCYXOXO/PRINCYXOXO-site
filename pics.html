@@ -137,18 +137,22 @@
 
 
     nav {
-      background-color: transparent;
-      border-bottom: 3px solid #000000;
-      text-align: center;
-      padding: 10px 0;
-      width: calc(100% + 40px);
-      box-sizing: border-box;
-      flex-basis: 100%;
-      margin-left: -20px;
-      margin-right: -20px;
-      margin-bottom: 0px; 
-    }
-
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+  
+  /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  /* 🎨 Color Change: Replace #000000 with your preferred color code (e.g., #d23f77) */
+  border-bottom: 3px solid #d23f77; 
+  
+  box-sizing: border-box;
+}
+    
     nav a {
       color: #5c0e2e;
       text-decoration: none;
@@ -174,15 +178,15 @@
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-
-      /* 🎀 The OG Box Styling 🎀 */
   background-color: #fceef2; /* Light pink interior background */
   background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
   background-repeat: repeat;
   background-size: 100px auto;
   border: 3px solid #000000; /* Distinct black border outlining the main content area */
   box-sizing: border-box;
-    }
+  position: relative;
+  padding: 50px 20px 20px 20px; 
+}
 
     aside {
       width: 250px;
