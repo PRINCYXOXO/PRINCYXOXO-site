@@ -30,6 +30,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
+
+    /* 📖 BURN BOOK STYLING & ANIMATION 📖 */
+.burnbook-popup {
+  position: fixed;
+  bottom: -100vh; /* Hidden below the screen initially */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10006;
+  transition: bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: grab;
+  user-select: none;
+}
+
+.burnbook-popup:active {
+  cursor: grabbing;
+}
+
+.burnbook-popup img {
+  width: 520px; /* Adjust size if needed */
+  max-width: 90vw;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
+}
+
+/* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
+.burnbook-close-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 32px;
+  height: 32px;
+  background-color: #d23f77;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10007;
+}
+
+.burnbook-close-btn:hover {
+  transform: scale(1.15);
+  background-color: #b02e60;
+}
+
+/* Slide up to screen position */
+.burnbook-popup.show {
+  bottom: 10%;
+}
+    
     body {
       background-color: #d23f77;
       color: #333333;
@@ -726,6 +785,102 @@ main {
       updateLightboxContent();
     });
   </script>
+
+  <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
+<div id="burnBookPopup" class="burnbook-popup">
+  <button id="closeBurnBook" class="burnbook-close-btn" title="Close">×</button>
+  <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
+</div>
+
+  <script>
+  // 🌟 KONAMI CODE SEQUENCE
+  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let konamiIndex = 0;
+
+  const burnBook = document.getElementById('burnBookPopup');
+  const closeBurnBookBtn = document.getElementById('closeBurnBook');
+
+  // Keydown listener for Konami Code sequence
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
+
+    if (key === requiredKey) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        triggerBurnBook();
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
+
+  // 🚀 SLIDE UP & RESET TO ORIGINAL POSITION
+  function triggerBurnBook() {
+    // Reset custom dragged positions so it always slides up from the center
+    burnBook.style.top = '';
+    burnBook.style.left = '50%';
+    burnBook.style.transform = 'translateX(-50%)';
+    burnBook.style.bottom = ''; // Clear inline bottom
+    burnBook.style.transition = 'bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    
+    burnBook.classList.add('show');
+  }
+
+  // ❌ CLOSE BUTTON DISMISS (FIXED)
+  closeBurnBookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // 1. Restore smooth transition back down
+    burnBook.style.transition = 'bottom 0.5s ease-in-out';
+    
+    // 2. Clear inline top/left/transform added while dragging
+    burnBook.style.top = '';
+    burnBook.style.left = '50%';
+    burnBook.style.transform = 'translateX(-50%)';
+    burnBook.style.bottom = ''; // Let CSS take over (bottom: -100vh)
+
+    // 3. Remove show class
+    burnBook.classList.remove('show');
+  });
+
+  // 🖱️ DRAGGABLE FUNCTIONALITY
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  burnBook.addEventListener('mousedown', (e) => {
+    // ✋ Don't start dragging if the user clicked on the close button
+    if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
+
+    isDragging = true;
+    burnBook.style.transition = 'none';
+
+    const rect = burnBook.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+
+    burnBook.style.transform = 'none';
+    burnBook.style.left = rect.left + 'px';
+    burnBook.style.top = rect.top + 'px';
+    burnBook.style.bottom = 'auto';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    burnBook.style.left = (e.clientX - offsetX) + 'px';
+    burnBook.style.top = (e.clientY - offsetY) + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+</script>
+  
 </body>
 </html>
 
