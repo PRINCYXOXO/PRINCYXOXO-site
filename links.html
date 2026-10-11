@@ -842,32 +842,63 @@ header {
 
 
     /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
-    @media (max-width: 768px) {
-      .banner-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-      }
+ @media (max-width: 768px) {
+  /* Prevent horizontal overflow on mobile */
+  body, html {
+    overflow-x: hidden;
+  }
 
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 
-      nav a {
-        margin: 5px 8px;
-      }
+  nav {
+    position: relative; /* Unfix the nav so it doesn't overlap header content on tiny screens */
+    border-bottom: none;
+    margin-bottom: 10px;
+  }
 
+  nav a {
+    margin: 5px 8px;
+  }
 
-      .wrapper {
-        flex-direction: column;
-      }
+  .wrapper {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
 
+  main, aside {
+    width: 100% !important;
+  }
 
-      aside {
-        width: 100%;
-      }
+  header::after {
+    font-size: 30px; /* Shrink watermark slightly so it doesn't break header layout */
+  }
 
+  /* Make floating desktop elements responsive on mobile screens */
+  .notepad-modal {
+    width: 90vw !important;
+    max-width: 360px;
+    right: -100vw;
+  }
+  
+  .notepad-modal.show {
+    right: 5vw !important; /* Centers the notepad nicely on phone screens */
+  }
 
-      header::after {
-        font-size: 40px;
-      }
+  .spotted-toast {
+    width: 85vw !important;
+    right: 7.5vw !important;
+  }
+
+  .music-player {
+    left: 20px;
+    right: 20px;
+    justify-content: center;
+  
+}
     }
   </style>
 </head>
