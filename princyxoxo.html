@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO — Links</title>
+  <title>PRINCYXOXO</title>
 
-  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+
+<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
   <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
+
 
   <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +20,8 @@
   <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
   <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta name="theme-color" content="#d23f77">
-  
+
+
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
   
@@ -29,34 +31,32 @@
   
   <style>
     body {
-      background-color: #fceef2;
-      background-image: url('Untitled77_20261004220524.png');
-      background-repeat: repeat;
-      background-size: 100px auto;
+      background-color: #d23f77;
       color: #333333;
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
+      /* 💖 CUSTOM CURSOR 💖 */
       cursor: url('crown.png'), auto;
     }
+
 
     /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
 
-    header {
-      background-color: #d23f77;
-      color: #ffffff;
-      padding: 30px 40px;
-      border-bottom: 4px solid #b02e60;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: relative;
-      overflow: hidden;
-    }
 
-    /* 🏙 WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
+header {
+  background-color: #d23f77;
+  color: #ffffff;
+  padding: 30px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -73,7 +73,8 @@
       z-index: 1;
     }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
+
+    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -89,6 +90,7 @@
       z-index: 2;
     }
 
+
     .banner-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -98,6 +100,7 @@
       position: relative;
       z-index: 3;
     }
+
 
     header h1 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -113,6 +116,7 @@
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
+
     /* Silhouette Image Styling */
     .header-silhouette {
       height: 65px;
@@ -121,6 +125,7 @@
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
+
     .tagline {
       font-size: 28px;
       font-style: italic;
@@ -128,13 +133,24 @@
       opacity: 0.9;
     }
 
-    nav {
-      background-color: #f0a3c2;
-      border-bottom: 1px solid #d23f77;
-      text-align: center;
-      padding: 10px 0;
-    }
 
+    nav {
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+  
+  /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  /* 🎨 Color Change: Replace #000000 with your preferred color code (e.g., #d23f77) */
+  border-bottom: 3px solid #d23f77; 
+  
+  box-sizing: border-box;
+}
+    
     nav a {
       color: #5c0e2e;
       text-decoration: none;
@@ -146,22 +162,36 @@
       display: inline-block;
     }
 
+
     nav a:hover {
       color: #ffffff;
+      background: transparent;
     }
+
 
     .wrapper {
       max-width: 1000px;
       margin: 30px auto;
-      padding: 0 20px;
+      padding: 0 20px 20px 20px;
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
-    }
+  background-color: #fceef2; /* Light pink interior background */
+  background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
+  background-repeat: repeat;
+  background-size: 100px auto;
+  border: 3px solid #000000; /* Distinct black border outlining the main content area */
+  box-sizing: border-box;
+  position: relative;
+  padding: 50px 20px 20px 20px; 
+}
 
     aside {
       width: 250px;
       flex-shrink: 0;
+      margin-top: 20px;
     }
+
 
     .sidebar-box {
       background-color: #f8c5d8;
@@ -170,6 +200,7 @@
       margin-bottom: 20px;
       border-radius: 2px;
     }
+
 
     .sidebar-box h2 {
       font-size: 22px;
@@ -185,12 +216,14 @@
   display: block;
 }
 
+
     .sidebar-box p {
       font-size: 12px;
       line-height: 1.5;
       color: #5c0e2e;
       margin: 0;
     }
+
 
     .form-box {
       background-color: #ffffff;
@@ -199,6 +232,7 @@
       border-radius: 2px;
     }
 
+
     .form-box h3 {
       font-size: 14px;
       color: #d23f77;
@@ -206,6 +240,7 @@
       margin-top: 0;
       text-align: center;
     }
+
 
     .form-box input, .form-box textarea {
       width: 100%;
@@ -219,10 +254,11 @@
       font-family: inherit;
     }
 
+
     .form-box button {
       width: 100%;
       background-color: #d23f77;
-      color: #ffffff;
+      color: white;
       border: none;
       padding: 8px;
       font-weight: bold;
@@ -231,13 +267,16 @@
       cursor: pointer;
     }
 
+
     .form-box button:hover {
       background-color: #b02e60;
     }
 
+
     main {
       flex-grow: 1;
     }
+
 
     .ticker {
       background-color: #ffffff;
@@ -251,20 +290,25 @@
       justify-content: space-between;
     }
 
+
     article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
       padding: 25px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
+
     article h2 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
       font-size: 28px;
+      font-weight: 700;
       color: #d23f77;
       margin: 0 0 5px 0;
       text-transform: lowercase;
     }
+
 
     .file-under {
       font-size: 11px;
@@ -275,11 +319,31 @@
       margin-bottom: 15px;
     }
 
+
     article p {
       font-size: 14px;
       line-height: 1.6;
       color: #444444;
     }
+
+
+    /* 💖 PINK, BOLD, BODONI MODA AT NORMAL BODY TEXT SIZE (14px) 💖 */
+    .rule-pink-1,
+    .rule-pink-2,
+    .rule-pink-3 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #d23f77;
+    }
+
+
+    article hr {
+      border: 0;
+      border-top: 1px dashed #f0a3c2;
+      margin: 20px 0;
+    }
+
 
     .signature {
       display: block;
@@ -288,64 +352,98 @@
       color: #d23f77;
       font-style: italic;
       font-size: 14px;
+      margin-top: 15px;
     }
 
-    .student-card {
-      background-color: #fff0f5;
-      background-image: radial-gradient(#f0a3c2 1.5px, transparent 1.5px);
-      background-size: 12px 12px;
-      border: 2px solid #d23f77;
-      border-radius: 15px;
-      padding: 20px;
-      display: flex;
+
+    /* 🔍 LIGHTBOX STYLING 🔍 */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      justify-content: center;
       align-items: center;
-      gap: 20px;
-      box-shadow: 0 4px 8px rgba(210, 63, 119, 0.15);
-      margin: 15px 0;
     }
 
-    .pfp-container {
-      border: 2px dotted #d23f77;
-      border-radius: 12px;
-      padding: 4px;
-      background-color: #ffffff;
-      flex-shrink: 0;
-      width: 110px;
-      height: 110px;
+    .lightbox-content-wrapper {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      max-width: 90%;
+      max-height: 90%;
     }
 
-    .pfp-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 10px;
-      object-fit: cover;
+    .lightbox-content {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 16px;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+      background-color: #fff;
       display: block;
     }
 
-    .card-details {
-      flex-grow: 1;
-    }
-
-    .card-title {
-      font-size: 26px;
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: -25px;
+      color: #ff69b4;
+      font-size: 32px;
       font-weight: bold;
-      color: #d23f77;
-      margin: 0 0 10px 0;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: transform 0.2s ease;
+      z-index: 10002;
     }
 
-    .card-details p {
-      margin: 6px 0;
-      font-size: 13px;
-      color: #5c0e2e;
+    .lightbox-close:hover {
+      transform: scale(1.2);
+      color: #b02e60;
     }
 
-    .tilted-text {
-      font-style: italic;
+    .lightbox-prev, .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      z-index: 10001;
     }
 
+    .lightbox-prev:hover, .lightbox-next:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-prev {
+      left: -70px;
+    }
+
+    .lightbox-next {
+      right: -70px;
+    }
+
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -354,7 +452,7 @@
       border: 2px solid #d23f77;
       padding: 10px 15px;
       border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       display: flex;
       align-items: center;
       gap: 12px;
@@ -376,8 +474,10 @@
     }
 
     .song-title {
+
       font-style: italic;
     }
+
 
     .music-player button {
       background-color: #d23f77;
@@ -391,9 +491,11 @@
       border-radius: 2px;
     }
 
+
     .music-player button:hover {
       background-color: #b02e60;
     }
+
 
     /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
     @media (max-width: 768px) {
@@ -403,30 +505,30 @@
         gap: 10px;
       }
 
+
       nav a {
         margin: 5px 8px;
       }
+
 
       .wrapper {
         flex-direction: column;
       }
 
+
       aside {
         width: 100%;
       }
 
+
       header::after {
         font-size: 40px;
-      }
-
-      .student-card {
-        flex-direction: column;
-        text-align: center;
       }
     }
   </style>
 </head>
 <body>
+
 
   <header>
     <div class="banner-container">
@@ -437,7 +539,10 @@
     </div>
   </header>
 
-  <nav>
+
+  <div class="wrapper">
+    
+<nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
     <a href="posts.html">Posts</a>
@@ -447,13 +552,13 @@
     <a href="more.html">More</a>
     <a href="princyslair.html">Princy's Lair</a>
   </nav>
-
-  <div class="wrapper">
+  
     <aside>
       <div class="sidebar-box">
         <h2><img src="welcome2.png" alt="Welcome" class="sidebar-heading-img"></h2>
         <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
+
 
       <div class="sidebar-box">
         <h2><img src="gossip2.png" alt="Gossip" class="sidebar-heading-img"></h2>
