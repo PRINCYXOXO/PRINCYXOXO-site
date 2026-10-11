@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
 
-<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
@@ -380,31 +380,6 @@
       color: #444444;
     }
 
-    .rule-pink-1,
-    .rule-pink-2,
-    .rule-pink-3 {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: #d23f77;
-    }
-
-    article hr {
-      border: 0;
-      border-top: 1px dashed #f0a3c2;
-      margin: 20px 0;
-    }
-
-    .signature {
-      display: block;
-      text-align: right;
-      font-weight: bold;
-      color: #d23f77;
-      font-style: italic;
-      font-size: 14px;
-      margin-top: 15px;
-    }
-
     .lightbox {
       display: none;
       position: fixed;
@@ -745,7 +720,7 @@
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (galleryLinks.length === 0) return;
-      currentIndex = (currentIndex === galleryLinks.length - 1) ? 0 : currentIndex + 1;
+      currentIndex = (galleryLinks.length === galleryLinks.length - 1) ? 0 : currentIndex + 1;
       updateLightboxContent();
     });
   </script>
@@ -829,4 +804,37 @@
   <script>
     const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
     let lastX = 0;
-    let lastY =
+    let lastY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+      if (distance < 15) return;
+
+      lastX = e.clientX;
+      lastY = e.clientY;
+
+      const sparkle = document.createElement('span');
+      sparkle.className = 'cursor-sparkle';
+      sparkle.textContent = trailSymbols[Math.floor(Math.random() * trailSymbols.length)];
+      
+      sparkle.style.left = `${e.clientX}px`;
+      sparkle.style.top = `${e.clientY}px`;
+
+      const dx = (Math.random() - 0.5) * 40;
+      const dy = Math.random() * 50 + 20;
+      sparkle.style.setProperty('--dx', `${dx}px`);
+      sparkle.style.setProperty('--dy', `${dy}px`);
+
+      const size = Math.floor(Math.random() * 10) + 12;
+      sparkle.style.fontSize = `${size}px`;
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
