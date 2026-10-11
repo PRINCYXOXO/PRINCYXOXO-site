@@ -31,7 +31,7 @@
   
   <style>
     body {
-      background-color: #fceef2;
+      background-color: #d23f77;
       color: #333333;
       font-family: 'Georgia', serif;
       margin: 0;
@@ -138,11 +138,15 @@
 
     nav {
       background-color: #f0a3c2;
-      border-bottom: 1px solid #d23f77;
+      border-bottom: 3px solid #000000;
       text-align: center;
       padding: 10px 0;
-    }
-
+  width: 100%;
+  flex-basis: 100%;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 0px; 
+}
 
     nav a {
       color: #5c0e2e;
@@ -164,10 +168,11 @@
     .wrapper {
       max-width: 1000px;
       margin: 30px auto;
-      padding: 0 20px;
+      padding: 0 20px 20px 20px;
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
-      
+
       /* 🎀 The OG Box Styling 🎀 */
   background-color: #fceef2; /* Light pink interior background */
   background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
@@ -176,7 +181,6 @@
   border: 3px solid #000000; /* Distinct black border outlining the main content area */
   box-sizing: border-box;
     }
-
 
     aside {
       width: 250px;
@@ -206,6 +210,7 @@
   height: auto;
   display: block;
 }
+
 
     .sidebar-box p {
       font-size: 12px;
@@ -530,7 +535,9 @@
   </header>
 
 
-  <nav>
+  <div class="wrapper">
+    
+<nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
     <a href="posts.html">Posts</a>
@@ -540,9 +547,7 @@
     <a href="more.html">More</a>
     <a href="princyslair.html">Princy's Lair</a>
   </nav>
-
-
-  <div class="wrapper">
+  
     <aside>
       <div class="sidebar-box">
         <h2><img src="welcome2.png" alt="Welcome" class="sidebar-heading-img"></h2>
