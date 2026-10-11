@@ -31,6 +31,75 @@
   
   <style>
 
+    /* 🎬 THIRTEEN.GIF SECRET POPUP STYLING 🎬 */
+.thirteen-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Soft dim background */
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10010;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.thirteen-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.thirteen-content-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 85vw;
+  max-height: 85vh;
+}
+
+.thirteen-content-wrapper img {
+  display: block;
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  border-radius: 20px; /* Rounded rectangle corners */
+  border: 8px solid #d23f77; /* REALLY thick pink border */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(210, 63, 119, 0.5); /* Drop-shadow AFTER the border */
+}
+
+/* 🎀 PINK CLOSE CROSS FOR THIRTEEN MODAL 🎀 */
+.thirteen-close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 36px;
+  height: 36px;
+  background-color: #d23f77;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10011;
+}
+
+.thirteen-close-btn:hover {
+  transform: scale(1.15);
+  background-color: #b02e60;
+}
+    
     /* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
 .kiss-stamp {
   position: fixed;
@@ -1125,6 +1194,58 @@ main {
     setTimeout(() => {
       kiss.remove();
     }, 1500);
+  });
+</script>
+
+  <!-- 🎬 THIRTEEN.GIF SECRET POPUP MODAL 🎬 -->
+<div id="thirteenModal" class="thirteen-modal">
+  <div class="thirteen-content-wrapper">
+    <button id="closeThirteen" class="thirteen-close-btn" title="Close">×</button>
+    <img src="thirteen.gif" alt="Thirteen Movie Moment" id="thirteenImg" draggable="false">
+  </div>
+</div>
+
+  <script>
+  // ⌨️ "THIRTEEN" KEYBOARD LISTENER SCRIPT ⌨️
+  const secretWord = "thirteen";
+  let typedBuffer = "";
+  
+  const thirteenModal = document.getElementById('thirteenModal');
+  const closeThirteenBtn = document.getElementById('closeThirteen');
+
+  document.addEventListener('keydown', (e) => {
+    // Ignore if typing inside input fields or textareas
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    // Only track single letter keys
+    if (e.key.length === 1) {
+      typedBuffer += e.key.toLowerCase();
+
+      // Keep only the last N characters corresponding to the length of the secret word
+      if (typedBuffer.length > secretWord.length) {
+        typedBuffer = typedBuffer.slice(-secretWord.length);
+      }
+
+      // Check if the buffer matches "thirteen"
+      if (typedBuffer === secretWord) {
+        thirteenModal.classList.add('show');
+        typedBuffer = ""; // Reset buffer
+      }
+    }
+  });
+
+  // Close modal via the pink cross button
+  closeThirteenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    thirteenModal.classList.remove('show');
+  });
+
+  // Close modal if clicking outside the GIF on the dark backdrop
+  thirteenModal.addEventListener('click', (e) => {
+    if (e.target === thirteenModal) {
+      thirteenModal.classList.remove('show');
+    }
   });
 </script>
   
