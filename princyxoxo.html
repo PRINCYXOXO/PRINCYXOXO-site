@@ -274,11 +274,70 @@ header {
     }
 
 
+    /* 🛠️ Layout Fix: Forces the main blog area next to the sidebar */
     main {
       flex-grow: 1;
-        width: calc(100% - 280px); 
-  box-sizing: border-box;
+      width: calc(100% - 280px);
+      box-sizing: border-box;
     }
+
+    /* 🛠️ Layout Fix: Prevents the nav bar from breaking rows */
+    nav {
+      flex-basis: 100%;
+    }
+
+    /* 🪪 Student ID Card Container Layout Box */
+    .student-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: #fff5f8; /* Soft pink card backing */
+      border: 2px dashed #f0a3c2;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* 🖼️ Profile Picture Setup: Scaled down smaller, rounded, and outlined */
+    .pfp-img {
+      width: 85px;  /* 🛠️ Scaled down from 130px to look neat and compact */
+      height: 85px;
+      object-fit: cover;
+      border-radius: 50%; /* Smooth circle rounding */
+      border: 3px solid #d23f77; /* Bright pink outline */
+      display: block;
+    }
+
+    /* 👑 Main Card Title Name: Bright Pink, Bodoni Moda Font */
+    .student-card .card-details h3.card-title {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #d23f77; /* Bright Pink */
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    /* 💬 Card Description Lines: Georgia Font, Dark Pink */
+    .student-card .card-details p {
+      font-family: 'Georgia', serif;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #5c0e2e; /* Darker Wine Pink */
+      margin: 4px 0;
+    }
+
+    /* 🏷️ Keeps your property labels matching the dark pink Georgia styling */
+    .student-card .card-details p strong {
+      font-family: 'Georgia', serif;
+      color: #5c0e2e;
+    }
+
+    /* Tilted location helper */
+    .tilted-text {
+      font-style: italic;
+    }
+
 
 
     .ticker {
