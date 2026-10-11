@@ -1477,15 +1477,31 @@ main {
   </div>
 </div>
 
-  <script>
-  // 📝 "N" KEYBOARD TRIGGER & DRAGGABLE NOTEPAD SCRIPT 📝
+<script>
+  // 📝 "N" KEYBOARD TRIGGER, DRAGGABLE & AUTO-SAVING NOTEPAD SCRIPT 📝
   const notepadModal = document.getElementById('notepadModal');
   const closeNotepadBtn = document.getElementById('closeNotepad');
   const notepadText = document.getElementById('notepadText');
   const notepadCharCount = document.getElementById('notepadCharCount');
   const notepadHeader = document.querySelector('.notepad-header');
 
-  // 1. Listen for "N" keypress (ignores typing inside active input/textarea fields)
+  // 💾 1. LOAD SAVED GOSSIP FROM LOCALSTORAGE ON PAGE LOAD 💾
+  const savedGossip = localStorage.getItem('princy_notepad_text');
+  if (savedGossip !== null) {
+    notepadText.value = savedGossip;
+    notepadCharCount.textContent = `${savedGossip.length} / 900`;
+  }
+
+  // 💾 2. AUTO-SAVE EVERY TIME THE USER TYPES 💾
+  notepadText.addEventListener('input', () => {
+    const currentText = notepadText.value;
+    notepadCharCount.textContent = `${currentText.length} / 900`;
+    
+    // Saves to the browser's persistent storage
+    localStorage.setItem('princy_notepad_text', currentText);
+  });
+
+  // ⌨️ 3. Listen for "N" keypress (ignores active inputs)
   document.addEventListener('keydown', (e) => {
     if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
@@ -1500,18 +1516,12 @@ main {
       
       notepadModal.classList.add('show');
       
-      // Auto-focus the notepad textarea so you can start typing immediately
+      // Auto-focus the notepad textarea
       setTimeout(() => notepadText.focus(), 300);
     }
   });
 
-  // 2. Character counter updater (max 900)
-  notepadText.addEventListener('input', () => {
-    const currentLength = notepadText.value.length;
-    notepadCharCount.textContent = `${currentLength} / 900`;
-  });
-
-  // 3. Close Notepad button
+  // 🎀 4. Close Notepad button
   closeNotepadBtn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -1520,7 +1530,7 @@ main {
     notepadModal.classList.remove('show');
   });
 
-  // 4. Drag and Drop Functionality
+  // 🖐️ 5. Drag and Drop Functionality
   let isDraggingNotepad = false;
   let nOffsetX = 0;
   let nOffsetY = 0;
