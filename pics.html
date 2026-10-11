@@ -823,10 +823,10 @@
         popup.classList.remove('show');
       }, 3000);
 
-      // 3. Cooldown of 1 minute (60,000 milliseconds) before it can be triggered again
+      // 3. Cooldown of 10 seconds (10,000 milliseconds) before it can be triggered again
       setTimeout(() => {
         canTrigger = true;
-      }, 60000);
+      }, 10000);
     }
   });
 </script>
