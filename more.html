@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- 📱 RESPONSIVE VIEWPORT META TAG 📱 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRINCYXOXO — Links</title>
+  <title>PRINCYXOXO</title>
 
-  <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
+
+<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
   <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
   <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
+
 
   <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
@@ -19,7 +20,8 @@
   <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
   <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta name="theme-color" content="#d23f77">
-  
+
+
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
   
@@ -29,34 +31,32 @@
   
   <style>
     body {
-      background-color: #fceef2;
-      background-image: url('Untitled77_20261004220524.png');
-      background-repeat: repeat;
-      background-size: 100px auto;
+      background-color: #d23f77;
       color: #333333;
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      /* 💖 CUSTOM CURSOR ADDED HERE 💖 */
+      /* 💖 CUSTOM CURSOR 💖 */
       cursor: url('crown.png'), auto;
     }
+
 
     /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
 
-    header {
-      background-color: #d23f77;
-      color: #ffffff;
-      padding: 30px 40px;
-      border-bottom: 4px solid #b02e60;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      position: relative;
-      overflow: hidden;
-    }
 
-    /* 🏙 WHITE SKYLINE OVERLAY (FULL HEADER COVERAGE) 🏙️ */
+header {
+  background-color: #d23f77;
+  color: #ffffff;
+  padding: 30px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -73,7 +73,8 @@
       z-index: 1;
     }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK OVERLAY 💋 */
+
+    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -89,6 +90,7 @@
       z-index: 2;
     }
 
+
     .banner-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -98,6 +100,7 @@
       position: relative;
       z-index: 3;
     }
+
 
     header h1 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -113,6 +116,7 @@
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
+
     /* Silhouette Image Styling */
     .header-silhouette {
       height: 65px;
@@ -121,6 +125,7 @@
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
+
     .tagline {
       font-size: 28px;
       font-style: italic;
@@ -128,13 +133,24 @@
       opacity: 0.9;
     }
 
-    nav {
-      background-color: #f0a3c2;
-      border-bottom: 1px solid #d23f77;
-      text-align: center;
-      padding: 10px 0;
-    }
 
+    nav {
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+  
+  /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  /* 🎨 Color Change: Replace #000000 with your preferred color code (e.g., #d23f77) */
+  border-bottom: 3px solid #d23f77; 
+  
+  box-sizing: border-box;
+}
+    
     nav a {
       color: #5c0e2e;
       text-decoration: none;
@@ -146,22 +162,36 @@
       display: inline-block;
     }
 
+
     nav a:hover {
       color: #ffffff;
+      background: transparent;
     }
+
 
     .wrapper {
       max-width: 1000px;
       margin: 30px auto;
-      padding: 0 20px;
+      padding: 0 20px 20px 20px;
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
-    }
+  background-color: #fceef2; /* Light pink interior background */
+  background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
+  background-repeat: repeat;
+  background-size: 100px auto;
+  border: 3px solid #000000; /* Distinct black border outlining the main content area */
+  box-sizing: border-box;
+  position: relative;
+  padding: 50px 20px 20px 20px; 
+}
 
     aside {
       width: 250px;
       flex-shrink: 0;
+      margin-top: 20px;
     }
+
 
     .sidebar-box {
       background-color: #f8c5d8;
