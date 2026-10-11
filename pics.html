@@ -138,11 +138,15 @@
 
     nav {
       background-color: #f0a3c2;
-      border-bottom: 1px solid #d23f77;
+      border-bottom: 3px solid #000000;
       text-align: center;
       padding: 10px 0;
-    }
-
+  width: 100%;
+  flex-basis: 100%;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 0px; 
+}
 
     nav a {
       color: #5c0e2e;
@@ -164,8 +168,9 @@
     .wrapper {
       max-width: 1000px;
       margin: 30px auto;
-      padding: 20px;
+      padding: 0 20px 20px 20px;
       display: flex;
+      flex-wrap: wrap;
       gap: 30px;
 
       /* 🎀 The OG Box Styling 🎀 */
@@ -530,7 +535,9 @@
   </header>
 
 
-  <nav>
+  <div class="wrapper">
+    
+<nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
     <a href="posts.html">Posts</a>
@@ -540,9 +547,7 @@
     <a href="more.html">More</a>
     <a href="princyslair.html">Princy's Lair</a>
   </nav>
-
-
-  <div class="wrapper">
+  
     <aside>
       <div class="sidebar-box">
         <h2><img src="welcome2.png" alt="Welcome" class="sidebar-heading-img"></h2>
