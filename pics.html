@@ -28,6 +28,29 @@
   
   <style>
 
+    /* 🎀 PINK SYMBOL CURSOR TRAIL STYLING 🎀 */
+.cursor-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  font-size: 14px;
+  color: #ff69b4; /* 🌸 Pink color for text symbols */
+  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6); /* Optional cute pink glow */
+  user-select: none;
+  animation: sparkleFade 1s linear forwards;
+}
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.3) rotate(180deg);
+  }
+}
+    
     /* 📖 BURN BOOK STYLING & ANIMATION 📖 */
 .burnbook-popup {
   position: fixed;
@@ -984,6 +1007,48 @@ filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(2
   });
 </script>
 
+  <script>
+  // 💖 PINK SYMBOLS TRAIL SCRIPT 💖
+  const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
+  let lastX = 0;
+  let lastY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    // Only spawn a symbol if mouse moved at least 15px
+    const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+    if (distance < 15) return;
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    const sparkle = document.createElement('span');
+    sparkle.className = 'cursor-sparkle';
+    
+    // Pick a random symbol from the list
+    sparkle.textContent = trailSymbols[Math.floor(Math.random() * trailSymbols.length)];
+    
+    // Position at mouse coordinates
+    sparkle.style.left = `${e.clientX}px`;
+    sparkle.style.top = `${e.clientY}px`;
+
+    // Random drift directions
+    const dx = (Math.random() - 0.5) * 40;
+    const dy = Math.random() * 50 + 20;
+    sparkle.style.setProperty('--dx', `${dx}px`);
+    sparkle.style.setProperty('--dy', `${dy}px`);
+
+    // Slightly randomize size
+    const size = Math.floor(Math.random() * 10) + 12;
+    sparkle.style.fontSize = `${size}px`;
+
+    document.body.appendChild(sparkle);
+
+    // Remove element after animation finishes
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+  });
+</script>
   
 </body>
 </html>
