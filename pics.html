@@ -536,7 +536,7 @@ main {
         font-size: 40px;
       }
 
-      /* 📁 RETRO FILE EXPLORER WINDOW STYLING 📁 */
+ /* 📁 RETRO FILE EXPLORER WINDOW STYLING 📁 */
     .file-explorer-window {
       background-color: #ffffff;
       border: 2px solid #d23f77;
@@ -583,7 +583,7 @@ main {
     .file-item {
       text-align: center;
       text-decoration: none;
-      width: 120px;
+      width: 100px;
       display: block;
       transition: transform 0.2s ease;
     }
@@ -592,7 +592,7 @@ main {
       transform: scale(1.05);
     }
 
-.file-item img {
+    .file-item img {
       width: 48px;
       height: 48px;
       object-fit: cover;
@@ -692,18 +692,39 @@ main {
       </div>
     </div>
 
-    <main>
+<main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
         <span>Main • Welcome Post</span>
       </div>
 
+      <!-- 🗂️ FILE EXPLORER WIDGET 🗂️ -->
+      <div class="file-explorer-window">
+        <div class="window-titlebar">
+          <span>princys_vault.exe // explorer</span>
+          <div class="window-buttons">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="window-body">
+          
+          <!-- File 1: Limited Edition -->
+          <a href="limitededition.jpg" class="file-item gallery-item">
+            <img src="limitededition.jpg" alt="Limited Edition">
+            <span class="file-name">limitededition.jpg</span>
+          </a>
 
-    <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
+          <!-- File 2: Xoxo Princy Xoxo -->
+          <a href="xoxoprincyxoxo.png" class="file-item gallery-item">
+            <img src="xoxoprincyxoxo.png" alt="Xoxo Princy Xoxo">
+            <span class="file-name">xoxoprincyxoxo.png</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- 👑 THE FEED ZONE -->
       <section id="blastFeed">
-
-  
-
       </section>
     </main>
   </div>
