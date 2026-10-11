@@ -535,7 +535,83 @@ main {
       header::after {
         font-size: 40px;
       }
+
+      /* 📁 RETRO FILE EXPLORER WINDOW STYLING 📁 */
+    .file-explorer-window {
+      background-color: #ffffff;
+      border: 2px solid #d23f77;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
     }
+
+    .window-titlebar {
+      background-color: #d23f77;
+      color: #ffffff;
+      padding: 6px 12px;
+      font-family: 'Bodoni Moda', 'Didot', serif;
+      font-size: 13px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+    }
+
+    .window-buttons span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #f8c5d8;
+      border-radius: 50%;
+      margin-left: 4px;
+      border: 1px solid #b02e60;
+    }
+
+    .window-body {
+      padding: 20px;
+      background-color: #fff5f8;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .file-item {
+      text-align: center;
+      text-decoration: none;
+      width: 120px;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .file-item:hover {
+      transform: scale(1.05);
+    }
+
+    .file-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 2px solid #f0a3c2;
+      border-radius: 4px;
+      background: #fff;
+      padding: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .file-name {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      color: #5c0e2e;
+      font-weight: bold;
+      word-break: break-all;
+    }
+      
   </style>
 </head>
 <body>
@@ -591,6 +667,30 @@ main {
       </div>
     </aside>
 
+    <!-- 🗂️ FILE EXPLORER WIDGET 🗂️ -->
+    <div class="file-explorer-window">
+      <div class="window-titlebar">
+        <span>princys_vault.exe // explorer</span>
+        <div class="window-buttons">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="window-body">
+        
+        <!-- File 1: Limited Edition -->
+        <a href="limitededition.jpg" class="file-item gallery-item">
+          <img src="limitededition.jpg" alt="Limited Edition">
+          <span class="file-name">limitededition.jpg</span>
+        </a>
+
+        <!-- File 2: Xoxo Princy Xoxo -->
+        <a href="xoxoprincyxoxo.png" class="file-item gallery-item">
+          <img src="xoxoprincyxoxo.png" alt="Xoxo Princy Xoxo">
+          <span class="file-name">princyxoxo.png</span>
+        </a>
+
+      </div>
+    </div>
 
     <main>
       <div class="ticker">
