@@ -28,7 +28,7 @@
   
   <style>
 
-    .slide-popup {
+.slide-popup {
   position: fixed;
   bottom: -400px; /* Hidden completely below the screen initially */
   left: 50%;
@@ -40,12 +40,12 @@
 .slide-popup img {
   width: 250px; /* Adjust size as needed */
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  /* 🌟 filter: drop-shadow wraps precisely around the phone shape instead of a square box */
+  filter: drop-shadow(0 -5px 15px rgba(0, 0, 0, 0.3));
 }
 
 .slide-popup.show {
-  bottom: 20px; /* Slides up to this position from the bottom */
+  bottom: 0; /* 🌟 Touches the very bottom edge of the screen */
 }
     body {
       background-color: #d23f77;
