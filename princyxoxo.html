@@ -926,7 +926,7 @@ header {
     }
 
 
-    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
+/* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
 @media (max-width: 768px) {
   /* Prevent horizontal overflow on mobile */
   body, html {
@@ -949,9 +949,16 @@ header {
     margin: 5px 8px;
   }
 
+  /* 🛠️ FIX: Make wrapper span full screen on mobile */
   .wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-left: none;
+    border-right: none;
     flex-direction: column;
     padding: 20px 10px;
+    box-sizing: border-box;
   }
 
   main, aside {
