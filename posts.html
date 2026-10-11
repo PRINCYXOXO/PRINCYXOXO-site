@@ -131,9 +131,18 @@ header {
       font-style: italic;
       margin: 0;
       opacity: 0.9;
+      display: flex;
+  align-items: center;
+  gap: 10px;
     }
 
-
+.kissmark-img {
+  height: 35px; /* Adjust height as needed to fit your header layout */
+  width: auto;
+  display: inline-block;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+}
+    
     nav {
   background-color: transparent;
   text-align: center;
@@ -537,7 +546,10 @@ main {
       <h1>
         <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
       </h1>
-      <p class="tagline">...you know you love me</p>
+<p class="tagline">
+  ...you know you love me
+  <img src="kissmark.png" alt="kiss mark" class="kissmark-img">
+</p>
     </div>
   </header>
 
