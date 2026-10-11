@@ -216,12 +216,14 @@ header {
   display: block;
 }
 
+
     .sidebar-box p {
       font-size: 12px;
       line-height: 1.5;
       color: #5c0e2e;
       margin: 0;
     }
+
 
     .form-box {
       background-color: #ffffff;
@@ -230,6 +232,7 @@ header {
       border-radius: 2px;
     }
 
+
     .form-box h3 {
       font-size: 14px;
       color: #d23f77;
@@ -237,6 +240,7 @@ header {
       margin-top: 0;
       text-align: center;
     }
+
 
     .form-box input, .form-box textarea {
       width: 100%;
@@ -250,6 +254,7 @@ header {
       font-family: inherit;
     }
 
+
     .form-box button {
       width: 100%;
       background-color: #d23f77;
@@ -262,13 +267,16 @@ header {
       cursor: pointer;
     }
 
+
     .form-box button:hover {
       background-color: #b02e60;
     }
 
+
     main {
       flex-grow: 1;
     }
+
 
     .ticker {
       background-color: #ffffff;
@@ -282,52 +290,160 @@ header {
       justify-content: space-between;
     }
 
-    /* 💖 FAQ BOX STYLING 💖 */
-    .faq-container {
+
+    article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
       padding: 25px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    .faq-main-title {
+
+    article h2 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 38px;
-      color: #d23f77;
-      text-align: center;
+      font-size: 28px;
       font-weight: 700;
-      margin: 0 0 20px 0;
-      letter-spacing: -1px;
+      color: #d23f77;
+      margin: 0 0 5px 0;
       text-transform: lowercase;
     }
 
-    .faq-item {
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px dashed #fceef2;
+
+    .file-under {
+      font-size: 11px;
+      color: #777777;
+      text-transform: uppercase;
+      border-bottom: 1px solid #fceef2;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
     }
 
-    .faq-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
+
+    article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444444;
     }
 
-    .faq-question {
-      font-size: 18px;
+
+    /* 💖 PINK, BOLD, BODONI MODA AT NORMAL BODY TEXT SIZE (14px) 💖 */
+    .rule-pink-1,
+    .rule-pink-2,
+    .rule-pink-3 {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+      font-size: 14px;
+      font-weight: 700;
       color: #d23f77;
+    }
+
+
+    article hr {
+      border: 0;
+      border-top: 1px dashed #f0a3c2;
+      margin: 20px 0;
+    }
+
+
+    .signature {
+      display: block;
+      text-align: right;
       font-weight: bold;
-      margin-bottom: 6px;
+      color: #d23f77;
+      font-style: italic;
+      font-size: 14px;
+      margin-top: 15px;
     }
 
-    .faq-answer {
-      font-size: 13px;
-      color: #5c0e2e;
-      line-height: 1.5;
-      margin: 0;
-      padding-left: 5px;
+
+    /* 🔍 LIGHTBOX STYLING 🔍 */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
     }
 
+    .lightbox-content-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-content {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 16px;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+      background-color: #fff;
+      display: block;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: -25px;
+      color: #ff69b4;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: transform 0.2s ease;
+      z-index: 10002;
+    }
+
+    .lightbox-close:hover {
+      transform: scale(1.2);
+      color: #b02e60;
+    }
+
+    .lightbox-prev, .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+      z-index: 10001;
+    }
+
+    .lightbox-prev:hover, .lightbox-next:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-prev {
+      left: -70px;
+    }
+
+    .lightbox-next {
+      right: -70px;
+    }
+
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -358,8 +474,10 @@ header {
     }
 
     .song-title {
+
       font-style: italic;
     }
+
 
     .music-player button {
       background-color: #d23f77;
@@ -373,9 +491,11 @@ header {
       border-radius: 2px;
     }
 
+
     .music-player button:hover {
       background-color: #b02e60;
     }
+
 
     /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
     @media (max-width: 768px) {
@@ -385,29 +505,30 @@ header {
         gap: 10px;
       }
 
+
       nav a {
         margin: 5px 8px;
       }
+
 
       .wrapper {
         flex-direction: column;
       }
 
+
       aside {
         width: 100%;
       }
 
+
       header::after {
         font-size: 40px;
-      }
-
-      .faq-main-title {
-        font-size: 28px;
       }
     }
   </style>
 </head>
 <body>
+
 
   <header>
     <div class="banner-container">
@@ -418,7 +539,10 @@ header {
     </div>
   </header>
 
-  <nav>
+
+  <div class="wrapper">
+    
+<nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
     <a href="posts.html">Posts</a>
@@ -428,13 +552,13 @@ header {
     <a href="more.html">More</a>
     <a href="princyslair.html">Princy's Lair</a>
   </nav>
-
-  <div class="wrapper">
+  
     <aside>
       <div class="sidebar-box">
         <h2><img src="welcome2.png" alt="Welcome" class="sidebar-heading-img"></h2>
         <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
+
 
       <div class="sidebar-box">
         <h2><img src="gossip2.png" alt="Gossip" class="sidebar-heading-img"></h2>
