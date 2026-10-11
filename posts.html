@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
 
-
 <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
@@ -13,14 +12,12 @@
   <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
 
-
   <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
   <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
   <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta name="theme-color" content="#d23f77">
-
 
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
@@ -30,115 +27,107 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
-
     /* 🎀 PINK SYMBOL CURSOR TRAIL STYLING 🎀 */
-.cursor-sparkle {
-  position: fixed;
-  pointer-events: none;
-  z-index: 99999;
-  font-size: 14px;
-  color: #ff69b4; /* 🌸 Pink color for text symbols */
-  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6); /* Optional cute pink glow */
-  user-select: none;
-  animation: sparkleFade 1s linear forwards;
-}
+    .cursor-sparkle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      font-size: 14px;
+      color: #ff69b4; /* 🌸 Pink color for text symbols */
+      text-shadow: 0 0 4px rgba(210, 63, 119, 0.6);
+      user-select: none;
+      animation: sparkleFade 1s linear forwards;
+    }
 
-@keyframes sparkleFade {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(var(--dx), var(--dy)) scale(0.3) rotate(180deg);
-  }
-}
-    
+    @keyframes sparkleFade {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) scale(0.3) rotate(180deg);
+      }
+    }
+      
     /* 📖 BURN BOOK STYLING & ANIMATION 📖 */
-.burnbook-popup {
-  position: fixed;
-  bottom: -100vh; /* Hidden below the screen initially */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10006;
-  transition: bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: grab;
-  user-select: none;
-}
+    .burnbook-popup {
+      position: fixed;
+      bottom: -100vh;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10006;
+      transition: bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: grab;
+      user-select: none;
+    }
 
-.burnbook-popup:active {
-  cursor: grabbing;
-}
+    .burnbook-popup:active {
+      cursor: grabbing;
+    }
 
-.burnbook-popup img {
-  width: 520px; /* Adjust size if needed */
-  max-width: 90vw;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
-}
+    .burnbook-popup img {
+      width: 520px;
+      max-width: 90vw;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
+    }
 
-/* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
-.burnbook-close-btn {
-  position: absolute;
-  top: -12px;
-  right: -12px;
-  width: 32px;
-  height: 32px;
-  background-color: #d23f77;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  z-index: 10007;
-}
+    /* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
+    .burnbook-close-btn {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 32px;
+      height: 32px;
+      background-color: #d23f77;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      z-index: 10007;
+    }
 
-.burnbook-close-btn:hover {
-  transform: scale(1.15);
-  background-color: #b02e60;
-}
+    .burnbook-close-btn:hover {
+      transform: scale(1.15);
+      background-color: #b02e60;
+    }
 
-/* Slide up to screen position */
-.burnbook-popup.show {
-  bottom: 10%;
-}
-    
+    .burnbook-popup.show {
+      bottom: 10%;
+    }
+      
     body {
       background-color: #d23f77;
       color: #333333;
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      /* 💖 CUSTOM CURSOR 💖 */
       cursor: url('crown.png'), auto;
     }
 
-
-    /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
 
+    header {
+      background-color: #d23f77;
+      color: #ffffff;
+      padding: 30px 40px;
+      position: relative;
+      overflow: hidden;
+    }
 
-header {
-  background-color: #d23f77;
-  color: #ffffff;
-  padding: 30px 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-
-    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -155,8 +144,6 @@ header {
       z-index: 1;
     }
 
-
-    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -172,7 +159,6 @@ header {
       z-index: 2;
     }
 
-
     .banner-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -182,7 +168,6 @@ header {
       position: relative;
       z-index: 3;
     }
-
 
     header h1 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -198,8 +183,6 @@ header {
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
-
-    /* Silhouette Image Styling */
     .header-silhouette {
       height: 65px;
       width: auto;
@@ -207,40 +190,35 @@ header {
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
-
     .tagline {
       font-size: 28px;
       font-style: italic;
       margin: 0;
       opacity: 0.9;
       display: flex;
-  align-items: center;
-  gap: 10px;
+      align-items: center;
+      gap: 10px;
     }
 
-.kissmark-img {
-  height: 100px; /* increase number to make it bigger */
-  width: auto;
-  display: inline-block;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
-}
+    .kissmark-img {
+      height: 100px;
+      width: auto;
+      display: inline-block;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+    }
     
     nav {
-  background-color: transparent;
-  text-align: center;
-  padding: 10px 0;
-    flex-basis: 100%; 
-  /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  
-  /* 🎨 Color Change: Replace #000000 with your preferred color code (e.g., #d23f77) */
-  border-bottom: 3px solid #d23f77; 
-  
-  box-sizing: border-box;
-}
+      background-color: transparent;
+      text-align: center;
+      padding: 10px 0;
+      flex-basis: 100%; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 3px solid #d23f77; 
+      box-sizing: border-box;
+    }
     
     nav a {
       color: #5c0e2e;
@@ -253,36 +231,32 @@ header {
       display: inline-block;
     }
 
-
     nav a:hover {
       color: #ffffff;
       background: transparent;
     }
 
-
     .wrapper {
       max-width: 1000px;
       margin: 30px auto;
-      padding: 0 20px 20px 20px;
+      padding: 50px 20px 20px 20px;
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-  background-color: #fceef2; /* Light pink interior background */
-  background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
-  background-repeat: repeat;
-  background-size: 100px auto;
-  border: 3px solid #000000; /* Distinct black border outlining the main content area */
-  box-sizing: border-box;
-  position: relative;
-  padding: 50px 20px 20px 20px; 
-}
+      background-color: #fceef2;
+      background-image: url('Untitled77_20261004220524.png');
+      background-repeat: repeat;
+      background-size: 100px auto;
+      border: 3px solid #000000;
+      box-sizing: border-box;
+      position: relative;
+    }
 
     aside {
       width: 250px;
       flex-shrink: 0;
       margin-top: 20px;
     }
-
 
     .sidebar-box {
       background-color: #f8c5d8;
@@ -291,7 +265,6 @@ header {
       margin-bottom: 20px;
       border-radius: 2px;
     }
-
 
     .sidebar-box h2 {
       font-size: 22px;
@@ -302,11 +275,10 @@ header {
     }
 
     .sidebar-heading-img {
-  max-width: 65%;
-  height: auto;
-  display: block;
-}
-
+      max-width: 65%;
+      height: auto;
+      display: block;
+    }
 
     .sidebar-box p {
       font-size: 12px;
@@ -315,14 +287,12 @@ header {
       margin: 0;
     }
 
-
     .form-box {
       background-color: #ffffff;
       border: 2px solid #d23f77;
       padding: 15px;
       border-radius: 2px;
     }
-
 
     .form-box h3 {
       font-size: 14px;
@@ -331,7 +301,6 @@ header {
       margin-top: 0;
       text-align: center;
     }
-
 
     .form-box input, .form-box textarea {
       width: 100%;
@@ -345,7 +314,6 @@ header {
       font-family: inherit;
     }
 
-
     .form-box button {
       width: 100%;
       background-color: #d23f77;
@@ -358,18 +326,15 @@ header {
       cursor: pointer;
     }
 
-
     .form-box button:hover {
       background-color: #b02e60;
     }
 
-
-main {
-  flex-grow: 1;
-  width: calc(100% - 280px); /* Leaves exactly 250px for the sidebar + 30px for the gap */
-  box-sizing: border-box;
-}
-
+    main {
+      flex-grow: 1;
+      width: calc(100% - 280px);
+      box-sizing: border-box;
+    }
 
     .ticker {
       background-color: #ffffff;
@@ -383,7 +348,6 @@ main {
       justify-content: space-between;
     }
 
-
     article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
@@ -391,7 +355,6 @@ main {
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-
 
     article h2 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -402,7 +365,6 @@ main {
       text-transform: lowercase;
     }
 
-
     .file-under {
       font-size: 11px;
       color: #777777;
@@ -412,15 +374,12 @@ main {
       margin-bottom: 15px;
     }
 
-
     article p {
       font-size: 14px;
       line-height: 1.6;
       color: #444444;
     }
 
-
-    /* 💖 PINK, BOLD, BODONI MODA AT NORMAL BODY TEXT SIZE (14px) 💖 */
     .rule-pink-1,
     .rule-pink-2,
     .rule-pink-3 {
@@ -430,13 +389,11 @@ main {
       color: #d23f77;
     }
 
-
     article hr {
       border: 0;
       border-top: 1px dashed #f0a3c2;
       margin: 20px 0;
     }
-
 
     .signature {
       display: block;
@@ -448,8 +405,6 @@ main {
       margin-top: 15px;
     }
 
-
-    /* 🔍 LIGHTBOX STYLING 🔍 */
     .lightbox {
       display: none;
       position: fixed;
@@ -536,7 +491,6 @@ main {
       right: -70px;
     }
 
-    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -567,10 +521,8 @@ main {
     }
 
     .song-title {
-
       font-style: italic;
     }
-
 
     .music-player button {
       background-color: #d23f77;
@@ -584,13 +536,10 @@ main {
       border-radius: 2px;
     }
 
-
     .music-player button:hover {
       background-color: #b02e60;
     }
 
-
-    /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
     @media (max-width: 768px) {
       .banner-container {
         flex-direction: column;
@@ -598,21 +547,17 @@ main {
         gap: 10px;
       }
 
-
       nav a {
         margin: 5px 8px;
       }
-
 
       .wrapper {
         flex-direction: column;
       }
 
-
       aside {
         width: 100%;
       }
-
 
       header::after {
         font-size: 40px;
@@ -622,32 +567,29 @@ main {
 </head>
 <body>
 
-
   <header>
     <div class="banner-container">
       <h1>
         <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
       </h1>
-<p class="tagline">
-  ...you know you love me
-  <img src="kissmark.png" alt="kiss mark" class="kissmark-img">
-</p>
+      <p class="tagline">
+        ...you know you love me
+        <img src="kissmark.png" alt="kiss mark" class="kissmark-img">
+      </p>
     </div>
   </header>
 
-
   <div class="wrapper">
-    
-<nav>
-    <a href="index.html">Home</a>
-    <a href="rumours.html">Rumours</a>
-    <a href="posts.html">Posts</a>
-    <a href="pics.html">Pics</a>
-    <a href="princyxoxo.html">princyxoxo</a>
-    <a href="links.html">Links</a>
-    <a href="more.html">More</a>
-    <a href="princyslair.html">Princy's Lair</a>
-  </nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="rumours.html">Rumours</a>
+      <a href="posts.html">Posts</a>
+      <a href="pics.html">Pics</a>
+      <a href="princyxoxo.html">princyxoxo</a>
+      <a href="links.html">Links</a>
+      <a href="more.html">More</a>
+      <a href="princyslair.html">Princy's Lair</a>
+    </nav>
   
     <aside>
       <div class="sidebar-box">
@@ -655,14 +597,11 @@ main {
         <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
 
-
       <div class="sidebar-box">
         <h2><img src="gossip2.png" alt="Gossip" class="sidebar-heading-img"></h2>
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
 
-
-      <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
         <h3>Submit Gossip</h3>
         <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
@@ -673,30 +612,23 @@ main {
       </div>
     </aside>
 
-
     <main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
         <span>Main • Welcome Post</span>
       </div>
 
-
-    <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
-
-          <article>
+        <article>
           <h2>PrincyXOXO: New gossip site? </h2>
           <div class="file-under">Filed under: Live Feed > Archives > Princy's Lair</div>
           <p>You may be wondering what this is... You'll just have to wait and find out.</p>
-
           <span class="signature">xoxo, PRINCYXOXO</span>
         </article>
-
       </section>
     </main>
   </div>
 
-  <!-- 🔍 LIGHTBOX HTML CONTAINER 🔍 -->
   <div id="lightbox" class="lightbox">
     <div class="lightbox-content-wrapper">
       <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
@@ -706,7 +638,6 @@ main {
     </div>
   </div>
 
-  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
     <div class="player-info">
       <span class="music-icon">♫</span>
@@ -719,7 +650,13 @@ main {
     </audio>
   </div>
 
-  <!-- 🎼 PLAYBACK CONTROLLER SCRIPT 🎼 -->
+  <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
+  <div id="burnBookPopup" class="burnbook-popup">
+    <button id="closeBurnBook" class="burnbook-close-btn" title="Close">×</button>
+    <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
+  </div>
+
+  <!-- 🎼 CONTROLLER SCRIPTS 🎼 -->
   <script>
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
@@ -758,7 +695,6 @@ main {
     }
   </script>
 
-  <!-- 📸 CORRRECTED GALLERY LINK LIGHTBOX CONTROLLER SCRIPT 📸 -->
   <script>
     const galleryLinks = document.querySelectorAll('.gallery-item');
     const lightbox = document.getElementById('lightbox');
@@ -769,10 +705,9 @@ main {
 
     let currentIndex = 0;
 
-    // Connect page elements to the overlay system
     galleryLinks.forEach((link, index) => {
       link.addEventListener('click', (e) => {
-        e.preventDefault(); // ✋ Keeps page on /princyslair.html instead of changing pages
+        e.preventDefault();
         currentIndex = index;
         updateLightboxContent();
         lightbox.style.display = 'flex';
@@ -815,146 +750,83 @@ main {
     });
   </script>
 
-  <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
-<div id="burnBookPopup" class="burnbook-popup">
-  <button id="closeBurnBook" class="burnbook-close-btn" title="Close">×</button>
-  <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
-</div>
-  
-<script>
-  // 🌟 KONAMI CODE SEQUENCE
-  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-  let konamiIndex = 0;
+  <script>
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
 
-  const burnBook = document.getElementById('burnBookPopup');
-  const closeBurnBookBtn = document.getElementById('closeBurnBook');
+    const burnBook = document.getElementById('burnBookPopup');
+    const closeBurnBookBtn = document.getElementById('closeBurnBook');
 
-  // Keydown listener for Konami Code sequence
-  document.addEventListener('keydown', (e) => {
-    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
-    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-    const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
+      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
 
-    if (key === requiredKey) {
-      konamiIndex++;
-      if (konamiIndex === konamiCode.length) {
-        triggerBurnBook();
+      if (key === requiredKey) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          triggerBurnBook();
+          konamiIndex = 0;
+        }
+      } else {
         konamiIndex = 0;
       }
-    } else {
-      konamiIndex = 0;
+    });
+
+    function triggerBurnBook() {
+      burnBook.style.top = '';
+      burnBook.style.left = '50%';
+      burnBook.style.transform = 'translateX(-50%)';
+      burnBook.style.bottom = '';
+      burnBook.style.transition = 'bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      burnBook.classList.add('show');
     }
-  });
 
-  // 🚀 SLIDE UP & RESET TO ORIGINAL POSITION
-  function triggerBurnBook() {
-    // Reset custom dragged positions so it always slides up from the center
-    burnBook.style.top = '';
-    burnBook.style.left = '50%';
-    burnBook.style.transform = 'translateX(-50%)';
-    burnBook.style.bottom = ''; // Clear inline bottom
-    burnBook.style.transition = 'bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-    
-    burnBook.classList.add('show');
-  }
+    closeBurnBookBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
 
-  // ❌ CLOSE BUTTON DISMISS (FIXED)
-  closeBurnBookBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+      burnBook.style.transition = 'bottom 0.5s ease-in-out';
+      burnBook.style.top = '';
+      burnBook.style.left = '50%';
+      burnBook.style.transform = 'translateX(-50%)';
+      burnBook.style.bottom = '';
+      burnBook.classList.remove('show');
+    });
 
-    // 1. Restore smooth transition back down
-    burnBook.style.transition = 'bottom 0.5s ease-in-out';
-    
-    // 2. Clear inline top/left/transform added while dragging
-    burnBook.style.top = '';
-    burnBook.style.left = '50%';
-    burnBook.style.transform = 'translateX(-50%)';
-    burnBook.style.bottom = ''; // Let CSS take over (bottom: -100vh)
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    // 3. Remove show class
-    burnBook.classList.remove('show');
-  });
+    burnBook.addEventListener('mousedown', (e) => {
+      if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
 
-  // 🖱️ DRAGGABLE FUNCTIONALITY
-  let isDragging = false;
-  let offsetX = 0;
-  let offsetY = 0;
+      isDragging = true;
+      burnBook.style.transition = 'none';
 
-  burnBook.addEventListener('mousedown', (e) => {
-    // ✋ Don't start dragging if the user clicked on the close button
-    if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
+      const rect = burnBook.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
 
-    isDragging = true;
-    burnBook.style.transition = 'none';
+      burnBook.style.transform = 'none';
+      burnBook.style.left = rect.left + 'px';
+      burnBook.style.top = rect.top + 'px';
+      burnBook.style.bottom = 'auto';
+    });
 
-    const rect = burnBook.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      burnBook.style.left = (e.clientX - offsetX) + 'px';
+      burnBook.style.top = (e.clientY - offsetY) + 'px';
+    });
 
-    burnBook.style.transform = 'none';
-    burnBook.style.left = rect.left + 'px';
-    burnBook.style.top = rect.top + 'px';
-    burnBook.style.bottom = 'auto';
-  });
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+  </script>
 
-  document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    burnBook.style.left = (e.clientX - offsetX) + 'px';
-    burnBook.style.top = (e.clientY - offsetY) + 'px';
-  });
-
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-</script>
-
-    <script>
-  // 💖 PINK SYMBOLS TRAIL SCRIPT 💖
-  const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
-  let lastX = 0;
-  let lastY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    // Only spawn a symbol if mouse moved at least 15px
-    const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-    if (distance < 15) return;
-
-    lastX = e.clientX;
-    lastY = e.clientY;
-
-    const sparkle = document.createElement('span');
-    sparkle.className = 'cursor-sparkle';
-    
-    // Pick a random symbol from the list
-    sparkle.textContent = trailSymbols[Math.floor(Math.random() * trailSymbols.length)];
-    
-    // Position at mouse coordinates
-    sparkle.style.left = `${e.clientX}px`;
-    sparkle.style.top = `${e.clientY}px`;
-
-    // Random drift directions
-    const dx = (Math.random() - 0.5) * 40;
-    const dy = Math.random() * 50 + 20;
-    sparkle.style.setProperty('--dx', `${dx}px`);
-    sparkle.style.setProperty('--dy', `${dy}px`);
-
-    // Slightly randomize size
-    const size = Math.floor(Math.random() * 10) + 12;
-    sparkle.style.fontSize = `${size}px`;
-
-    document.body.appendChild(sparkle);
-
-    // Remove element after animation finishes
-    setTimeout(() => {
-      sparkle.remove();
-    }, 1000);
-  });
-</script>
-  
-  
-</body>
-</html>
-
-
+  <script>
+    const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
+    let lastX = 0;
+    let lastY =
