@@ -138,7 +138,7 @@ header {
   background-color: transparent;
   text-align: center;
   padding: 10px 0;
-  
+  flex-basis: 100%;
   /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
   position: absolute;
   top: 0;
@@ -274,7 +274,9 @@ header {
 
 
     main {
-      flex-grow: 1;
+  flex-grow: 1;
+  width: calc(100% - 280px); /* 🛠️ Forces main section to leave exact room for the sidebar + gap */
+  box-sizing: border-box;
     }
 
 
