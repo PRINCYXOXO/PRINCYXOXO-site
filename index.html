@@ -31,6 +31,134 @@
   
   <style>
 
+    /* 📝 Y2K NOTEPAD STYLING 📝 */
+.notepad-modal {
+  position: fixed;
+  top: 15%;
+  right: -420px; /* Hidden off-screen to the right initially */
+  width: 360px;
+  height: 420px;
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  border-radius: 12px 12px 8px 8px;
+  box-shadow: -8px 12px 30px rgba(0, 0, 0, 0.25), 0 0 15px rgba(210, 63, 119, 0.3);
+  z-index: 10009;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+.notepad-modal.show {
+  right: 30px; /* Slides smoothly into view from the right */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 💖 Pink Top Titlebar (Draggable Handle) 💖 */
+.notepad-header {
+  background-color: #d23f77;
+  color: #ffffff;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+  user-select: none;
+}
+
+.notepad-header:active {
+  cursor: grabbing;
+}
+
+.notepad-title {
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* 🎀 Pink Close Cross Button 🎀 */
+.notepad-close-btn {
+  width: 22px;
+  height: 22px;
+  background-color: #ffffff;
+  color: #d23f77;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.notepad-close-btn:hover {
+  transform: scale(1.15);
+  background-color: #fff0f5;
+}
+
+/* 📂 Non-clickable Menu Bar 📂 */
+.notepad-menubar {
+  background-color: #fff0f5;
+  border-bottom: 1px solid #f0a3c2;
+  padding: 4px 10px;
+  display: flex;
+  gap: 14px;
+  font-size: 11px;
+  color: #5c0e2e;
+  user-select: none;
+}
+
+.notepad-menubar span {
+  opacity: 0.8;
+  cursor: default;
+}
+
+/* ✍️ White Textarea Area ✍️ */
+.notepad-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 8px;
+}
+
+#notepadText {
+  flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.4;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 19px,
+    #ffeef4 20px
+  );
+  box-sizing: border-border-box;
+}
+
+.notepad-footer {
+  text-align: right;
+  font-size: 10px;
+  color: #d23f77;
+  padding-top: 4px;
+  font-weight: bold;
+  user-select: none;
+}
+    
     /* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
 .kiss-stamp {
   position: fixed;
@@ -1070,6 +1198,109 @@ main {
     setTimeout(() => {
       kiss.remove();
     }, 1500);
+  });
+</script>
+
+  <!-- 📝 Y2K SECRET NOTEPAD MODAL 📝 -->
+<div id="notepadModal" class="notepad-modal">
+  <div class="notepad-header">
+    <div class="notepad-title">
+      <span class="notepad-icon">📝</span>
+      <span>PrincyXOXO - Notepad</span>
+    </div>
+    <button id="closeNotepad" class="notepad-close-btn" title="Close">×</button>
+  </div>
+  <div class="notepad-menubar">
+    <span>File</span>
+    <span>Edit</span>
+    <span>Format</span>
+    <span>View</span>
+    <span>Help</span>
+  </div>
+  <div class="notepad-body">
+    <textarea 
+      id="notepadText" 
+      maxlength="900" 
+      placeholder="Type your secret gossip here..."
+      spellcheck="false"
+    ></textarea>
+    <div class="notepad-footer">
+      <span id="notepadCharCount">0 / 900</span>
+    </div>
+  </div>
+</div>
+  
+  <script>
+  // 📝 "N" KEYBOARD TRIGGER & DRAGGABLE NOTEPAD SCRIPT 📝
+  const notepadModal = document.getElementById('notepadModal');
+  const closeNotepadBtn = document.getElementById('closeNotepad');
+  const notepadText = document.getElementById('notepadText');
+  const notepadCharCount = document.getElementById('notepadCharCount');
+  const notepadHeader = document.querySelector('.notepad-header');
+
+  // 1. Listen for "N" keypress (ignores typing inside active input/textarea fields)
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'n' || e.key === 'N') {
+      e.preventDefault();
+      
+      // Reset inline drag styles so it slides out from the right smoothly
+      notepadModal.style.top = '15%';
+      notepadModal.style.left = '';
+      notepadModal.style.right = '';
+      notepadModal.style.transition = 'right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease';
+      
+      notepadModal.classList.add('show');
+      
+      // Auto-focus the notepad textarea so you can start typing immediately
+      setTimeout(() => notepadText.focus(), 300);
+    }
+  });
+
+  // 2. Character counter updater (max 900)
+  notepadText.addEventListener('input', () => {
+    const currentLength = notepadText.value.length;
+    notepadCharCount.textContent = `${currentLength} / 900`;
+  });
+
+  // 3. Close Notepad button
+  closeNotepadBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    notepadModal.style.transition = 'right 0.5s ease-in-out, opacity 0.3s ease';
+    notepadModal.style.right = '';
+    notepadModal.classList.remove('show');
+  });
+
+  // 4. Drag and Drop Functionality
+  let isDraggingNotepad = false;
+  let nOffsetX = 0;
+  let nOffsetY = 0;
+
+  notepadHeader.addEventListener('mousedown', (e) => {
+    if (e.target === closeNotepadBtn || closeNotepadBtn.contains(e.target)) return;
+
+    isDraggingNotepad = true;
+    notepadModal.style.transition = 'none';
+
+    const rect = notepadModal.getBoundingClientRect();
+    nOffsetX = e.clientX - rect.left;
+    nOffsetY = e.clientY - rect.top;
+
+    notepadModal.style.left = rect.left + 'px';
+    notepadModal.style.top = rect.top + 'px';
+    notepadModal.style.right = 'auto';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDraggingNotepad) return;
+    notepadModal.style.left = (e.clientX - nOffsetX) + 'px';
+    notepadModal.style.top = (e.clientY - nOffsetY) + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDraggingNotepad = false;
   });
 </script>
   
