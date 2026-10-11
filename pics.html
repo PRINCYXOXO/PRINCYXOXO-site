@@ -27,6 +27,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
+
+    .slide-popup {
+  position: fixed;
+  bottom: -400px; /* Hidden completely below the screen initially */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10005;
+  transition: bottom 0.6s ease-in-out; /* Controls the smooth sliding speed */
+}
+
+.slide-popup img {
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slide-popup.show {
+  bottom: 20px; /* Slides up to this position from the bottom */
+}
     body {
       background-color: #d23f77;
       color: #333333;
@@ -774,5 +794,42 @@
       updateLightboxContent();
     });
   </script>
+
+  <!-- 🚀 SLIDING POPUP IMAGE 🚀 -->
+<div id="slideUpPopup" class="slide-popup">
+  <img src="phone2.png" alt="Spotted Popup">
+</div>
+
+  <script>
+  let canTrigger = true;
+
+  document.addEventListener('keydown', (e) => {
+    // Check if the user pressed "p" or "P" (and isn't typing inside an input/textarea)
+    if ((e.key === 'p' || e.key === 'P') && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      
+      if (!canTrigger) {
+        console.log("Cooldown active. Please wait.");
+        return;
+      }
+
+      canTrigger = false;
+      const popup = document.getElementById('slideUpPopup');
+
+      // 1. Slide up
+      popup.classList.add('show');
+
+      // 2. Stay for 3 seconds, then slide down
+      setTimeout(() => {
+        popup.classList.remove('show');
+      }, 3000);
+
+      // 3. Cooldown of 1 minute (60,000 milliseconds) before it can be triggered again
+      setTimeout(() => {
+        canTrigger = true;
+      }, 60000);
+    }
+  });
+</script>
+  
 </body>
 </html>
