@@ -31,6 +31,33 @@
   
   <style>
 
+    <script>
+  // 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋
+  document.addEventListener('dblclick', (e) => {
+    // Prevent spawning if double-clicking inside interactive inputs/textareas
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    const kiss = document.createElement('img');
+    kiss.src = 'kissmark.png'; // Uses your existing kissmark image
+    kiss.className = 'kiss-stamp';
+
+    // Position exactly where the user double-clicked
+    kiss.style.left = `${e.clientX}px`;
+    kiss.style.top = `${e.clientY}px`;
+
+    // Give it a cute random tilt (-25deg to +25deg)
+    const randomRotation = (Math.random() - 0.5) * 50;
+    kiss.style.setProperty('--rot', `${randomRotation}deg`);
+
+    document.body.appendChild(kiss);
+
+    // Remove element from DOM after the 1.5s animation finishes
+    setTimeout(() => {
+      kiss.remove();
+    }, 1500);
+  });
+</script>
+    
     /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION WITH POLKA DOTS 📟 */
 .spotted-toast {
   position: fixed;
@@ -1110,6 +1137,33 @@ main {
     e.preventDefault();
     e.stopPropagation();
     spottedToast.classList.remove('show');
+  });
+</script>
+
+  <script>
+  // 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋
+  document.addEventListener('dblclick', (e) => {
+    // Prevent spawning if double-clicking inside interactive inputs/textareas
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    const kiss = document.createElement('img');
+    kiss.src = 'kissmark.png'; // Uses your existing kissmark image
+    kiss.className = 'kiss-stamp';
+
+    // Position exactly where the user double-clicked
+    kiss.style.left = `${e.clientX}px`;
+    kiss.style.top = `${e.clientY}px`;
+
+    // Give it a cute random tilt (-25deg to +25deg)
+    const randomRotation = (Math.random() - 0.5) * 50;
+    kiss.style.setProperty('--rot', `${randomRotation}deg`);
+
+    document.body.appendChild(kiss);
+
+    // Remove element from DOM after the 1.5s animation finishes
+    setTimeout(() => {
+      kiss.remove();
+    }, 1500);
   });
 </script>
   
