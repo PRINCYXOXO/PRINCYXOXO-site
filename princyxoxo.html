@@ -31,6 +31,29 @@
   
   <style>
 
+    /* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
+.kiss-stamp {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  width: 45px; /* Adjust size of the kiss mark */
+  height: auto;
+  transform: translate(-50%, -50%) scale(0.5);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+  animation: kissFade 1.5s ease-out forwards;
+}
+
+@keyframes kissFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8) rotate(var(--rot));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2) rotate(var(--rot));
+  }
+}
+    
     /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION WITH POLKA DOTS 📟 */
 .spotted-toast {
   position: fixed;
@@ -1148,6 +1171,33 @@ header {
     e.preventDefault();
     e.stopPropagation();
     spottedToast.classList.remove('show');
+  });
+</script>
+
+  <script>
+  // 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋
+  document.addEventListener('dblclick', (e) => {
+    // Prevent spawning if double-clicking inside interactive inputs/textareas
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    const kiss = document.createElement('img');
+    kiss.src = 'kissmark.png'; // Uses your existing kissmark image
+    kiss.className = 'kiss-stamp';
+
+    // Position exactly where the user double-clicked
+    kiss.style.left = `${e.clientX}px`;
+    kiss.style.top = `${e.clientY}px`;
+
+    // Give it a cute random tilt (-25deg to +25deg)
+    const randomRotation = (Math.random() - 0.5) * 50;
+    kiss.style.setProperty('--rot', `${randomRotation}deg`);
+
+    document.body.appendChild(kiss);
+
+    // Remove element from DOM after the 1.5s animation finishes
+    setTimeout(() => {
+      kiss.remove();
+    }, 1500);
   });
 </script>
   
