@@ -298,25 +298,28 @@ header {
       margin-top: 15px;
     }
 
-    /* 🖼️ Profile Picture Setup: Scaled down smaller, rounded, and outlined */
+    /* 🖼️ Square Profile Picture with Rounded Corners and Dual Outline */
     .pfp-img {
-      width: 85px;  /* 🛠️ Scaled down from 130px to look neat and compact */
-      height: 85px;
+      width: 90px;
+      height: 90px;
       object-fit: cover;
-      border-radius: 50%; /* Smooth circle rounding */
-      border: 3px solid #d23f77; /* Bright pink outline */
+      border-radius: 14px; /* Makes it a square with rounded corners instead of a circle */
+      border: 5px solid #ffffff; /* Really thick white outline directly around the picture */
+      outline: 3px solid #d23f77; /* Dark pink outline on the very outside */
       display: block;
+      box-sizing: border-box;
     }
 
-    /* 👑 Main Card Title Name: Bright Pink, Bodoni Moda Font */
-    .student-card .card-details h3.card-title {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 22px;
+    /* 👑 Main Card Title Name: Forced into Bodoni Moda Font */
+    .student-card .card-details .card-title {
+      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif !important;
+      font-size: 24px;
       font-weight: 700;
       color: #d23f77; /* Bright Pink */
       margin-top: 0;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
+
 
     /* 💬 Card Description Lines: Georgia Font, Dark Pink */
     .student-card .card-details p {
