@@ -54,7 +54,7 @@
   display: block;
   border-radius: 20px;
   /* 🌟 Crisp drop-shadow around the book shape */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(210, 63, 119, 0.5);
+filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
 }
 
 /* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
@@ -799,7 +799,7 @@ main {
   <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
 </div>
   
-  <script>
+<script>
   // 🌟 KONAMI CODE SEQUENCE
   const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
   let konamiIndex = 0;
@@ -809,7 +809,6 @@ main {
 
   // Keydown listener for Konami Code sequence
   document.addEventListener('keydown', (e) => {
-    // Ignore keypresses while typing inside inputs/textareas
     if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
     const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
@@ -819,27 +818,40 @@ main {
       konamiIndex++;
       if (konamiIndex === konamiCode.length) {
         triggerBurnBook();
-        konamiIndex = 0; // Reset index
+        konamiIndex = 0;
       }
     } else {
-      konamiIndex = 0; // Reset on wrong sequence key
+      konamiIndex = 0;
     }
   });
 
   // 🚀 SLIDE UP & RESET TO ORIGINAL POSITION
   function triggerBurnBook() {
-    // Reset custom dragged positions so it always returns to its original spot
+    // Reset custom dragged positions so it always slides up from the center
     burnBook.style.top = '';
     burnBook.style.left = '50%';
     burnBook.style.transform = 'translateX(-50%)';
+    burnBook.style.bottom = ''; // Clear inline bottom
     burnBook.style.transition = 'bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
     
     burnBook.classList.add('show');
   }
 
-  // ❌ CLOSE BUTTON DISMISS
+  // ❌ CLOSE BUTTON DISMISS (FIXED)
   closeBurnBookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
+
+    // 1. Restore smooth transition back down
+    burnBook.style.transition = 'bottom 0.5s ease-in-out';
+    
+    // 2. Clear inline top/left/transform added while dragging
+    burnBook.style.top = '';
+    burnBook.style.left = '50%';
+    burnBook.style.transform = 'translateX(-50%)';
+    burnBook.style.bottom = ''; // Let CSS take over (bottom: -100vh)
+
+    // 3. Remove show class
     burnBook.classList.remove('show');
   });
 
@@ -849,18 +861,16 @@ main {
   let offsetY = 0;
 
   burnBook.addEventListener('mousedown', (e) => {
-    if (e.target === closeBurnBookBtn) return; // Don't drag when clicking close button
+    // ✋ Don't start dragging if the user clicked on the close button
+    if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
 
     isDragging = true;
-    
-    // Disable smooth transition while dragging for instant mouse tracking
     burnBook.style.transition = 'none';
 
     const rect = burnBook.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
 
-    // Switch from bottom relative alignment to fixed pixel positioning
     burnBook.style.transform = 'none';
     burnBook.style.left = rect.left + 'px';
     burnBook.style.top = rect.top + 'px';
