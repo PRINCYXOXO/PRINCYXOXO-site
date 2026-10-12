@@ -1007,14 +1007,16 @@ header {
 }
 
 /* 🖼️ Rounded and Outlined Profile Picture */
+/* 🖼️ Square Profile Picture with Rounded Corners and Dual Outline */
 .pfp-img {
   width: 130px;
   height: 130px;
   object-fit: cover;
-  border-radius: 16px; /* Makes the image perfectly circle/rounded */
-  border: 3px solid #d23f77; /* Bright pink border outline */
+  border-radius: 16px; /* Changes it from a circle to a square with rounded corners */
+  border: 6px solid #ffffff; /* Very thick white line directly around the image */
+  box-shadow: 0 0 0 4px #d23f77; /* Thick pink outer line */
   display: block;
-  box-shadow: 0 4px 8px rgba(210, 63, 119, 0.15);
+  box-sizing: border-box;
 }
 
 /* 👑 Main Card Name: Bright Pink, Bodoni Moda Font */
