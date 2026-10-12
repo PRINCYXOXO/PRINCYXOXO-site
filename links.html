@@ -1264,9 +1264,10 @@ header {
   });
 </script>
 
+  <!-- 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋 -->
   <script>
-  // 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋
-  document.addEventListener('dblclick', (e) => {
+  // Listen to the entire window so it captures clicks on top of wrapper boxes
+  window.addEventListener('dblclick', (e) => {
     // Prevent spawning if double-clicking inside interactive inputs/textareas
     if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
@@ -1289,7 +1290,8 @@ header {
       kiss.remove();
     }, 1500);
   });
-<script>
+</script>
+
   // 📝 "N" KEYBOARD TRIGGER, DRAGGABLE & AUTO-SAVING NOTEPAD SCRIPT 📝
   const notepadModal = document.getElementById('notepadModal');
   const closeNotepadBtn = document.getElementById('closeNotepad');
