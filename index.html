@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
 
-
 <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
@@ -13,14 +12,12 @@
   <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
 
-
   <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
   <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
   <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta name="theme-color" content="#d23f77">
-
 
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
@@ -30,6 +27,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
+    /* 👑 PRINCY CHARACTER 2 SLIDE-UP STYLING 👑 */
+    .princy-character2-container {
+      position: fixed;
+      bottom: 0;
+      left: 30px;
+      height: 60vh; /* Proportionate height */
+      z-index: 10005;
+      pointer-events: none;
+      transform: translateY(120%); /* Hidden off-screen downwards initially */
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .princy-character2-container.show {
+      transform: translateY(0); /* Slides smoothly up into view */
+    }
+
+    .princy-character2-img {
+      height: 100%;
+      width: auto;
+      display: block;
+      /* Drop-shadow around the transparent edges of the character */
+      filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 15px rgba(210, 63, 119, 0.4));
+    }
 
     /* 📝 Y2K NOTEPAD STYLING 📝 */
 .notepad-modal {
@@ -147,7 +167,7 @@
     transparent 19px,
     #ffeef4 20px
   );
-  box-sizing: border-border-box;
+  box-sizing: border-box;
 }
 
 .notepad-footer {
@@ -271,8 +291,7 @@
   right: 25px;
   width: 260px;
   background-color: #fff5f8;
-  /* 🌟 Light pink polka dot background pattern */
-background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
+  background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
   background-size: 16px 16px;
   border: 2px solid #d23f77;
   border-radius: 12px;
@@ -289,8 +308,8 @@ background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%)
   pointer-events: none;
   z-index: 99999;
   font-size: 14px;
-  color: #ff69b4; /* 🌸 Pink color for text symbols */
-  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6); /* Optional cute pink glow */
+  color: #ff69b4;
+  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6);
   user-select: none;
   animation: sparkleFade 1s linear forwards;
 }
@@ -323,12 +342,12 @@ background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%)
 }
 
 .burnbook-popup img {
-  width: 520px; /* Adjust size if needed */
+  width: 520px;
   max-width: 90vw;
   height: auto;
   display: block;
   border-radius: 20px;
-filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
 }
 
 /* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
@@ -359,7 +378,6 @@ filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(2
   background-color: #b02e60;
 }
 
-/* Slide up to screen position */
 .burnbook-popup.show {
   bottom: 10%;
 }
@@ -370,16 +388,12 @@ filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(2
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      /* 💖 CUSTOM CURSOR 💖 */
       cursor: url('crown.png'), auto;
     }
 
-
-    /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
-
 
 header {
   background-color: #d23f77;
@@ -389,8 +403,6 @@ header {
   overflow: hidden;
 }
 
-
-    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -407,8 +419,6 @@ header {
       z-index: 1;
     }
 
-
-    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -424,7 +434,6 @@ header {
       z-index: 2;
     }
 
-
     .banner-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -434,7 +443,6 @@ header {
       position: relative;
       z-index: 3;
     }
-
 
     header h1 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -450,15 +458,13 @@ header {
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
-
-    /* Silhouette Image Styling */
     .header-silhouette {
       height: 65px;
       width: auto;
       display: inline-block;
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+      cursor: pointer; /* Makes the logo look interactive */
     }
-
 
     .tagline {
       font-size: 28px;
@@ -466,34 +472,29 @@ header {
       margin: 0;
       opacity: 0.9;
       display: flex;
-  align-items: center;
-  gap: 10px;
+      align-items: center;
+      gap: 10px;
     }
 
     .kissmark-img {
-  height: 100px; /* change to increase size */
-  width: auto;
-  display: inline-block;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
-}
-
+      height: 100px;
+      width: auto;
+      display: inline-block;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+    }
 
     nav {
-  background-color: transparent;
-  text-align: center;
-  padding: 10px 0;
-    flex-basis: 100%; 
-  /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  
-  /* 🎨 Color Change: Replace #000000 with your preferred color code (e.g., #d23f77) */
-  border-bottom: 3px solid #d23f77; 
-  
-  box-sizing: border-box;
-}
+      background-color: transparent;
+      text-align: center;
+      padding: 10px 0;
+      flex-basis: 100%; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 3px solid #d23f77; 
+      box-sizing: border-box;
+    }
     
     nav a {
       color: #5c0e2e;
@@ -506,12 +507,10 @@ header {
       display: inline-block;
     }
 
-
     nav a:hover {
       color: #ffffff;
       background: transparent;
     }
-
 
     .wrapper {
       max-width: 1000px;
@@ -520,22 +519,21 @@ header {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-  background-color: #fceef2; /* Light pink interior background */
-  background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
-  background-repeat: repeat;
-  background-size: 100px auto;
-  border: 3px solid #000000; /* Distinct black border outlining the main content area */
-  box-sizing: border-box;
-  position: relative;
-  padding: 50px 20px 20px 20px; 
-}
+      background-color: #fceef2;
+      background-image: url('Untitled77_20261004220524.png');
+      background-repeat: repeat;
+      background-size: 100px auto;
+      border: 3px solid #000000;
+      box-sizing: border-box;
+      position: relative;
+      padding: 50px 20px 20px 20px; 
+    }
 
     aside {
       width: 250px;
       flex-shrink: 0;
       margin-top: 20px;
     }
-
 
     .sidebar-box {
       background-color: #f8c5d8;
@@ -544,7 +542,6 @@ header {
       margin-bottom: 20px;
       border-radius: 2px;
     }
-
 
     .sidebar-box h2 {
       font-size: 22px;
@@ -555,11 +552,10 @@ header {
     }
 
     .sidebar-heading-img {
-  max-width: 65%;
-  height: auto;
-  display: block;
-}
-
+      max-width: 65%;
+      height: auto;
+      display: block;
+    }
 
     .sidebar-box p {
       font-size: 12px;
@@ -568,14 +564,12 @@ header {
       margin: 0;
     }
 
-
     .form-box {
       background-color: #ffffff;
       border: 2px solid #d23f77;
       padding: 15px;
       border-radius: 2px;
     }
-
 
     .form-box h3 {
       font-size: 14px;
@@ -584,7 +578,6 @@ header {
       margin-top: 0;
       text-align: center;
     }
-
 
     .form-box input, .form-box textarea {
       width: 100%;
@@ -598,7 +591,6 @@ header {
       font-family: inherit;
     }
 
-
     .form-box button {
       width: 100%;
       background-color: #d23f77;
@@ -611,18 +603,15 @@ header {
       cursor: pointer;
     }
 
-
     .form-box button:hover {
       background-color: #b02e60;
     }
 
-
-main {
-  flex-grow: 1;
-  width: calc(100% - 280px); /* Leaves exactly 250px for the sidebar + 30px for the gap */
-  box-sizing: border-box;
-}
-
+    main {
+      flex-grow: 1;
+      width: calc(100% - 280px);
+      box-sizing: border-box;
+    }
 
     .ticker {
       background-color: #ffffff;
@@ -636,7 +625,6 @@ main {
       justify-content: space-between;
     }
 
-
     article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
@@ -644,7 +632,6 @@ main {
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-
 
     article h2 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -655,7 +642,6 @@ main {
       text-transform: lowercase;
     }
 
-
     .file-under {
       font-size: 11px;
       color: #777777;
@@ -665,15 +651,12 @@ main {
       margin-bottom: 15px;
     }
 
-
     article p {
       font-size: 14px;
       line-height: 1.6;
       color: #444444;
     }
 
-
-    /* 💖 PINK, BOLD, BODONI MODA AT NORMAL BODY TEXT SIZE (14px) 💖 */
     .rule-pink-1,
     .rule-pink-2,
     .rule-pink-3 {
@@ -683,13 +666,11 @@ main {
       color: #d23f77;
     }
 
-
     article hr {
       border: 0;
       border-top: 1px dashed #f0a3c2;
       margin: 20px 0;
     }
-
 
     .signature {
       display: block;
@@ -700,7 +681,6 @@ main {
       font-size: 14px;
       margin-top: 15px;
     }
-
 
     /* 🔍 LIGHTBOX STYLING 🔍 */
     .lightbox {
@@ -820,10 +800,8 @@ main {
     }
 
     .song-title {
-
       font-style: italic;
     }
-
 
     .music-player button {
       background-color: #d23f77;
@@ -837,15 +815,12 @@ main {
       border-radius: 2px;
     }
 
-
     .music-player button:hover {
       background-color: #b02e60;
     }
 
-
 /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
 @media (max-width: 768px) {
-  /* Prevent horizontal overflow on mobile */
   body, html {
     overflow-x: hidden;
   }
@@ -857,7 +832,7 @@ main {
   }
 
   nav {
-    position: relative; /* Unfix the nav so it doesn't overlap header content on tiny screens */
+    position: relative;
     border-bottom: none;
     margin-bottom: 10px;
   }
@@ -866,7 +841,6 @@ main {
     margin: 5px 8px;
   }
 
-  /* 🛠️ FIX: Make wrapper span full screen on mobile */
   .wrapper {
     width: 100%;
     max-width: 100%;
@@ -883,10 +857,9 @@ main {
   }
 
   header::after {
-    font-size: 30px; /* Shrink watermark slightly so it doesn't break header layout */
+    font-size: 30px;
   }
 
-  /* Make floating desktop elements responsive on mobile screens */
   .notepad-modal {
     width: 90vw !important;
     max-width: 360px;
@@ -894,7 +867,7 @@ main {
   }
   
   .notepad-modal.show {
-    right: 5vw !important; /* Centers the notepad nicely on phone screens */
+    right: 5vw !important;
   }
 
   .spotted-toast {
@@ -912,39 +885,36 @@ main {
 </head>
 <body>
 
-
   <header>
     <div class="banner-container">
       <h1>
-        <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
+        <img src="silhouette.png" alt="silhouette" class="header-silhouette" id="headerSilhouette">princyxoxo
       </h1>
-<p class="tagline">
-  ...you know you love me
-  <img src="kissmark.png" alt="kiss mark" class="kissmark-img">
-</p>
+      <p class="tagline">
+        ...you know you love me
+        <img src="kissmark.png" alt="kiss mark" class="kissmark-img">
+      </p>
     </div>
   </header>
 
-
   <div class="wrapper">
     
-<nav>
-    <a href="index.html">Home</a>
-    <a href="rumours.html">Rumours</a>
-    <a href="posts.html">Posts</a>
-    <a href="pics.html">Pics</a>
-    <a href="princyxoxo.html">princyxoxo</a>
-    <a href="links.html">Links</a>
-    <a href="more.html">More</a>
-    <a href="princyslair.html">Princy's Lair</a>
-  </nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="rumours.html">Rumours</a>
+      <a href="posts.html">Posts</a>
+      <a href="pics.html">Pics</a>
+      <a href="princyxoxo.html">princyxoxo</a>
+      <a href="links.html">Links</a>
+      <a href="more.html">More</a>
+      <a href="princyslair.html">Princy's Lair</a>
+    </nav>
   
     <aside>
       <div class="sidebar-box">
         <h2><img src="welcome2.png" alt="Welcome" class="sidebar-heading-img"></h2>
         <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
-
 
       <div class="sidebar-box">
         <h2><img src="gossip2.png" alt="Gossip" class="sidebar-heading-img"></h2>
@@ -999,6 +969,11 @@ main {
     </main>
   </div>
 
+  <!-- 👑 PRINCY CHARACTER 2 SLIDE-UP CONTAINER 👑 -->
+  <div id="princyChar2Container" class="princy-character2-container">
+    <img src="princycharacter2.png" alt="Princy Character 2" class="princy-character2-img">
+  </div>
+
   <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
     <div class="player-info">
@@ -1050,305 +1025,29 @@ main {
     }
   </script>
 
-  <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
-<div id="burnBookPopup" class="burnbook-popup">
-  <button id="closeBurnBook" class="burnbook-close-btn" title="Close">×</button>
-  <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
-</div>
-  
+  <!-- 👑 HEADER SILHOUETTE CHARACTER 2 TRIGGER SCRIPT 👑 -->
   <script>
-  // 🌟 KONAMI CODE SEQUENCE
-  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-  let konamiIndex = 0;
+    const headerSilhouette = document.getElementById('headerSilhouette');
+    const princyChar2Container = document.getElementById('princyChar2Container');
+    let char2Timer = null;
 
-  const burnBook = document.getElementById('burnBookPopup');
-  const closeBurnBookBtn = document.getElementById('closeBurnBook');
+    if (headerSilhouette) {
+      headerSilhouette.addEventListener('click', (e) => {
+        e.stopPropagation();
 
-  // Keydown listener for Konami Code sequence
-  document.addEventListener('keydown', (e) => {
-    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+        if (char2Timer) {
+          clearTimeout(char2Timer);
+        }
 
-    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-    const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
+        princyChar2Container.classList.add('show');
 
-    if (key === requiredKey) {
-      konamiIndex++;
-      if (konamiIndex === konamiCode.length) {
-        triggerBurnBook();
-        konamiIndex = 0;
-      }
-    } else {
-      konamiIndex = 0;
-    }
-  });
-
-  // 🚀 SLIDE UP & RESET TO ORIGINAL POSITION
-  function triggerBurnBook() {
-    // Reset custom dragged positions so it always slides up from the center
-    burnBook.style.top = '';
-    burnBook.style.left = '50%';
-    burnBook.style.transform = 'translateX(-50%)';
-    burnBook.style.bottom = ''; // Clear inline bottom
-    burnBook.style.transition = 'bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-    
-    burnBook.classList.add('show');
-  }
-
-  // ❌ CLOSE BUTTON DISMISS (FIXED)
-  closeBurnBookBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    // 1. Restore smooth transition back down
-    burnBook.style.transition = 'bottom 0.5s ease-in-out';
-    
-    // 2. Clear inline top/left/transform added while dragging
-    burnBook.style.top = '';
-    burnBook.style.left = '50%';
-    burnBook.style.transform = 'translateX(-50%)';
-    burnBook.style.bottom = ''; // Let CSS take over (bottom: -100vh)
-
-    // 3. Remove show class
-    burnBook.classList.remove('show');
-  });
-
-  // 🖱️ DRAGGABLE FUNCTIONALITY
-  let isDragging = false;
-  let offsetX = 0;
-  let offsetY = 0;
-
-  burnBook.addEventListener('mousedown', (e) => {
-    // ✋ Don't start dragging if the user clicked on the close button
-    if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
-
-    isDragging = true;
-    burnBook.style.transition = 'none';
-
-    const rect = burnBook.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
-
-    burnBook.style.transform = 'none';
-    burnBook.style.left = rect.left + 'px';
-    burnBook.style.top = rect.top + 'px';
-    burnBook.style.bottom = 'auto';
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    burnBook.style.left = (e.clientX - offsetX) + 'px';
-    burnBook.style.top = (e.clientY - offsetY) + 'px';
-  });
-
-  document.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-</script>
-
-  <script>
-    const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
-    let lastX = 0;
-    let lastY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-      if (distance < 15) return;
-
-      lastX = e.clientX;
-      lastY = e.clientY;
-
-      const sparkle = document.createElement('span');
-      sparkle.className = 'cursor-sparkle';
-      sparkle.textContent = trailSymbols[Math.floor(Math.random() * trailSymbols.length)];
-      
-      sparkle.style.left = `${e.clientX}px`;
-      sparkle.style.top = `${e.clientY}px`;
-
-      const dx = (Math.random() - 0.5) * 40;
-      const dy = Math.random() * 50 + 20;
-      sparkle.style.setProperty('--dx', `${dx}px`);
-      sparkle.style.setProperty('--dy', `${dy}px`);
-
-      const size = Math.floor(Math.random() * 10) + 12;
-      sparkle.style.fontSize = `${size}px`;
-
-      document.body.appendChild(sparkle);
-
-      setTimeout(() => {
-        sparkle.remove();
-      }, 1000);
-    });
+        char2Timer = setTimeout(() => {
+          princyChar2Container.classList.remove('show');
+        }, 5000);
+      });
+    }
   </script>
 
-  <!-- 📟 SPOTTED! FLIP-PHONE SMS TOAST NOTIFICATION 📟 -->
-<div id="spottedToast" class="spotted-toast">
-  <button id="closeSpotted" class="spotted-close-btn" title="Close">×</button>
-  <div class="spotted-header">
-    <span class="spotted-icon">♡</span>
-    <span class="spotted-title">New Gossip Alert!</span>
-  </div>
-  <div class="spotted-body">
-    <p>Spotted: Someone sitting at this screen for way too long...</p>
-  </div>
-</div>
-  
-  <script>
-  // 📟 SPOTTED TOAST 3-MINUTE TIMER SCRIPT 📟
-  const spottedToast = document.getElementById('spottedToast');
-  const closeSpottedBtn = document.getElementById('closeSpotted');
-
-  // Trigger after 3 minutes (180,000 milliseconds)
-  // Tip: Change 180000 to 5000 (5 seconds) temporarily if you want to test it instantly!
-  setTimeout(() => {
-    spottedToast.classList.add('show');
-  }, 180000);
-
-  // Close / dismiss notification
-  closeSpottedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    spottedToast.classList.remove('show');
-  });
-</script>
-
-  <script>
-  // 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋
-  document.addEventListener('dblclick', (e) => {
-    // Prevent spawning if double-clicking inside interactive inputs/textareas
-    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
-
-    const kiss = document.createElement('img');
-    kiss.src = 'kissmark.png'; // Uses your existing kissmark image
-    kiss.className = 'kiss-stamp';
-
-    // Position exactly where the user double-clicked
-    kiss.style.left = `${e.clientX}px`;
-    kiss.style.top = `${e.clientY}px`;
-
-    // Give it a cute random tilt (-25deg to +25deg)
-    const randomRotation = (Math.random() - 0.5) * 50;
-    kiss.style.setProperty('--rot', `${randomRotation}deg`);
-
-    document.body.appendChild(kiss);
-
-    // Remove element from DOM after the 1.5s animation finishes
-    setTimeout(() => {
-      kiss.remove();
-    }, 1500);
-  });
-</script>
-
-  <!-- 📝 Y2K SECRET NOTEPAD MODAL 📝 -->
-<div id="notepadModal" class="notepad-modal">
-  <div class="notepad-header">
-    <div class="notepad-title">
-      <span>PrincyXOXO - Notepad</span>
-    </div>
-    <button id="closeNotepad" class="notepad-close-btn" title="Close">×</button>
-  </div>
-  <div class="notepad-menubar">
-    <span>File</span>
-    <span>Edit</span>
-    <span>Format</span>
-    <span>View</span>
-    <span>Help</span>
-  </div>
-  <div class="notepad-body">
-    <textarea 
-      id="notepadText" 
-      maxlength="900" 
-      placeholder="Type your secret gossip here..."
-      spellcheck="false"
-    ></textarea>
-    <div class="notepad-footer">
-      <span id="notepadCharCount">0 / 900</span>
-    </div>
-  </div>
-</div>
-  
-<script>
-  // 📝 "N" KEYBOARD TRIGGER, DRAGGABLE & AUTO-SAVING NOTEPAD SCRIPT 📝
-  const notepadModal = document.getElementById('notepadModal');
-  const closeNotepadBtn = document.getElementById('closeNotepad');
-  const notepadText = document.getElementById('notepadText');
-  const notepadCharCount = document.getElementById('notepadCharCount');
-  const notepadHeader = document.querySelector('.notepad-header');
-
-  // 💾 1. LOAD SAVED GOSSIP FROM LOCALSTORAGE ON PAGE LOAD 💾
-  const savedGossip = localStorage.getItem('princy_notepad_text');
-  if (savedGossip !== null) {
-    notepadText.value = savedGossip;
-    notepadCharCount.textContent = `${savedGossip.length} / 900`;
-  }
-
-  // 💾 2. AUTO-SAVE EVERY TIME THE USER TYPES 💾
-  notepadText.addEventListener('input', () => {
-    const currentText = notepadText.value;
-    notepadCharCount.textContent = `${currentText.length} / 900`;
-    
-    // Saves to the browser's persistent storage
-    localStorage.setItem('princy_notepad_text', currentText);
-  });
-
-  // ⌨️ 3. Listen for "N" keypress (ignores active inputs)
-  document.addEventListener('keydown', (e) => {
-    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
-
-    if (e.key === 'n' || e.key === 'N') {
-      e.preventDefault();
-      
-      // Reset inline drag styles so it slides out from the right smoothly
-      notepadModal.style.top = '15%';
-      notepadModal.style.left = '';
-      notepadModal.style.right = '';
-      notepadModal.style.transition = 'right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease';
-      
-      notepadModal.classList.add('show');
-      
-      // Auto-focus the notepad textarea
-      setTimeout(() => notepadText.focus(), 300);
-    }
-  });
-
-  // 🎀 4. Close Notepad button
-  closeNotepadBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    notepadModal.style.transition = 'right 0.5s ease-in-out, opacity 0.3s ease';
-    notepadModal.style.right = '';
-    notepadModal.classList.remove('show');
-  });
-
-  // 🖐️ 5. Drag and Drop Functionality
-  let isDraggingNotepad = false;
-  let nOffsetX = 0;
-  let nOffsetY = 0;
-
-  notepadHeader.addEventListener('mousedown', (e) => {
-    if (e.target === closeNotepadBtn || closeNotepadBtn.contains(e.target)) return;
-
-    isDraggingNotepad = true;
-    notepadModal.style.transition = 'none';
-
-    const rect = notepadModal.getBoundingClientRect();
-    nOffsetX = e.clientX - rect.left;
-    nOffsetY = e.clientY - rect.top;
-
-    notepadModal.style.left = rect.left + 'px';
-    notepadModal.style.top = rect.top + 'px';
-    notepadModal.style.right = 'auto';
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (!isDraggingNotepad) return;
-    notepadModal.style.left = (e.clientX - nOffsetX) + 'px';
-    notepadModal.style.top = (e.clientY - nOffsetY) + 'px';
-  });
-
-  document.addEventListener('mouseup', () => {
-    isDraggingNotepad = false;
-  });
-</script>
-  
-</body>
-</html>
+  <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
+  <div id="burnBookPopup" class="burnbook-popup">
+    <button id="closeBurnBook" class="burnbook-close-btn" title="
