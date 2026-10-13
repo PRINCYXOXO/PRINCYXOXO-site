@@ -27,20 +27,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
-  /* 👑 PRINCY CHARACTER SLIDE-OUT STYLING 👑 */
+ /* 👑 PRINCY CHARACTER SLIDE-OUT STYLING (GPU ACCELERATED) 👑 */
     .princy-character-container {
       position: fixed;
       bottom: 0;
-      right: -600px; /* Hide completely off-screen by default */
-      height: 66vh; /* About 4/6ths (2/3rds) of the screen height */
+      right: 0;
+      height: 66vh; /* About 4/6ths of the screen height */
       z-index: 10005;
       pointer-events: none;
-      /* Explicitly define transition for both states */
-      transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      /* Hidden off-screen to the right using smooth GPU transform */
+      transform: translateX(120%);
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .princy-character-container.show {
-      right: 0; /* Slides smoothly into view and stays on the right */
+      transform: translateX(0); /* Slides smoothly into view and stays on the right */
     }
 
     .princy-character-img {
