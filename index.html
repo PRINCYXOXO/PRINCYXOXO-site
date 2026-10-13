@@ -27,30 +27,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
-    /* 👑 PRINCY CHARACTER 2 SLIDE-UP STYLING 👑 */
+ /* 👑 PRINCY CHARACTER 2 SLIDE-UP STYLING 👑 */
     .princy-character2-container {
       position: fixed;
       bottom: 0;
       left: 30px;
-      height: 60vh; /* Proportionate height */
+      height: 60vh;
       z-index: 10005;
       pointer-events: none;
       transform: translateY(120%); /* Hidden off-screen downwards initially */
+      /* Slower duration (1.2s) when sliding back down */
       transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .princy-character2-container.show {
-      transform: translateY(0); /* Slides smoothly up into view */
+      transform: translateY(0); /* Slides up into view */
+      /* Faster duration (0.6s) when popping up */
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .princy-character2-img {
       height: 100%;
       width: auto;
       display: block;
-      /* Drop-shadow around the transparent edges of the character */
       filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 15px rgba(210, 63, 119, 0.4));
     }
-
+    
     /* 📝 Y2K NOTEPAD STYLING 📝 */
 .notepad-modal {
   position: fixed;
