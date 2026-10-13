@@ -1228,7 +1228,7 @@ main {
 
   <script>
   // 💋 DOUBLE-CLICK KISS STAMP SCRIPT (GLOBAL) 💋
-  document.addEventListener('click', (e) => {
+  document.addEventListener('dblclick', (e) => {
     if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
     const kiss = document.createElement('img');
@@ -1256,7 +1256,7 @@ main {
     let charTimer = null;
 
     if (headerKiss) {
-      headerKiss.addEventListener('dblclick', (e) => {
+      headerKiss.addEventListener('click', (e) => {
         e.stopPropagation(); // Prevents layout glitches with the global double-click
 
         // If clicked again before the 5 seconds are up, reset the timer
