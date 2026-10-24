@@ -31,6 +31,59 @@
   
   <style>
 
+    /* Container to center and align your Linktree buttons */
+.linktree-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+/* The actual polka-dot buttons */
+.lt-btn {
+  display: block;
+  text-align: center;
+  padding: 18px 20px;
+  color: #ffffff !important; /* Forces text to stay white */
+  font-family: 'Bodoni Moda', 'Georgia', serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-transform: lowercase; /* Matches your site's lowercase headers */
+  
+  /* 1px White border */
+  border: 1px solid #ffffff; 
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+  /* 🔴 CSS POLKA DOT BACKGROUND GENERATOR */
+  background-color: #dd688f;
+  background-image: radial-gradient(#fbcad8 15%, transparent 16%),
+                    radial-gradient(#fbcad8 15%, transparent 16%);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+  
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+/* Cute 2000s hover effect */
+.lt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
+}
+
+/* Make sure it scales nicely on small phones (FIXED: Added missing closing bracket!) */
+@media (max-width: 480px) {
+  .lt-btn {
+    font-size: 16px;
+    padding: 14px 15px;
+  }
+}
+    
 /* -------------------------------------------------------------
    📜 CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
 ------------------------------------------------------------- */
@@ -1064,156 +1117,25 @@ main {
     <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
 
-          <!-- 🌸 START OF LINK TREE BUTTONS 🌸 -->
+ <!-- 🌸 START OF LINK TREE BUTTONS 🌸 -->
 <div class="linktree-container">
-  
-  <!-- BUTTON 1: MOODBOARDS -->
-  <a href="https://www.pinterest.com/ohprincyxoxo/" target="_blank" class="lt-btn">
-    ♡ Moodboards ♡
-  </a>
+  
+  <!-- BUTTON 1: MOODBOARDS -->
+  <a href="https://www.pinterest.com/ohprincyxoxo/" target="_blank" class="lt-btn">
+    ♡ Moodboards ♡
+  </a>
 
-  <!-- BUTTON 2: PLAYLISTS -->
-  <a href="https://open.spotify.com/user/31ukepvce7zjwarpi2mi5etmfac4" target="_blank" class="lt-btn">
-    ♡ Playlists ♡
-  </a>
+  <!-- BUTTON 2: PLAYLISTS -->
+  <a href="https://open.spotify.com/user/31ukepvce7zjwarpi2mi5etmfac4" target="_blank" class="lt-btn">
+    ♡ Playlists ♡
+  </a>
 
-  <!-- BUTTON 3: SUBMIT GOSSIP (Anchors to your sidebar form) -->
-  <a href="#gossipForm" class="lt-btn">
-    ♡ Submit a Tip ♡
-  </a>
+  <!-- BUTTON 3: SUBMIT GOSSIP -->
+  <a href="#gossipForm" class="lt-btn">
+    ♡ Submit a Tip ♡
+  </a>
 
 </div>
-
-<style>
-
-  /* -------------------------------------------------------------
-   📜 CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
-------------------------------------------------------------- */
-.retro-sidebar-tabs {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 24px; /* Slim vertical rail stuck to the left of the screen */
-  background-color: #f0f0f0; /* Light greyish white like original Mac OS IE */
-  border-right: 1px solid #000000; /* Dark line separating sidebar from site */
-  display: flex;
-  flex-direction: column;
-  z-index: 99999; /* Stays above everything on screen */
-  box-sizing: border-box;
-}
-
-.retro-tab {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 120px; /* Space for each vertical text tab */
-  text-decoration: none;
-  position: relative;
-  transition: background-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-.retro-tab:hover {
-  background-color: #e0e0e0; /* Subtle hover gray tint */
-}
-
-/* Diagonal separation line between each tab */
-.retro-tab::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -2px;
-  width: 28px;
-  height: 1px;
-  background-color: #888888; /* Diagonal divider line color */
-  transform: rotate(25deg); /* Creates the angled slant separator line */
-  transform-origin: center;
-}
-
-/* Vertical text reading top-to-bottom */
-.retro-tab-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: 'Geneva', 'Georgia', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: #111111; /* Clean black text */
-  letter-spacing: 0.5px;
-  user-select: none;
-  white-space: nowrap;
-}
-
-/* Push main wrapper site content right so it doesn't overlap the sidebar */
-body {
-  padding-left: 24px;
-}
-
-/* Hide on mobile devices so it doesn't cover tiny mobile screens */
-@media (max-width: 768px) {
-  .retro-sidebar-tabs {
-    display: none;
-  }
-  body {
-    padding-left: 0;
-  }
-}
-  
-  /* Container to center and align your Linktree buttons */
-  .linktree-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 0 10px;
-  }
-
-  /* The actual polka-dot buttons */
-  .lt-btn {
-    display: block;
-    text-align: center;
-    padding: 18px 20px;
-    color: #ffffff !important; /* Forces text to stay white */
-    font-family: 'Bodoni Moda', 'Georgia', serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    text-transform: lowercase; /* Matches your site's lowercase headers */
-    
-    /* 1px White border requested */
-    border: 1px solid #ffffff; 
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    
-    /* 🔴 CSS POLKA DOT BACKGROUND GENERATOR */
-    /* Medium site pink background (#d23f77) with lighter pink dots (#fbcad8) */
-    background-color: #dd688f;
-    background-image: radial-gradient(#fbcad8 15%, transparent 16%),
-                      radial-gradient(#fbcad8 15%, transparent 16%);
-    background-size: 12px 12px;
-    background-position: 0 0, 6px 6px;
-    
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  }
-
-  /* Cute 2000s hover effect */
-  .lt-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    filter: brightness(1.05); /* Makes the pink pop a little brighter on hover */
-  }
-
-  /* Make sure it scales nicely on small phones */
-  @media (max-width: 480px) {
-    .lt-btn {
-      font-size: 16px;
-      padding: 14px 15px;
-    }
-
-</style>
 <!-- 🌸 END OF LINK TREE BUTTONS 🌸 -->
 
       </section>
