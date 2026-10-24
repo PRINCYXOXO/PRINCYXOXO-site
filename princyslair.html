@@ -457,6 +457,7 @@ header {
       width: auto;
       display: inline-block;
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+        cursor: default;
     }
 
     .tagline {
@@ -469,13 +470,15 @@ header {
       gap: 10px;
     }
 
-    .kissmark-img {
-      height: 100px; /* change to increase size */
-      width: auto;
-      display: inline-block;
-      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
-      cursor: pointer;
-    }
+.kissmark-img {
+  height: 100px;
+  width: auto;
+  display: inline-block;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+  pointer-events: none; /* 👈 Disables all mouse clicks, hovers, and events */
+  user-select: none;    /* 👈 Prevents the user from accidentally highlighting the image */
+}
+
 
     nav {
       background-color: transparent;
@@ -1249,31 +1252,7 @@ main {
   });
 </script>
 
-  <!-- 👑 HEADER KISS MARK CHARACTER TRIGGER SCRIPT 👑 -->
-  <script>
-    const headerKiss = document.getElementById('headerKiss');
-    const princyCharContainer = document.getElementById('princyCharContainer');
-    let charTimer = null;
-
-    if (headerKiss) {
-      headerKiss.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevents layout glitches with the global double-click
-
-        // If clicked again before the 5 seconds are up, reset the timer
-        if (charTimer) {
-          clearTimeout(charTimer);
-        }
-
-        // Slide the character smoothly into view on the right side
-        princyCharContainer.classList.add('show');
-
-        // Stay fully visible for 5 seconds, then slide back out
-        charTimer = setTimeout(() => {
-          princyCharContainer.classList.remove('show');
-        }, 5000);
-      });
-    }
-  </script>
+ 
 
   <!-- 📝 Y2K SECRET NOTEPAD MODAL 📝 -->
   <div id="notepadModal" class="notepad-modal">
