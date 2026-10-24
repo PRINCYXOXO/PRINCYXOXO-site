@@ -27,6 +27,84 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   
   <style>
+
+        /* -------------------------------------------------------------
+   📜 CLASSIC EARLY 2000s INTERNET EXPLORER SIDEBAR TABS
+------------------------------------------------------------- */
+.retro-sidebar-tabs {
+  position: absolute;
+  top: 0;
+  left: -32px; /* Pulls the tabs to stick on the outer-left edge of .wrapper */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 10;
+}
+
+.retro-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 145px; /* Increased height to comfortably fit longer names like "The Couture Closet" */
+  background: linear-gradient(180deg, #e6b8c8 0%, #c47c96 100%);
+  border: 1px solid #7c2d4d;
+  border-right: none; 
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.6), -2px 2px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.retro-tab:hover {
+  background: linear-gradient(180deg, #fceef2 0%, #e6b8c8 100%);
+  left: -2px; 
+}
+
+.retro-tab.active {
+  background: linear-gradient(180deg, #d23f77 0%, #8c234a 100%);
+  border-color: #50132b;
+}
+
+/* Vertical rotated text configuration */
+.retro-tab-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Georgia', serif;
+  font-size: 11px; /* Slightly adjusted down so multi-word titles fit cleanly */
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #3b0c1e;
+  text-transform: none; /* Keeps custom capitalization like "The Couture Closet" intact */
+  user-select: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.retro-tab.active .retro-tab-text {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.retro-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Hide or adjust tab positions on mobile so they don't break mobile responsiveness */
+@media (max-width: 768px) {
+  .retro-sidebar-tabs {
+    display: none;
+  }
+}
+    
  /* 👑 PRINCY CHARACTER 2 SLIDE-UP STYLING 👑 */
     .princy-character2-container {
       position: fixed;
@@ -900,6 +978,22 @@ header {
   </header>
 
   <div class="wrapper">
+
+    <!-- 📜 RETRO SIDEBAR TABS 📜 -->
+    <div class="retro-sidebar-tabs">
+      <a href="couture.html" class="retro-tab">
+        <span class="retro-tab-text">The Couture Closet</span>
+      </a>
+      <a href="history.html" class="retro-tab">
+        <span class="retro-tab-text">History</span>
+      </a>
+      <a href="favourites.html" class="retro-tab">
+        <span class="retro-tab-text">Favourites</span>
+      </a>
+      <a href="links.html" class="retro-tab">
+        <span class="retro-tab-text">Scrapbook</span>
+      </a>
+    </div>
     
     <nav>
       <a href="index.html">Home</a>
