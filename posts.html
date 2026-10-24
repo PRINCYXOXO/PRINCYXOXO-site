@@ -31,7 +31,7 @@
   
   <style>
 
-    /* -------------------------------------------------------------
+/* -------------------------------------------------------------
    📜 CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
 ------------------------------------------------------------- */
 .retro-sidebar-tabs {
@@ -233,6 +233,7 @@ body {
   user-select: none;
 }
     
+
     
     /* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
 .kiss-stamp {
@@ -1001,9 +1002,7 @@ main {
 
   <div class="wrapper">
 
-    <div class="wrapper">
-
-    <!-- 📜 RETRO SIDEBAR TABS 📜 -->
+<!-- 📜 RETRO SIDEBAR TABS 📜 -->
     <div class="retro-sidebar-tabs">
       <a href="couture.html" class="retro-tab">
         <span class="retro-tab-text">The Couture Closet</span>
@@ -1014,15 +1013,11 @@ main {
       <a href="favourites.html" class="retro-tab">
         <span class="retro-tab-text">Favourites</span>
       </a>
-      <a href="scrapbook.html" class="retro-tab">
+      <a href="links.html" class="retro-tab">
         <span class="retro-tab-text">Scrapbook</span>
       </a>
     </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      ...
-      
+    
 <nav>
     <a href="index.html">Home</a>
     <a href="rumours.html">Rumours</a>
@@ -1068,12 +1063,9 @@ main {
 
     <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
-        <article>
-          <h2>PrincyXOXO: New gossip site? </h2>
-          <div class="file-under">Filed under: Live Feed > Archives > Princy's Lair • 10.10.26</div>
-          <p>You may be wondering what this is... You'll just have to wait and find out.</p>
-          <span class="signature">xoxo, PRINCYXOXO</span>
-        </article>
+
+  
+
       </section>
     </main>
   </div>
@@ -1393,7 +1385,6 @@ main {
   });
 </script>
 
- 
 
   <!-- 📝 Y2K SECRET NOTEPAD MODAL 📝 -->
 <div id="notepadModal" class="notepad-modal">
@@ -1442,27 +1433,22 @@ main {
   notepadText.addEventListener('input', () => {
     const currentText = notepadText.value;
     notepadCharCount.textContent = `${currentText.length} / 900`;
-    
-    // Saves to the browser's persistent storage
     localStorage.setItem('princy_notepad_text', currentText);
   });
 
-  // ⌨️ 3. Listen for "N" keypress (ignores active inputs)
+  // ⌨️ 3. Listen for "N" keypress (Safe-guarded so it doesn't trigger inside inputs)
   document.addEventListener('keydown', (e) => {
     if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
     if (e.key === 'n' || e.key === 'N') {
       e.preventDefault();
       
-      // Reset inline drag styles so it slides out from the right smoothly
       notepadModal.style.top = '15%';
       notepadModal.style.left = '';
-      notepadModal.style.right = '';
+      notepadModal.style.right = '30px';
       notepadModal.style.transition = 'right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease';
       
       notepadModal.classList.add('show');
-      
-      // Auto-focus the notepad textarea
       setTimeout(() => notepadText.focus(), 300);
     }
   });
@@ -1472,7 +1458,7 @@ main {
     e.preventDefault();
     e.stopPropagation();
     notepadModal.style.transition = 'right 0.5s ease-in-out, opacity 0.3s ease';
-    notepadModal.style.right = '';
+    notepadModal.style.right = '-420px';
     notepadModal.classList.remove('show');
   });
 
