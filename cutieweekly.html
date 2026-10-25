@@ -113,35 +113,7 @@
   position: relative;
 }
 
-/* Status Indicator Lights */
-.swiper-lights {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
-.swiper-light {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ffb6c1;
-  border: 1px solid #d23f77;
-  transition: all 0.3s ease;
-}
-
-.swiper-light.red { background-color: #ff4d4d; opacity: 0.4; }
-.swiper-light.yellow { background-color: #ffcc00; opacity: 0.4; }
-.swiper-light.green { background-color: #33cc66; opacity: 0.4; }
-
-.swiper-light.active-green {
-  background-color: #00ff66;
-  box-shadow: 0 0 10px #00ff66;
-  opacity: 1;
-}
 
 .swiper-instruction {
   font-size: 11px;
@@ -1335,12 +1307,7 @@ main {
           <h2 class="keycard-reader-title">♡ Cutie Weekly VIP Vault ♡</h2>
           <p class="keycard-reader-subtitle">Swipe your St. Sinclair keycard to unlock this week's issue!</p>
           
-          <div class="swiper-housing" id="swiperTargetBox">
-            <div class="swiper-lights">
-              <div class="swiper-light red"></div>
-              <div class="swiper-light yellow"></div>
-              <div class="swiper-light green" id="greenLight"></div>
-            </div>
+
             <div class="swiper-slot"></div>
           </div>
           
@@ -1792,7 +1759,7 @@ main {
     </div>
   </div>
 
-  <!-- 💳 KEYCARD SWIPE & MAGAZINE CONTROLLER SCRIPT 💳 -->
+<!-- 💳 KEYCARD SWIPE & MAGAZINE CONTROLLER SCRIPT 💳 -->
   <script>
     const dragKeycard = document.getElementById('dragKeycard');
     const swiperTarget = document.getElementById('swiperTargetBox');
@@ -1802,7 +1769,6 @@ main {
     const closeMagBtn = document.getElementById('closeMagBtn');
     const magPrevBtn = document.getElementById('magPrevBtn');
     const magNextBtn = document.getElementById('magNextBtn');
-    const greenLight = document.getElementById('greenLight');
 
     const magazineImages = [
       'magazineimage1.png',
@@ -1894,9 +1860,6 @@ main {
       unlocked = true;
       isDraggingCard = false;
 
-      // Glow indicator light
-      greenLight.classList.add('active-green');
-
       // Hide keycard smoothly
       dragKeycard.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
       dragKeycard.style.opacity = '0';
@@ -1936,8 +1899,22 @@ main {
       updateMagazineImage();
     });
 
+    // Close Magazine and reset keycard back to its starting spot
     closeMagBtn.addEventListener('click', () => {
       magazineModal.classList.remove('show');
+
+      // Reset keycard positioning & bring it back
+      unlocked = false;
+      dragKeycard.style.display = 'block';
+      dragKeycard.style.left = '';
+      dragKeycard.style.top = '';
+      dragKeycard.style.transform = 'none';
+      dragKeycard.style.opacity = '1';
+      dragKeycard.classList.remove('slide-in');
+      
+      // Re-trigger slide in from right edge
+      void dragKeycard.offsetWidth; // Force CSS reflow
+      dragKeycard.classList.add('slide-in');
     });
   </script>
   
