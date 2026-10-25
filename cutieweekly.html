@@ -31,6 +31,273 @@
   
   <style>
 
+    /* =============================================================
+   💳 KEYCARD SWIPER & MAGAZINE BOOKLET STYLING
+============================================================= */
+
+/* 🔑 Floating Vertical Keycard Sliding In From Right */
+.keycard-draggable {
+  position: fixed;
+  right: -250px; /* Initially hidden past right screen edge */
+  top: 30%;
+  width: 140px;
+  height: auto;
+  z-index: 10005;
+  cursor: grab;
+  user-select: none;
+  filter: drop-shadow(-4px 8px 15px rgba(210, 63, 119, 0.35));
+  transition: right 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.keycard-draggable.slide-in {
+  right: 40px; /* Slides in smoothly */
+}
+
+.keycard-draggable:active {
+  cursor: grabbing;
+}
+
+/* 📟 Magnetic Card Reader Box (White with Pink Accents) */
+.keycard-reader-card {
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  border-radius: 14px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(210, 63, 119, 0.2);
+  margin-bottom: 25px;
+}
+
+.keycard-reader-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d23f77;
+  margin-top: 0;
+  margin-bottom: 6px;
+  text-transform: lowercase;
+}
+
+.keycard-reader-subtitle {
+  font-size: 12px;
+  color: #5c0e2e;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Swiper Graphic Box */
+.swiper-housing {
+  width: 140px;
+  height: 240px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #ffffff 0%, #ffe6f0 100%);
+  border: 2px solid #f0a3c2;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.06), 0 10px 20px rgba(210, 63, 119, 0.15);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 22px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Vertical Swipe Slot */
+.swiper-slot {
+  width: 14px;
+  height: 200px;
+  background-color: #3a1523;
+  border: 1px solid #d23f77;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+/* Status Indicator Lights */
+.swiper-lights {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.swiper-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffb6c1;
+  border: 1px solid #d23f77;
+  transition: all 0.3s ease;
+}
+
+.swiper-light.red { background-color: #ff4d4d; opacity: 0.4; }
+.swiper-light.yellow { background-color: #ffcc00; opacity: 0.4; }
+.swiper-light.green { background-color: #33cc66; opacity: 0.4; }
+
+.swiper-light.active-green {
+  background-color: #00ff66;
+  box-shadow: 0 0 10px #00ff66;
+  opacity: 1;
+}
+
+.swiper-instruction {
+  font-size: 11px;
+  color: #d23f77;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* 🔒 FULLSCREEN LIGHTBOX OVERLAY */
+.access-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  z-index: 100010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.access-lightbox-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 🌟 Access Approved Fancy Text */
+.access-approved-text {
+  font-family: 'Cinzel', 'Bodoni Moda', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0 0 20px rgba(255, 105, 180, 0.8);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  animation: pulseApprove 0.6s ease-in-out infinite alternate;
+  user-select: none;
+}
+
+@keyframes pulseApprove {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1.05); }
+}
+
+/* 📖 MAGAZINE BOOKLET POPUP OVERLAY */
+.magazine-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  max-width: 90vw;
+  max-height: 85vh;
+  z-index: 100012;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.magazine-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.magazine-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magazine-frame {
+  max-width: 75vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6), 0 0 20px rgba(210, 63, 119, 0.5);
+  background-color: #ffffff;
+  display: block;
+}
+
+/* 🎀 Cute Pink Navigation Arrows */
+.mag-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #d23f77;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 100013;
+  user-select: none;
+}
+
+.mag-nav-btn:hover {
+  transform: translateY(-50%) scale(1.15);
+  background-color: #b02e60;
+}
+
+.mag-prev { left: -25px; }
+.mag-next { right: -25px; }
+
+/* ❌ Close Magazine Button */
+.mag-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 32px;
+  height: 32px;
+  background-color: #d23f77;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100014;
+  transition: transform 0.2s ease;
+}
+
+.mag-close-btn:hover {
+  transform: scale(1.15);
+}
+  
 /* -------------------------------------------------------------
    📜 CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
 ------------------------------------------------------------- */
@@ -1064,7 +1331,21 @@ main {
     <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
       <section id="blastFeed">
 
-  
+  <div class="keycard-reader-card">
+          <h2 class="keycard-reader-title">♡ Cutie Weekly VIP Vault ♡</h2>
+          <p class="keycard-reader-subtitle">Swipe your St. Sinclair keycard to unlock this week's issue!</p>
+          
+          <div class="swiper-housing" id="swiperTargetBox">
+            <div class="swiper-lights">
+              <div class="swiper-light red"></div>
+              <div class="swiper-light yellow"></div>
+              <div class="swiper-light green" id="greenLight"></div>
+            </div>
+            <div class="swiper-slot"></div>
+          </div>
+          
+          <div class="swiper-instruction">Drag keycard through slot to unlock</div>
+        </div>
 
       </section>
     </main>
@@ -1492,6 +1773,173 @@ main {
     isDraggingNotepad = false;
   });
 </script>
+
+  <!-- 🔑 SLIDING & DRAGGABLE VERTICAL KEYCARD 🔑 -->
+  <img src="keycard.png" alt="St. Sinclair Keycard" class="keycard-draggable" id="dragKeycard" draggable="false">
+
+  <!-- 🔒 ACCESS APPROVED LIGHTBOX OVERLAY 🔒 -->
+  <div class="access-lightbox-overlay" id="accessOverlay">
+    <div class="access-approved-text">Access approved!</div>
+  </div>
+
+  <!-- 📖 MAGAZINE BOOKLET MODAL OVERLAY 📖 -->
+  <div class="magazine-modal" id="magazineModal">
+    <div class="magazine-container">
+      <button class="mag-close-btn" id="closeMagBtn">×</button>
+      <button class="mag-nav-btn mag-prev" id="magPrevBtn">‹</button>
+      <img src="magazineimage1.png" alt="Cutie Weekly Magazine Page" class="magazine-frame" id="magazineImg">
+      <button class="mag-nav-btn mag-next" id="magNextBtn">›</button>
+    </div>
+  </div>
+
+  <!-- 💳 KEYCARD SWIPE & MAGAZINE CONTROLLER SCRIPT 💳 -->
+  <script>
+    const dragKeycard = document.getElementById('dragKeycard');
+    const swiperTarget = document.getElementById('swiperTargetBox');
+    const accessOverlay = document.getElementById('accessOverlay');
+    const magazineModal = document.getElementById('magazineModal');
+    const magazineImg = document.getElementById('magazineImg');
+    const closeMagBtn = document.getElementById('closeMagBtn');
+    const magPrevBtn = document.getElementById('magPrevBtn');
+    const magNextBtn = document.getElementById('magNextBtn');
+    const greenLight = document.getElementById('greenLight');
+
+    const magazineImages = [
+      'magazineimage1.png',
+      'magazineimage2.png',
+      'magazineimage3.png',
+      'magazineimage4.png',
+      'magazineimage5.png'
+    ];
+    let currentMagIndex = 0;
+    let unlocked = false;
+
+    // 1. Smoothly slide keycard in from the right edge when page loads
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        dragKeycard.classList.add('slide-in');
+      }, 300);
+    });
+
+    // 2. Drag keycard functionality (Mouse & Touch supported)
+    let isDraggingCard = false;
+    let cardOffsetX = 0;
+    let cardOffsetY = 0;
+    let dragStartY = 0;
+
+    function startDrag(clientX, clientY) {
+      if (unlocked) return;
+      isDraggingCard = true;
+      dragKeycard.style.transition = 'none';
+      const rect = dragKeycard.getBoundingClientRect();
+      cardOffsetX = clientX - rect.left;
+      cardOffsetY = clientY - rect.top;
+      dragStartY = clientY;
+    }
+
+    function moveDrag(clientX, clientY) {
+      if (!isDraggingCard || unlocked) return;
+
+      const newLeft = clientX - cardOffsetX;
+      const newTop = clientY - cardOffsetY;
+
+      dragKeycard.style.left = `${newLeft}px`;
+      dragKeycard.style.top = `${newTop}px`;
+      dragKeycard.style.right = 'auto';
+
+      // Check collision/swipe across swiper housing
+      const cardRect = dragKeycard.getBoundingClientRect();
+      const targetRect = swiperTarget.getBoundingClientRect();
+
+      const overlaps = !(
+        cardRect.right < targetRect.left ||
+        cardRect.left > targetRect.right ||
+        cardRect.bottom < targetRect.top ||
+        cardRect.top > targetRect.bottom
+      );
+
+      const verticalDistance = Math.abs(clientY - dragStartY);
+
+      // Trigger swipe unlock if dragged through swiper box with vertical movement
+      if (overlaps && verticalDistance > 70) {
+        triggerUnlockSequence();
+      }
+    }
+
+    function stopDrag() {
+      isDraggingCard = false;
+    }
+
+    // Mouse listeners
+    dragKeycard.addEventListener('mousedown', (e) => startDrag(e.clientX, e.clientY));
+    document.addEventListener('mousemove', (e) => moveDrag(e.clientX, e.clientY));
+    document.addEventListener('mouseup', stopDrag);
+
+    // Touch listeners for mobile devices
+    dragKeycard.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      startDrag(touch.clientX, touch.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDraggingCard) return;
+      const touch = e.touches[0];
+      moveDrag(touch.clientX, touch.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchend', stopDrag);
+
+    // 3. Unlock Sequence Animation
+    function triggerUnlockSequence() {
+      unlocked = true;
+      isDraggingCard = false;
+
+      // Glow indicator light
+      greenLight.classList.add('active-green');
+
+      // Hide keycard smoothly
+      dragKeycard.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      dragKeycard.style.opacity = '0';
+      dragKeycard.style.transform = 'scale(0.8)';
+
+      setTimeout(() => {
+        dragKeycard.style.display = 'none';
+        
+        // Show Dark Lightbox Overlay with "Access Approved!"
+        accessOverlay.classList.add('show');
+
+        // Fade out overlay & display Magazine Booklet after delay
+        setTimeout(() => {
+          accessOverlay.classList.remove('show');
+          
+          setTimeout(() => {
+            magazineModal.classList.add('show');
+          }, 300);
+
+        }, 1600);
+
+      }, 200);
+    }
+
+    // 4. Magazine Navigation controls
+    function updateMagazineImage() {
+      magazineImg.src = magazineImages[currentMagIndex];
+    }
+
+    magPrevBtn.addEventListener('click', () => {
+      currentMagIndex = (currentMagIndex === 0) ? magazineImages.length - 1 : currentMagIndex - 1;
+      updateMagazineImage();
+    });
+
+    magNextBtn.addEventListener('click', () => {
+      currentMagIndex = (currentMagIndex === magazineImages.length - 1) ? 0 : currentMagIndex + 1;
+      updateMagazineImage();
+    });
+
+    closeMagBtn.addEventListener('click', () => {
+      magazineModal.classList.remove('show');
+    });
+  </script>
   
 </body>
 </html>
