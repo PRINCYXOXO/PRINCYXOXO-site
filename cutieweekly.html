@@ -207,7 +207,7 @@
   position: relative;
   background-color: transparent;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(210, 63, 119, 0.4);
-  border-radius: 0; /* 👈 Corners are now sharp/squared off */
+  border-radius: 0;
 }
 
 /* Spine shadow in the center fold */
@@ -236,12 +236,12 @@
 }
 
 .book-page-side.left-side {
-  border-radius: 0; /* 👈 Corners are now sharp/squared off */
+  border-radius: 0;
   border-right: 1px solid #ddd;
 }
 
 .book-page-side.right-side {
-  border-radius: 0; /* 👈 Corners are now sharp/squared off */
+  border-radius: 0;
   border-left: 1px solid #ddd;
 }
 
@@ -1750,12 +1750,12 @@ main {
       <div class="book-spread" id="bookSpread">
         <!-- Left Side Page -->
         <div class="book-page-side left-side">
-          <img id="magLeftImg" src="" alt="Left Page" style="display: none;">
+          <img id="magLeftImg" src="" alt="Left Page">
         </div>
         
         <!-- Right Side Page -->
         <div class="book-page-side right-side">
-          <img id="magRightImg" src="magazineimage1.png" alt="Right Page">
+          <img id="magRightImg" src="" alt="Right Page">
         </div>
 
         <!-- Hidden Flip Overlays for Flip Animations -->
@@ -1789,10 +1789,11 @@ main {
     const flipLeftOverlay = document.getElementById('flipLeftOverlay');
     const flipLeftImg = document.getElementById('flipLeftImg');
 
+    // Exact requested mapping for the 3 book spreads
     const magazineSpreads = [
-      { left: null, right: 'magazineimage1.png' },
-      { left: 'magazineimage2.png', right: 'magazineimage3.png' },
-      { left: 'magazineimage5.png', right: 'magazineimage6.png' }
+      { left: 'magazineimage1.png', right: 'magazineimage2.png' }, // Spread 1
+      { left: 'magazineimage3.png', right: 'magazineimage4.png' }, // Spread 2
+      { left: 'magazineimage5.png', right: 'magazineimage6.png' }  // Spread 3
     ];
 
     let currentSpreadIndex = 0;
@@ -1897,26 +1898,17 @@ main {
     function renderSpread() {
       const spread = magazineSpreads[currentSpreadIndex];
 
-      if (spread.left) {
-        magLeftImg.src = spread.left;
-        magLeftImg.style.display = 'block';
-      } else {
-        magLeftImg.style.display = 'none';
-      }
+      magLeftImg.src = spread.left;
+      magRightImg.src = spread.right;
 
-      if (spread.right) {
-        magRightImg.src = spread.right;
-        magRightImg.style.display = 'block';
-      } else {
-        magRightImg.style.display = 'none';
-      }
-
+      // Hide left arrow on Spread 1 (beginning of book)
       if (currentSpreadIndex === 0) {
         magPrevBtn.style.display = 'none';
       } else {
         magPrevBtn.style.display = 'flex';
       }
 
+      // Hide right arrow on Spread 3 (end of book)
       if (currentSpreadIndex === magazineSpreads.length - 1) {
         magNextBtn.style.display = 'none';
       } else {
