@@ -197,13 +197,12 @@
   padding: 10px;
 }
 
-/* 📚 OPEN BOOK SPREAD STRUCTURE 📚 */
+/* 📚 OPEN BOOK SPREAD STRUCTURE (ASPECT RATIO 4000 : 2597) 📚 */
 .book-spread {
   display: flex;
-  width: 75vw;
-  max-width: 950px;
-  height: 68vh;
-  max-height: 650px;
+  height: 78vh;
+  max-height: 700px;
+  aspect-ratio: 4000 / 2597; /* Exactly 2 pages of 2000x2597 side by side */
   perspective: 1500px;
   position: relative;
   background-color: transparent;
@@ -225,9 +224,11 @@
   pointer-events: none;
 }
 
+/* 📄 EACH INDIVIDUAL PAGE (ASPECT RATIO 2000 : 2597) 📄 */
 .book-page-side {
   flex: 1;
   height: 100%;
+  aspect-ratio: 2000 / 2597; /* Exact 2000x2597 aspect ratio per page */
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -247,7 +248,7 @@
 .book-page-side img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   display: block;
 }
 
@@ -258,6 +259,7 @@
   bottom: 0;
   width: 50%;
   height: 100%;
+  aspect-ratio: 2000 / 2597;
   background-color: #ffffff;
   z-index: 10;
   backface-visibility: hidden;
@@ -268,7 +270,7 @@
 .flip-overlay img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .flip-overlay.flip-right-side {
@@ -368,12 +370,12 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 24px; /* Slim vertical rail stuck to the left of the screen */
-  background-color: #f0f0f0; /* Light greyish white like original Mac OS IE */
-  border-right: 1px solid #000000; /* Dark line separating sidebar from site */
+  width: 24px;
+  background-color: #f0f0f0;
+  border-right: 1px solid #000000;
   display: flex;
   flex-direction: column;
-  z-index: 99999; /* Stays above everything on screen */
+  z-index: 99999;
   box-sizing: border-box;
 }
 
@@ -382,7 +384,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 120px; /* Space for each vertical text tab */
+  height: 120px;
   text-decoration: none;
   position: relative;
   transition: background-color 0.2s ease;
@@ -390,10 +392,9 @@
 }
 
 .retro-tab:hover {
-  background-color: #e0e0e0; /* Subtle hover gray tint */
+  background-color: #e0e0e0;
 }
 
-/* Diagonal separation line between each tab */
 .retro-tab::after {
   content: '';
   position: absolute;
@@ -401,30 +402,27 @@
   left: -2px;
   width: 28px;
   height: 1px;
-  background-color: #888888; /* Diagonal divider line color */
-  transform: rotate(25deg); /* Creates the angled slant separator line */
+  background-color: #888888;
+  transform: rotate(25deg);
   transform-origin: center;
 }
 
-/* Vertical text reading top-to-bottom */
 .retro-tab-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: 'Geneva', 'Georgia', sans-serif;
   font-size: 11px;
   font-weight: 600;
-  color: #111111; /* Clean black text */
+  color: #111111;
   letter-spacing: 0.5px;
   user-select: none;
   white-space: nowrap;
 }
 
-/* Push main wrapper site content right so it doesn't overlap the sidebar */
 body {
   padding-left: 24px;
 }
 
-/* Hide on mobile devices so it doesn't cover tiny mobile screens */
 @media (max-width: 768px) {
   .retro-sidebar-tabs {
     display: none;
@@ -438,7 +436,7 @@ body {
 .notepad-modal {
   position: fixed;
   top: 15%;
-  right: -420px; /* Hidden off-screen to the right initially */
+  right: -420px;
   width: 360px;
   height: 420px;
   background-color: #ffffff;
@@ -456,12 +454,11 @@ body {
 }
 
 .notepad-modal.show {
-  right: 30px; /* Slides smoothly into view from the right */
+  right: 30px;
   opacity: 1;
   pointer-events: auto;
 }
 
-/* 💖 Pink Top Titlebar (Draggable Handle) 💖 */
 .notepad-header {
   background-color: #d23f77;
   color: #ffffff;
@@ -486,7 +483,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* 🎀 Pink Close Cross Button 🎀 */
 .notepad-close-btn {
   width: 22px;
   height: 22px;
@@ -509,7 +505,6 @@ body {
   background-color: #fff0f5;
 }
 
-/* 📂 Non-clickable Menu Bar 📂 */
 .notepad-menubar {
   background-color: #fff0f5;
   border-bottom: 1px solid #f0a3c2;
@@ -526,7 +521,6 @@ body {
   cursor: default;
 }
 
-/* ✍️ White Textarea Area ✍️ */
 .notepad-body {
   flex: 1;
   display: flex;
@@ -567,7 +561,7 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 99998;
-  width: 45px; /* Adjust size of the kiss mark */
+  width: 45px;
   height: auto;
   transform: translate(-50%, -50%) scale(0.5);
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
@@ -588,7 +582,7 @@ body {
     /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION 📟 */
 .spotted-toast {
   position: fixed;
-  bottom: -150px; /* Hidden off-screen initially */
+  bottom: -150px;
   right: 25px;
   width: 260px;
   background-color: #fff5f8;
@@ -602,7 +596,7 @@ body {
 }
 
 .spotted-toast.show {
-  bottom: 25px; /* Slides up neatly above the music player */
+  bottom: 25px;
 }
 
 .spotted-header {
@@ -637,17 +631,16 @@ body {
 
 .spotted-icon {
   font-size: 16px;
-  color: #d23f77; /* Matches the hot pink header title */
+  color: #d23f77;
 }
     
     /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION WITH POLKA DOTS 📟 */
 .spotted-toast {
   position: fixed;
-  bottom: -150px; /* Hidden off-screen initially */
+  bottom: -150px;
   right: 25px;
   width: 260px;
   background-color: #fff5f8;
-  /* 🌟 Light pink polka dot background pattern */
   background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
   background-size: 16px 16px;
   border: 2px solid #d23f77;
@@ -659,7 +652,6 @@ body {
   font-family: 'Georgia', serif;
 }
     
-/* 🎀 PINK CLOSE BUTTON FOR TOAST 🎀 */
 .spotted-close-btn {
   position: absolute;
   top: -8px;
@@ -686,14 +678,13 @@ body {
   background-color: #b02e60;
 }
     
-    /* 🎀 PINK SYMBOL CURSOR TRAIL STYLING 🎀 */
 .cursor-sparkle {
   position: fixed;
   pointer-events: none;
   z-index: 99999;
   font-size: 14px;
-  color: #ff69b4; /* 🌸 Pink color for text symbols */
-  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6); /* Optional cute pink glow */
+  color: #ff69b4;
+  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6);
   user-select: none;
   animation: sparkleFade 1s linear forwards;
 }
@@ -709,10 +700,9 @@ body {
   }
 }
 
-    /* 📖 BURN BOOK STYLING & ANIMATION 📖 */
 .burnbook-popup {
   position: fixed;
-  bottom: -100vh; /* Hidden below the screen initially */
+  bottom: -100vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10006;
@@ -726,7 +716,7 @@ body {
 }
 
 .burnbook-popup img {
-  width: 520px; /* Adjust size if needed */
+  width: 520px;
   max-width: 90vw;
   height: auto;
   display: block;
@@ -734,7 +724,6 @@ body {
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
 }
 
-/* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
 .burnbook-close-btn {
   position: absolute;
   top: -12px;
@@ -762,7 +751,6 @@ body {
   background-color: #b02e60;
 }
 
-/* Slide up to screen position */
 .burnbook-popup.show {
   bottom: 10%;
 }
@@ -773,11 +761,9 @@ body {
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
-      /* 💖 CUSTOM CURSOR 💖 */
       cursor: url('crown.png'), auto;
     }
 
-    /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
@@ -790,7 +776,6 @@ header {
   overflow: hidden;
 }
 
-    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -807,7 +792,6 @@ header {
       z-index: 1;
     }
 
-    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -847,7 +831,6 @@ header {
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
-    /* Silhouette Image Styling */
     .header-silhouette {
       height: 65px;
       width: auto;
@@ -866,7 +849,7 @@ header {
     }
 
 .kissmark-img {
-  height: 100px; /* increase number to make it bigger */
+  height: 100px;
   width: auto;
   display: inline-block;
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
@@ -908,11 +891,11 @@ header {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-      background-color: #fceef2; /* Light pink interior background */
-      background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
+      background-color: #fceef2;
+      background-image: url('Untitled77_20261004220524.png');
       background-repeat: repeat;
       background-size: 100px auto;
-      border: 3px solid #000000; /* Distinct black border outlining the main content area */
+      border: 3px solid #000000;
       box-sizing: border-box;
       position: relative;
       padding: 50px 20px 20px 20px; 
@@ -998,7 +981,7 @@ header {
 
 main {
   flex-grow: 1;
-  width: calc(100% - 280px); /* Leaves exactly 250px for the sidebar + 30px for the gap */
+  width: calc(100% - 280px);
   box-sizing: border-box;
 }
 
@@ -1046,7 +1029,6 @@ main {
       color: #444444;
     }
 
-    /* 💖 PINK, BOLD, BODONI MODA AT NORMAL BODY TEXT SIZE (14px) 💖 */
     .rule-pink-1,
     .rule-pink-2,
     .rule-pink-3 {
@@ -1272,8 +1254,7 @@ main {
   }
 
   .book-spread {
-    width: 90vw;
-    height: 50vh;
+    height: 55vh;
   }
 }
   </style>
@@ -1808,10 +1789,6 @@ main {
     const flipLeftOverlay = document.getElementById('flipLeftOverlay');
     const flipLeftImg = document.getElementById('flipLeftImg');
 
-    // Page spreads definition
-    // Spread 0: Left=None, Right=magazineimage1.png
-    // Spread 1: Left=magazineimage2.png, Right=magazineimage3.png
-    // Spread 2: Left=magazineimage5.png, Right=magazineimage6.png (or magazineimage4/5 depending on count)
     const magazineSpreads = [
       { left: null, right: 'magazineimage1.png' },
       { left: 'magazineimage2.png', right: 'magazineimage3.png' },
@@ -1822,14 +1799,12 @@ main {
     let isFlipping = false;
     let unlocked = false;
 
-    // 1. Slide keycard in
     window.addEventListener('load', () => {
       setTimeout(() => {
         dragKeycard.classList.add('slide-in');
       }, 300);
     });
 
-    // 2. Drag keycard functionality
     let isDraggingCard = false;
     let cardOffsetX = 0;
     let cardOffsetY = 0;
@@ -1893,7 +1868,6 @@ main {
 
     document.addEventListener('touchend', stopDrag);
 
-    // 3. Unlock Sequence Animation
     function triggerUnlockSequence() {
       unlocked = true;
       isDraggingCard = false;
@@ -1920,11 +1894,9 @@ main {
       }, 200);
     }
 
-    // 4. Render current spread & manage arrow visibility
     function renderSpread() {
       const spread = magazineSpreads[currentSpreadIndex];
 
-      // Update Left Page
       if (spread.left) {
         magLeftImg.src = spread.left;
         magLeftImg.style.display = 'block';
@@ -1932,7 +1904,6 @@ main {
         magLeftImg.style.display = 'none';
       }
 
-      // Update Right Page
       if (spread.right) {
         magRightImg.src = spread.right;
         magRightImg.style.display = 'block';
@@ -1940,14 +1911,12 @@ main {
         magRightImg.style.display = 'none';
       }
 
-      // Hide left arrow on start spread (Spread 0)
       if (currentSpreadIndex === 0) {
         magPrevBtn.style.display = 'none';
       } else {
         magPrevBtn.style.display = 'flex';
       }
 
-      // Hide right arrow on end spread (Spread 2)
       if (currentSpreadIndex === magazineSpreads.length - 1) {
         magNextBtn.style.display = 'none';
       } else {
@@ -1955,14 +1924,12 @@ main {
       }
     }
 
-    // 5. Flip Forward (Right Arrow Click)
     magNextBtn.addEventListener('click', () => {
       if (isFlipping || currentSpreadIndex >= magazineSpreads.length - 1) return;
       isFlipping = true;
 
       const currentSpread = magazineSpreads[currentSpreadIndex];
       
-      // Set image for flipping animation
       flipRightImg.src = currentSpread.right;
       bookSpread.classList.add('flipping-right');
 
@@ -1971,17 +1938,15 @@ main {
         renderSpread();
         bookSpread.classList.remove('flipping-right');
         isFlipping = false;
-      }, 500); // Animation duration (0.5s)
+      }, 500);
     });
 
-    // 6. Flip Backward (Left Arrow Click)
     magPrevBtn.addEventListener('click', () => {
       if (isFlipping || currentSpreadIndex <= 0) return;
       isFlipping = true;
 
       const currentSpread = magazineSpreads[currentSpreadIndex];
 
-      // Set image for flipping animation
       flipLeftImg.src = currentSpread.left;
       bookSpread.classList.add('flipping-left');
 
@@ -1990,10 +1955,9 @@ main {
         renderSpread();
         bookSpread.classList.remove('flipping-left');
         isFlipping = false;
-      }, 500); // Animation duration (0.5s)
+      }, 500);
     });
 
-    // Close Magazine Modal
     closeMagBtn.addEventListener('click', () => {
       magazineModal.classList.remove('show');
 
@@ -2005,7 +1969,7 @@ main {
       dragKeycard.style.opacity = '1';
       dragKeycard.classList.remove('slide-in');
       
-      void dragKeycard.offsetWidth; // Force CSS reflow
+      void dragKeycard.offsetWidth;
       dragKeycard.classList.add('slide-in');
     });
   </script>
