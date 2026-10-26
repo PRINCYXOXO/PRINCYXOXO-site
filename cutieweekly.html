@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
 
-
   <!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
@@ -13,14 +12,12 @@
   <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
 
-
   <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
   <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
   <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta name="theme-color" content="#d23f77">
-
 
   <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
@@ -31,11 +28,9 @@
   
   <style>
 
-
 /* =============================================================
    💳 KEYCARD SWIPER & MAGAZINE BOOKLET STYLING
 ============================================================= */
-
 
 /* 🔑 Floating Vertical Keycard Sliding In From Right */
 .keycard-draggable {
@@ -51,16 +46,55 @@
   transition: right 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
 .keycard-draggable.slide-in {
   right: 40px; /* Slides in smoothly */
 }
-
 
 .keycard-draggable:active {
   cursor: grabbing;
 }
 
+/* 🏆 CUTIE OF THE WEEK CARD STYLING */
+.cutie-week-card {
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  border-radius: 14px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(210, 63, 119, 0.2);
+  margin-bottom: 25px;
+}
+
+.cutie-week-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d23f77;
+  margin-top: 0;
+  margin-bottom: 4px;
+  text-transform: lowercase;
+}
+
+.cutie-week-subtitle {
+  font-size: 12px;
+  color: #5c0e2e;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.cutie-week-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cutie-week-img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
 
 /* 📟 Magnetic Card Reader Box (White with Pink Accents) */
 .keycard-reader-card {
@@ -73,7 +107,6 @@
   margin-bottom: 25px;
 }
 
-
 .keycard-reader-title {
   font-family: 'Bodoni Moda', serif;
   font-size: 24px;
@@ -84,14 +117,12 @@
   text-transform: lowercase;
 }
 
-
 .keycard-reader-subtitle {
   font-size: 12px;
   color: #5c0e2e;
   margin-bottom: 20px;
   font-style: italic;
 }
-
 
 /* Swiper Graphic Box */
 .swiper-housing {
@@ -110,7 +141,6 @@
   box-sizing: border-box;
 }
 
-
 /* Vertical Swipe Slot */
 .swiper-slot {
   width: 14px;
@@ -122,7 +152,6 @@
   position: relative;
 }
 
-
 .swiper-instruction {
   font-size: 11px;
   color: #d23f77;
@@ -131,7 +160,6 @@
   margin-top: 15px;
   letter-spacing: 0.5px;
 }
-
 
 /* 🔒 FULLSCREEN LIGHTBOX OVERLAY */
 .access-lightbox-overlay {
@@ -151,12 +179,10 @@
   transition: opacity 0.4s ease;
 }
 
-
 .access-lightbox-overlay.show {
   opacity: 1;
   pointer-events: auto;
 }
-
 
 /* 🌟 Access Approved Fancy Text */
 .access-approved-text {
@@ -177,12 +203,10 @@
   user-select: none;
 }
 
-
 @keyframes pulseApprove {
   0% { transform: scale(0.95); }
   100% { transform: scale(1.05); }
 }
-
 
 /* 📖 ANIMATED MAGAZINE BOOKLET MODAL OVERLAY 📖 */
 .magazine-modal {
@@ -201,13 +225,11 @@
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
 }
 
-
 .magazine-modal.show {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
 }
-
 
 .magazine-container {
   position: relative;
@@ -216,7 +238,6 @@
   justify-content: center;
   padding: 10px;
 }
-
 
 /* 📚 OPEN BOOK SPREAD STRUCTURE (ASPECT RATIO 4000 : 2597) 📚 */
 .book-spread {
@@ -230,7 +251,6 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(210, 63, 119, 0.4);
   border-radius: 0;
 }
-
 
 /* Spine shadow in the center fold */
 .book-spread::after {
@@ -246,7 +266,6 @@
   pointer-events: none;
 }
 
-
 /* 📄 EACH INDIVIDUAL PAGE (ASPECT RATIO 2000 : 2597) 📄 */
 .book-page-side {
   flex: 1;
@@ -258,18 +277,15 @@
   box-sizing: border-box;
 }
 
-
 .book-page-side.left-side {
   border-radius: 0;
   border-right: 1px solid #ddd;
 }
 
-
 .book-page-side.right-side {
   border-radius: 0;
   border-left: 1px solid #ddd;
 }
-
 
 .book-page-side img {
   width: 100%;
@@ -277,7 +293,6 @@
   object-fit: cover;
   display: block;
 }
-
 
 /* 📄 PAGE FLIP ANIMATIONS 📄 */
 .flip-overlay {
@@ -294,25 +309,21 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-
 .flip-overlay img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-
 .flip-overlay.flip-right-side {
   right: 0;
   transform-origin: left center;
 }
 
-
 .flip-overlay.flip-left-side {
   left: 0;
   transform-origin: right center;
 }
-
 
 /* Keyframe Animations for 3D Page Flip */
 @keyframes flipRightToLeft {
@@ -320,24 +331,20 @@
   100% { transform: rotateY(-180deg); }
 }
 
-
 @keyframes flipLeftToRight {
   0% { transform: rotateY(0deg); }
   100% { transform: rotateY(180deg); }
 }
-
 
 .book-spread.flipping-right .flip-right-side {
   display: block;
   animation: flipRightToLeft 0.5s ease-in-out forwards;
 }
 
-
 .book-spread.flipping-left .flip-left-side {
   display: block;
   animation: flipLeftToRight 0.5s ease-in-out forwards;
 }
-
 
 /* 🎀 Cute Pink Navigation Arrows */
 .mag-nav-btn {
@@ -362,16 +369,13 @@
   user-select: none;
 }
 
-
 .mag-nav-btn:hover {
   transform: translateY(-50%) scale(1.15);
   background-color: #b02e60;
 }
 
-
 .mag-prev { left: -25px; }
 .mag-next { right: -25px; }
-
 
 /* ❌ Close Magazine Button */
 .mag-close-btn {
@@ -395,7 +399,6 @@
   z-index: 100014;
   transition: transform 0.2s ease;
 }
-
 
 .mag-close-btn:hover {
   transform: scale(1.15);
@@ -469,7 +472,6 @@
   box-sizing: border-box;
 }
 
-
 .retro-tab {
   display: flex;
   align-items: center;
@@ -482,11 +484,9 @@
   box-sizing: border-box;
 }
 
-
 .retro-tab:hover {
   background-color: #e0e0e0;
 }
-
 
 .retro-tab::after {
   content: '';
@@ -500,7 +500,6 @@
   transform-origin: center;
 }
 
-
 .retro-tab-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -513,11 +512,9 @@
   white-space: nowrap;
 }
 
-
 body {
   padding-left: 24px;
 }
-
 
 @media (max-width: 768px) {
   .retro-sidebar-tabs {
@@ -528,7 +525,7 @@ body {
   }
 }
     
-    /* 📝 Y2K NOTEPAD STYLING 📝 */
+/* 📝 Y2K NOTEPAD STYLING 📝 */
 .notepad-modal {
   position: fixed;
   top: 15%;
@@ -549,13 +546,11 @@ body {
   overflow: hidden;
 }
 
-
 .notepad-modal.show {
   right: 30px;
   opacity: 1;
   pointer-events: auto;
 }
-
 
 .notepad-header {
   background-color: #d23f77;
@@ -568,11 +563,9 @@ body {
   user-select: none;
 }
 
-
 .notepad-header:active {
   cursor: grabbing;
 }
-
 
 .notepad-title {
   font-weight: bold;
@@ -582,7 +575,6 @@ body {
   gap: 6px;
   letter-spacing: 0.5px;
 }
-
 
 .notepad-close-btn {
   width: 22px;
@@ -601,12 +593,10 @@ body {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-
 .notepad-close-btn:hover {
   transform: scale(1.15);
   background-color: #fff0f5;
 }
-
 
 .notepad-menubar {
   background-color: #fff0f5;
@@ -619,12 +609,10 @@ body {
   user-select: none;
 }
 
-
 .notepad-menubar span {
   opacity: 0.8;
   cursor: default;
 }
-
 
 .notepad-body {
   flex: 1;
@@ -633,7 +621,6 @@ body {
   background-color: #ffffff;
   padding: 8px;
 }
-
 
 #notepadText {
   flex: 1;
@@ -650,9 +637,8 @@ body {
     transparent 19px,
     #ffeef4 20px
   );
-  box-sizing: border-border-box;
+  box-sizing: border-box;
 }
-
 
 .notepad-footer {
   text-align: right;
@@ -663,7 +649,7 @@ body {
   user-select: none;
 }
     
-    /* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
+/* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
 .kiss-stamp {
   position: fixed;
   pointer-events: none;
@@ -674,7 +660,6 @@ body {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   animation: kissFade 1.5s ease-out forwards;
 }
-
 
 @keyframes kissFade {
   0% {
@@ -687,7 +672,7 @@ body {
   }
 }
     
-    /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION 📟 */
+/* 📟 FLIP-PHONE SMS TOAST NOTIFICATION 📟 */
 .spotted-toast {
   position: fixed;
   bottom: -150px;
@@ -703,11 +688,9 @@ body {
   font-family: 'Georgia', serif;
 }
 
-
 .spotted-toast.show {
   bottom: 25px;
 }
-
 
 .spotted-header {
   display: flex;
@@ -718,11 +701,10 @@ body {
   padding-bottom: 6px;
 }
 
-
 .spotted-icon {
   font-size: 16px;
+  color: #d23f77;
 }
-
 
 .spotted-title {
   font-family: 'Bodoni Moda', serif;
@@ -733,7 +715,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-
 .spotted-body p {
   font-size: 12px;
   color: #5c0e2e;
@@ -742,13 +723,7 @@ body {
   font-style: italic;
 }
 
-
-.spotted-icon {
-  font-size: 16px;
-  color: #d23f77;
-}
-    
-    /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION WITH POLKA DOTS 📟 */
+/* 📟 FLIP-PHONE SMS TOAST NOTIFICATION WITH POLKA DOTS 📟 */
 .spotted-toast {
   position: fixed;
   bottom: -150px;
@@ -787,7 +762,6 @@ body {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-
 .spotted-close-btn:hover {
   transform: scale(1.15);
   background-color: #b02e60;
@@ -804,7 +778,6 @@ body {
   animation: sparkleFade 1s linear forwards;
 }
 
-
 @keyframes sparkleFade {
   0% {
     opacity: 1;
@@ -815,7 +788,6 @@ body {
     transform: translate(var(--dx), var(--dy)) scale(0.3) rotate(180deg);
   }
 }
-
 
 .burnbook-popup {
   position: fixed;
@@ -828,11 +800,9 @@ body {
   user-select: none;
 }
 
-
 .burnbook-popup:active {
   cursor: grabbing;
 }
-
 
 .burnbook-popup img {
   width: 520px;
@@ -842,7 +812,6 @@ body {
   border-radius: 20px;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
 }
-
 
 .burnbook-close-btn {
   position: absolute;
@@ -866,31 +835,27 @@ body {
   z-index: 10007;
 }
 
-
 .burnbook-close-btn:hover {
   transform: scale(1.15);
   background-color: #b02e60;
 }
 
-
 .burnbook-popup.show {
   bottom: 10%;
 }
     
-    body {
-      background-color: #d23f77;
-      color: #333333;
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-      cursor: url('crown.png'), auto;
-    }
+body {
+  background-color: #d23f77;
+  color: #333333;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  cursor: url('crown.png'), auto;
+}
 
-
-    a, button {
-      cursor: url('heart.png'), pointer;
-    }
-
+a, button {
+  cursor: url('heart.png'), pointer;
+}
 
 header {
   background-color: #d23f77;
@@ -900,84 +865,77 @@ header {
   overflow: hidden;
 }
 
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('skyline.png');
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: auto 100%;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('skyline.png');
-      background-repeat: repeat-x;
-      background-position: center bottom;
-      background-size: auto 100%;
-      opacity: 0.4;
-      pointer-events: none;
-      z-index: 1;
-    }
+header::after {
+  content: "princyxoxo princyxoxo princyxoxo princyxoxo";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bodoni Moda', serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.30);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
 
+.banner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
 
-    header::after {
-      content: "princyxoxo princyxoxo princyxoxo princyxoxo";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Bodoni Moda', serif;
-      font-size: 80px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.30);
-      white-space: nowrap;
-      pointer-events: none;
-      z-index: 2;
-    }
+header h1 {
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+  font-size: 52px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1.5px;
+  text-transform: lowercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
 
+.header-silhouette {
+  height: 65px;
+  width: auto;
+  display: inline-block;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+}
 
-    .banner-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 3;
-    }
-
-
-    header h1 {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 52px;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -1.5px;
-      text-transform: lowercase;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #ffffff;
-      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
-    }
-
-
-    .header-silhouette {
-      height: 65px;
-      width: auto;
-      display: inline-block;
-      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
-    }
-
-
-    .tagline {
-      font-size: 28px;
-      font-style: italic;
-      margin: 0;
-      opacity: 0.9;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+.tagline {
+  font-size: 28px;
+  font-style: italic;
+  margin: 0;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .kissmark-img {
   height: 100px;
@@ -986,142 +944,129 @@ header {
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
 }
     
-    nav {
-      background-color: transparent;
-      text-align: center;
-      padding: 10px 0;
-      flex-basis: 100%; 
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-bottom: 3px solid #d23f77; 
-      box-sizing: border-box;
-    }
-    
-    nav a {
-      color: #5c0e2e;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin: 0 15px;
-      display: inline-block;
-    }
+nav {
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+  flex-basis: 100%; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid #d23f77; 
+  box-sizing: border-box;
+}
 
+nav a {
+  color: #5c0e2e;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: 0 15px;
+  display: inline-block;
+}
 
-    nav a:hover {
-      color: #ffffff;
-      background: transparent;
-    }
+nav a:hover {
+  color: #ffffff;
+  background: transparent;
+}
 
+.wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  background-color: #fceef2;
+  background-image: url('Untitled77_20261004220524.png');
+  background-repeat: repeat;
+  background-size: 100px auto;
+  border: 3px solid #000000;
+  box-sizing: border-box;
+  position: relative;
+  padding: 50px 20px 20px 20px; 
+}
 
-    .wrapper {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px 20px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      background-color: #fceef2;
-      background-image: url('Untitled77_20261004220524.png');
-      background-repeat: repeat;
-      background-size: 100px auto;
-      border: 3px solid #000000;
-      box-sizing: border-box;
-      position: relative;
-      padding: 50px 20px 20px 20px; 
-    }
+aside {
+  width: 250px;
+  flex-shrink: 0;
+  margin-top: 20px;
+}
 
+.sidebar-box {
+  background-color: #f8c5d8;
+  border: 1px solid #d23f77;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
 
-    aside {
-      width: 250px;
-      flex-shrink: 0;
-      margin-top: 20px;
-    }
+.sidebar-box h2 {
+  font-size: 22px;
+  color: #d23f77;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-transform: lowercase;
+}
 
+.sidebar-heading-img {
+  max-width: 65%;
+  height: auto;
+  display: block;
+}
 
-    .sidebar-box {
-      background-color: #f8c5d8;
-      border: 1px solid #d23f77;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 2px;
-    }
+.sidebar-box p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #5c0e2e;
+  margin: 0;
+}
 
+.form-box {
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  padding: 15px;
+  border-radius: 2px;
+}
 
-    .sidebar-box h2 {
-      font-size: 22px;
-      color: #d23f77;
-      margin-top: 0;
-      margin-bottom: 8px;
-      text-transform: lowercase;
-    }
+.form-box h3 {
+  font-size: 14px;
+  color: #d23f77;
+  text-transform: uppercase;
+  margin-top: 0;
+  text-align: center;
+}
 
+.form-box input, .form-box textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff5f8;
+  border: 1px solid #f0a3c2;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  border-radius: 2px;
+  font-family: inherit;
+}
 
-    .sidebar-heading-img {
-      max-width: 65%;
-      height: auto;
-      display: block;
-    }
+.form-box button {
+  width: 100%;
+  background-color: #d23f77;
+  color: white;
+  border: none;
+  padding: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
 
-
-    .sidebar-box p {
-      font-size: 12px;
-      line-height: 1.5;
-      color: #5c0e2e;
-      margin: 0;
-    }
-
-
-    .form-box {
-      background-color: #ffffff;
-      border: 2px solid #d23f77;
-      padding: 15px;
-      border-radius: 2px;
-    }
-
-
-    .form-box h3 {
-      font-size: 14px;
-      color: #d23f77;
-      text-transform: uppercase;
-      margin-top: 0;
-      text-align: center;
-    }
-
-
-    .form-box input, .form-box textarea {
-      width: 100%;
-      box-sizing: border-box;
-      background-color: #fff5f8;
-      border: 1px solid #f0a3c2;
-      padding: 8px;
-      margin-bottom: 10px;
-      font-size: 12px;
-      border-radius: 2px;
-      font-family: inherit;
-    }
-
-
-    .form-box button {
-      width: 100%;
-      background-color: #d23f77;
-      color: white;
-      border: none;
-      padding: 8px;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-
-    .form-box button:hover {
-      background-color: #b02e60;
-    }
-
+.form-box button:hover {
+  background-color: #b02e60;
+}
 
 main {
   flex-grow: 1;
@@ -1129,235 +1074,211 @@ main {
   box-sizing: border-box;
 }
 
+.ticker {
+  background-color: #ffffff;
+  border: 1px solid #f0a3c2;
+  padding: 8px 15px;
+  font-size: 11px;
+  color: #d23f77;
+  font-style: italic;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
 
-    .ticker {
-      background-color: #ffffff;
-      border: 1px solid #f0a3c2;
-      padding: 8px 15px;
-      font-size: 11px;
-      color: #d23f77;
-      font-style: italic;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-    }
+article {
+  background-color: #ffffff;
+  border: 2px solid #f0a3c2;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
+article h2 {
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #d23f77;
+  margin: 0 0 5px 0;
+  text-transform: lowercase;
+}
 
-    article {
-      background-color: #ffffff;
-      border: 2px solid #f0a3c2;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
+.file-under {
+  font-size: 11px;
+  color: #777777;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fceef2;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
 
+article p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444444;
+}
 
-    article h2 {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #d23f77;
-      margin: 0 0 5px 0;
-      text-transform: lowercase;
-    }
+.rule-pink-1,
+.rule-pink-2,
+.rule-pink-3 {
+  font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d23f77;
+}
 
+article hr {
+  border: 0;
+  border-top: 1px dashed #f0a3c2;
+  margin: 20px 0;
+}
 
-    .file-under {
-      font-size: 11px;
-      color: #777777;
-      text-transform: uppercase;
-      border-bottom: 1px solid #fceef2;
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-    }
+.signature {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+  color: #d23f77;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 15px;
+}
 
+/* 🔍 LIGHTBOX STYLING 🔍 */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
 
-    article p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444444;
-    }
+.lightbox-content-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  max-height: 90%;
+}
 
+.lightbox-content {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  display: block;
+}
 
-    .rule-pink-1,
-    .rule-pink-2,
-    .rule-pink-3 {
-      font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: #d23f77;
-    }
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: -25px;
+  color: #ff69b4;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: transform 0.2s ease;
+  z-index: 10002;
+}
 
+.lightbox-close:hover {
+  transform: scale(1.2);
+  color: #b02e60;
+}
 
-    article hr {
-      border: 0;
-      border-top: 1px dashed #f0a3c2;
-      margin: 20px 0;
-    }
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+  z-index: 10001;
+}
 
+.lightbox-prev:hover, .lightbox-next:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+}
 
-    .signature {
-      display: block;
-      text-align: right;
-      font-weight: bold;
-      color: #d23f77;
-      font-style: italic;
-      font-size: 14px;
-      margin-top: 15px;
-    }
+.lightbox-prev {
+  left: -70px;
+}
 
+.lightbox-next {
+  right: -70px;
+}
 
-    /* 🔍 LIGHTBOX STYLING 🔍 */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
-      justify-content: center;
-      align-items: center;
-    }
+/* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  padding: 10px 15px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+}
 
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #5c0e2e;
+  font-weight: bold;
+}
 
-    .lightbox-content-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 90%;
-      max-height: 90%;
-    }
+.music-icon {
+  color: #d23f77;
+  font-size: 14px;
+}
 
+.song-title {
+  font-style: italic;
+}
 
-    .lightbox-content {
-      max-width: 100%;
-      max-height: 80vh;
-      border-radius: 16px;
-      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
-      background-color: #fff;
-      display: block;
-    }
+.music-player button {
+  background-color: #d23f77;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+}
 
-
-    .lightbox-close {
-      position: absolute;
-      top: -45px;
-      right: -25px;
-      color: #ff69b4;
-      font-size: 32px;
-      font-weight: bold;
-      cursor: pointer;
-      background: none;
-      border: none;
-      transition: transform 0.2s ease;
-      z-index: 10002;
-    }
-
-
-    .lightbox-close:hover {
-      transform: scale(1.2);
-      color: #b02e60;
-    }
-
-
-    .lightbox-prev, .lightbox-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #333;
-      font-size: 24px;
-      font-weight: bold;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      user-select: none;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: all 0.2s ease;
-      z-index: 10001;
-    }
-
-
-    .lightbox-prev:hover, .lightbox-next:hover {
-      background: rgba(255, 255, 255, 1);
-      transform: translateY(-50%) scale(1.1);
-    }
-
-
-    .lightbox-prev {
-      left: -70px;
-    }
-
-
-    .lightbox-next {
-      right: -70px;
-    }
-
-
-    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
-    .music-player {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ffffff;
-      border: 2px solid #d23f77;
-      padding: 10px 15px;
-      border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 1000;
-    }
-
-
-    .player-info {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: #5c0e2e;
-      font-weight: bold;
-    }
-
-
-    .music-icon {
-      color: #d23f77;
-      font-size: 14px;
-    }
-
-
-    .song-title {
-      font-style: italic;
-    }
-
-
-    .music-player button {
-      background-color: #d23f77;
-      color: #ffffff;
-      border: none;
-      padding: 5px 10px;
-      font-size: 11px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 2px;
-    }
-
-
-    .music-player button:hover {
-      background-color: #b02e60;
-    }
-
+.music-player button:hover {
+  background-color: #b02e60;
+}
 
 /* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
 @media (max-width: 768px) {
@@ -1365,13 +1286,11 @@ main {
     overflow-x: hidden;
   }
 
-
   .banner-container {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-
 
   nav {
     position: relative;
@@ -1379,11 +1298,9 @@ main {
     margin-bottom: 10px;
   }
 
-
   nav a {
     margin: 5px 8px;
   }
-
 
   .wrapper {
     width: 100%;
@@ -1396,16 +1313,13 @@ main {
     box-sizing: border-box;
   }
 
-
   main, aside {
     width: 100% !important;
   }
 
-
   header::after {
     font-size: 30px;
   }
-
 
   .notepad-modal {
     width: 90vw !important;
@@ -1417,19 +1331,16 @@ main {
     right: 5vw !important;
   }
 
-
   .spotted-toast {
     width: 85vw !important;
     right: 7.5vw !important;
   }
-
 
   .music-player {
     left: 20px;
     right: 20px;
     justify-content: center;
   }
-
 
   .book-spread {
     height: 55vh;
@@ -1438,7 +1349,6 @@ main {
   </style>
 </head>
 <body>
-
 
   <header>
     <div class="banner-container">
@@ -1452,9 +1362,7 @@ main {
     </div>
   </header>
 
-
   <div class="wrapper">
-
 
     <!-- 📜 RETRO SIDEBAR TABS 📜 -->
     <div class="retro-sidebar-tabs">
@@ -1489,12 +1397,10 @@ main {
         <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
       </div>
 
-
       <div class="sidebar-box">
         <h2><img src="gossip2.png" alt="Gossip" class="sidebar-heading-img"></h2>
         <p>The latest and greatest 411 on all the 'in' people.</p>
       </div>
-
 
       <!-- Visitor Submit Gossip Form -->
       <div class="form-box">
@@ -1507,16 +1413,23 @@ main {
       </div>
     </aside>
 
-
     <main>
       <div class="ticker">
         <span>Reason #643 Why We Love This Site</span>
         <span>Main • Welcome Post</span>
       </div>
 
-
       <!-- 👑 THE FEED ZONE -->
       <section id="blastFeed">
+        <!-- 🏆 CUTIE OF THE WEEK SECTION -->
+        <div class="cutie-week-card">
+          <h2 class="cutie-week-title">♡ Cutie of the week ♡</h2>
+          <p class="cutie-week-subtitle">This week's cutest boy award goes to...</p>
+          <div class="cutie-week-img-container">
+            <img src="cutestboyoftheweek.png" alt="Cutest Boy of the Week" class="cutie-week-img" draggable="false">
+          </div>
+        </div>
+
         <div class="keycard-reader-card">
           <h2 class="keycard-reader-title">♡ Cutie Weekly VIP Vault ♡</h2>
           <p class="keycard-reader-subtitle">Swipe your St. Sinclair keycard to unlock this week's issue!</p>
@@ -1531,7 +1444,6 @@ main {
     </main>
   </div>
 
-
   <!-- 🔍 LIGHTBOX HTML CONTAINER 🔍 -->
   <div id="lightbox" class="lightbox">
     <div class="lightbox-content-wrapper">
@@ -1541,7 +1453,6 @@ main {
       <button class="lightbox-close" id="closeLightbox">×</button>
     </div>
   </div>
-
 
   <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
   <div class="music-player">
@@ -1556,22 +1467,18 @@ main {
     </audio>
   </div>
 
-
   <!-- 🎼 PLAYBACK CONTROLLER SCRIPT 🎼 -->
   <script>
     const audio = document.getElementById('bgMusic');
     const btn = document.getElementById('playBtn');
 
-
     window.addEventListener('DOMContentLoaded', () => {
       const savedTime = localStorage.getItem('musicTime');
       const isPlaying = localStorage.getItem('musicPlaying') === 'true';
 
-
       if (savedTime) {
         audio.currentTime = parseFloat(savedTime);
       }
-
 
       if (isPlaying) {
         audio.play().then(() => {
@@ -1582,11 +1489,9 @@ main {
       }
     });
 
-
     audio.addEventListener('timeupdate', () => {
       localStorage.setItem('musicTime', audio.currentTime);
     });
-
 
     function toggleAudio() {
       if (audio.paused) {
@@ -1601,7 +1506,6 @@ main {
     }
   </script>
 
-
   <!-- 📸 CORRRECTED GALLERY LINK LIGHTBOX CONTROLLER SCRIPT 📸 -->
   <script>
     const galleryLinks = document.querySelectorAll('.gallery-item');
@@ -1611,9 +1515,7 @@ main {
     const prevBtn = document.getElementById('lightboxPrev');
     const nextBtn = document.getElementById('lightboxNext');
 
-
     let currentIndex = 0;
-
 
     galleryLinks.forEach((link, index) => {
       link.addEventListener('click', (e) => {
@@ -1623,7 +1525,6 @@ main {
         lightbox.style.display = 'flex';
       });
     });
-
 
     function updateLightboxContent() {
       const currentLink = galleryLinks[currentIndex];
@@ -1636,11 +1537,9 @@ main {
       }
     }
 
-
     closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
     });
-
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) {
@@ -1648,14 +1547,12 @@ main {
       }
     });
 
-
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (galleryLinks.length === 0) return;
       currentIndex = (currentIndex === 0) ? galleryLinks.length - 1 : currentIndex - 1;
       updateLightboxContent();
     });
-
 
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -1665,30 +1562,24 @@ main {
     });
   </script>
 
-
   <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
   <div id="burnBookPopup" class="burnbook-popup">
     <button id="closeBurnBook" class="burnbook-close-btn" title="Close">×</button>
     <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
   </div>
 
-
   <script>
     const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
 
-
     const burnBook = document.getElementById('burnBookPopup');
     const closeBurnBookBtn = document.getElementById('closeBurnBook');
-
 
     document.addEventListener('keydown', (e) => {
       if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
-
       const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
       const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
-
 
       if (key === requiredKey) {
         konamiIndex++;
@@ -1701,7 +1592,6 @@ main {
       }
     });
 
-
     function triggerBurnBook() {
       burnBook.style.top = '';
       burnBook.style.left = '50%';
@@ -1712,11 +1602,9 @@ main {
       burnBook.classList.add('show');
     }
 
-
     closeBurnBookBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-
 
       burnBook.style.transition = 'bottom 0.5s ease-in-out';
       burnBook.style.top = '';
@@ -1724,28 +1612,22 @@ main {
       burnBook.style.transform = 'translateX(-50%)';
       burnBook.style.bottom = '';
 
-
       burnBook.classList.remove('show');
     });
-
 
     let isDragging = false;
     let offsetX = 0;
     let offsetY = 0;
 
-
     burnBook.addEventListener('mousedown', (e) => {
       if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
-
 
       isDragging = true;
       burnBook.style.transition = 'none';
 
-
       const rect = burnBook.getBoundingClientRect();
       offsetX = e.clientX - rect.left;
       offsetY = e.clientY - rect.top;
-
 
       burnBook.style.transform = 'none';
       burnBook.style.left = rect.left + 'px';
@@ -1753,34 +1635,28 @@ main {
       burnBook.style.bottom = 'auto';
     });
 
-
     document.addEventListener('mousemove', (e) => {
       if (!isDragging) return;
       burnBook.style.left = (e.clientX - offsetX) + 'px';
       burnBook.style.top = (e.clientY - offsetY) + 'px';
     });
 
-
     document.addEventListener('mouseup', () => {
       isDragging = false;
     });
   </script>
-
 
   <script>
     const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
     let lastX = 0;
     let lastY = 0;
 
-
     document.addEventListener('mousemove', (e) => {
       const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
       if (distance < 15) return;
 
-
       lastX = e.clientX;
       lastY = e.clientY;
-
 
       const sparkle = document.createElement('span');
       sparkle.className = 'cursor-sparkle';
@@ -1788,26 +1664,21 @@ main {
       sparkle.style.left = `${e.clientX}px`;
       sparkle.style.top = `${e.clientY}px`;
 
-
       const dx = (Math.random() - 0.5) * 40;
       const dy = Math.random() * 50 + 20;
       sparkle.style.setProperty('--dx', `${dx}px`);
       sparkle.style.setProperty('--dy', `${dy}px`);
 
-
       const size = Math.floor(Math.random() * 10) + 12;
       sparkle.style.fontSize = `${size}px`;
 
-
       document.body.appendChild(sparkle);
-
 
       setTimeout(() => {
         sparkle.remove();
       }, 1000);
     });
   </script>
-
 
   <!-- 📟 SPOTTED! FLIP-PHONE SMS TOAST NOTIFICATION 📟 -->
   <div id="spottedToast" class="spotted-toast">
@@ -1825,11 +1696,9 @@ main {
     const spottedToast = document.getElementById('spottedToast');
     const closeSpottedBtn = document.getElementById('closeSpotted');
 
-
     setTimeout(() => {
       spottedToast.classList.add('show');
     }, 180000);
-
 
     closeSpottedBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1837,7 +1706,6 @@ main {
       spottedToast.classList.remove('show');
     });
   </script>
-
 
   <script>
     document.addEventListener('dblclick', (e) => {
@@ -1848,29 +1716,23 @@ main {
         return;
       }
 
-
       const kiss = document.createElement('img');
       kiss.src = 'kissmark.png';
       kiss.className = 'kiss-stamp';
 
-
       kiss.style.left = `${e.clientX}px`;
       kiss.style.top = `${e.clientY}px`;
-
 
       const randomRotation = (Math.random() - 0.5) * 50;
       kiss.style.setProperty('--rot', `${randomRotation}deg`);
 
-
       document.body.appendChild(kiss);
-
 
       setTimeout(() => {
         kiss.remove();
       }, 1500);
     });
   </script>
-
 
   <!-- 📝 Y2K SECRET NOTEPAD MODAL 📝 -->
   <div id="notepadModal" class="notepad-modal">
@@ -1900,7 +1762,6 @@ main {
     </div>
   </div>
 
-
   <script>
     const notepadModal = document.getElementById('notepadModal');
     const closeNotepadBtn = document.getElementById('closeNotepad');
@@ -1908,13 +1769,11 @@ main {
     const notepadCharCount = document.getElementById('notepadCharCount');
     const notepadHeader = document.querySelector('.notepad-header');
 
-
     const savedGossip = localStorage.getItem('princy_notepad_text');
     if (savedGossip !== null) {
       notepadText.value = savedGossip;
       notepadCharCount.textContent = `${savedGossip.length} / 900`;
     }
-
 
     notepadText.addEventListener('input', () => {
       const currentText = notepadText.value;
@@ -1922,10 +1781,8 @@ main {
       localStorage.setItem('princy_notepad_text', currentText);
     });
 
-
     document.addEventListener('keydown', (e) => {
       if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
-
 
       if (e.key === 'n' || e.key === 'N') {
         e.preventDefault();
@@ -1940,7 +1797,6 @@ main {
       }
     });
 
-
     closeNotepadBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -1949,30 +1805,24 @@ main {
       notepadModal.classList.remove('show');
     });
 
-
     let isDraggingNotepad = false;
     let nOffsetX = 0;
     let nOffsetY = 0;
 
-
     notepadHeader.addEventListener('mousedown', (e) => {
       if (e.target === closeNotepadBtn || closeNotepadBtn.contains(e.target)) return;
 
-
       isDraggingNotepad = true;
       notepadModal.style.transition = 'none';
-
 
       const rect = notepadModal.getBoundingClientRect();
       nOffsetX = e.clientX - rect.left;
       nOffsetY = e.clientY - rect.top;
 
-
       notepadModal.style.left = rect.left + 'px';
       notepadModal.style.top = rect.top + 'px';
       notepadModal.style.right = 'auto';
     });
-
 
     document.addEventListener('mousemove', (e) => {
       if (!isDraggingNotepad) return;
@@ -1980,22 +1830,18 @@ main {
       notepadModal.style.top = (e.clientY - nOffsetY) + 'px';
     });
 
-
     document.addEventListener('mouseup', () => {
       isDraggingNotepad = false;
     });
   </script>
 
-
   <!-- 🔑 SLIDING & DRAGGABLE VERTICAL KEYCARD 🔑 -->
   <img src="keycard.png" alt="St. Sinclair Keycard" class="keycard-draggable" id="dragKeycard" draggable="false">
-
 
   <!-- 🔒 ACCESS APPROVED LIGHTBOX OVERLAY 🔒 -->
   <div class="access-lightbox-overlay" id="accessOverlay">
     <div class="access-approved-text">Access approved!</div>
   </div>
-
 
   <!-- 📖 ANIMATED OPEN BOOK MAGAZINE MODAL OVERLAY 📖 -->
   <div class="magazine-modal" id="magazineModal">
@@ -2015,7 +1861,6 @@ main {
           <img id="magRightImg" src="" alt="Right Page">
         </div>
 
-
         <!-- Hidden Flip Overlays for Flip Animations -->
         <div class="flip-overlay flip-right-side" id="flipRightOverlay">
           <img id="flipRightImg" src="" alt="Flipping Page">
@@ -2025,7 +1870,6 @@ main {
         </div>
       </div>
 
-
       <button class="mag-nav-btn mag-next" id="magNextBtn">›</button>
     </div>
   </div>
@@ -2034,7 +1878,6 @@ main {
   <div id="heroTextBanner" class="hero-text-popup" onclick="this.classList.remove('show')">
     I dont think this is meant to be here..
   </div>
-
 
   <!-- 💳 KEYCARD SWIPE & ANIMATED BOOK CONTROLLER SCRIPT 💳 -->
   <script>
@@ -2046,7 +1889,6 @@ main {
     const magPrevBtn = document.getElementById('magPrevBtn');
     const magNextBtn = document.getElementById('magNextBtn');
 
-
     const bookSpread = document.getElementById('bookSpread');
     const magLeftImg = document.getElementById('magLeftImg');
     const magRightImg = document.getElementById('magRightImg');
@@ -2056,14 +1898,12 @@ main {
     const flipLeftImg = document.getElementById('flipLeftImg');
     const heroTextBanner = document.getElementById('heroTextBanner');
 
-
     // Exact requested mapping for the 3 book spreads
     const magazineSpreads = [
       { left: 'magazineimage1.png', right: 'magazineimage2.png' }, // Spread 1
       { left: 'magazineimage3.png', right: 'magazineimage4.png' }, // Spread 2
       { left: 'magazineimage5.png', right: 'magazineimage6.png' }  // Spread 3
     ];
-
 
     let currentSpreadIndex = 0;
     let isFlipping = false;
@@ -2080,12 +1920,10 @@ main {
       }, 300);
     });
 
-
     let isDraggingCard = false;
     let cardOffsetX = 0;
     let cardOffsetY = 0;
     let dragStartY = 0;
-
 
     function startDrag(clientX, clientY) {
       if (unlocked) return;
@@ -2097,23 +1935,18 @@ main {
       dragStartY = clientY;
     }
 
-
     function moveDrag(clientX, clientY) {
       if (!isDraggingCard || unlocked) return;
 
-
       const newLeft = clientX - cardOffsetX;
       const newTop = clientY - cardOffsetY;
-
 
       dragKeycard.style.left = `${newLeft}px`;
       dragKeycard.style.top = `${newTop}px`;
       dragKeycard.style.right = 'auto';
 
-
       const cardRect = dragKeycard.getBoundingClientRect();
       const targetRect = swiperTarget.getBoundingClientRect();
-
 
       const overlaps = !(
         cardRect.right < targetRect.left ||
@@ -2122,31 +1955,25 @@ main {
         cardRect.top > targetRect.bottom
       );
 
-
       const verticalDistance = Math.abs(clientY - dragStartY);
-
 
       if (overlaps && verticalDistance > 70) {
         triggerUnlockSequence();
       }
     }
 
-
     function stopDrag() {
       isDraggingCard = false;
     }
-
 
     dragKeycard.addEventListener('mousedown', (e) => startDrag(e.clientX, e.clientY));
     document.addEventListener('mousemove', (e) => moveDrag(e.clientX, e.clientY));
     document.addEventListener('mouseup', stopDrag);
 
-
     dragKeycard.addEventListener('touchstart', (e) => {
       const touch = e.touches[0];
       startDrag(touch.clientX, touch.clientY);
     }, { passive: true });
-
 
     document.addEventListener('touchmove', (e) => {
       if (!isDraggingCard) return;
@@ -2154,24 +1981,19 @@ main {
       moveDrag(touch.clientX, touch.clientY);
     }, { passive: true });
 
-
     document.addEventListener('touchend', stopDrag);
-
 
     function triggerUnlockSequence() {
       unlocked = true;
       isDraggingCard = false;
 
-
       dragKeycard.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
       dragKeycard.style.opacity = '0';
       dragKeycard.style.transform = 'scale(0.8)';
 
-
       setTimeout(() => {
         dragKeycard.style.display = 'none';
         accessOverlay.classList.add('show');
-
 
         setTimeout(() => {
           accessOverlay.classList.remove('show');
@@ -2182,22 +2004,17 @@ main {
             magazineModal.classList.add('show');
           }, 300);
 
-
         }, 1600);
-
 
       }, 200);
     }
-
 
     function renderSpread() {
       clearInspectState();
       const spread = magazineSpreads[currentSpreadIndex];
 
-
       magLeftImg.src = spread.left;
       magRightImg.src = spread.right;
-
 
       // Hide left arrow on Spread 1 (beginning of book)
       if (currentSpreadIndex === 0) {
@@ -2205,7 +2022,6 @@ main {
       } else {
         magPrevBtn.style.display = 'flex';
       }
-
 
       // Hide right arrow on Spread 3 (end of book)
       if (currentSpreadIndex === magazineSpreads.length - 1) {
@@ -2319,17 +2135,14 @@ main {
       }
     });
 
-
     magNextBtn.addEventListener('click', () => {
       if (isFlipping || currentSpreadIndex >= magazineSpreads.length - 1) return;
       isFlipping = true;
-
 
       const currentSpread = magazineSpreads[currentSpreadIndex];
       
       flipRightImg.src = currentSpread.right;
       bookSpread.classList.add('flipping-right');
-
 
       setTimeout(() => {
         currentSpreadIndex++;
@@ -2339,18 +2152,14 @@ main {
       }, 500);
     });
 
-
     magPrevBtn.addEventListener('click', () => {
       if (isFlipping || currentSpreadIndex <= 0) return;
       isFlipping = true;
 
-
       const currentSpread = magazineSpreads[currentSpreadIndex];
-
 
       flipLeftImg.src = currentSpread.left;
       bookSpread.classList.add('flipping-left');
-
 
       setTimeout(() => {
         currentSpreadIndex--;
@@ -2360,12 +2169,10 @@ main {
       }, 500);
     });
 
-
     closeMagBtn.addEventListener('click', () => {
       clearInspectState();
       heroTextBanner.classList.remove('show');
       magazineModal.classList.remove('show');
-
 
       unlocked = false;
       dragKeycard.style.display = 'block';
