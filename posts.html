@@ -47,8 +47,8 @@
 }
 
 .princy-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 350px;  /* 👈 Limits the maximum width (make smaller/larger here) */
+  max-height: 350px; /* 👈 Limits the maximum height */
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1970,26 +1970,36 @@ main {
   <img src="princyisalwayswatching.png" alt="Princy is Always Watching">
 </div>
 
-  <!-- 👁️ "W" KEYBOARD TRIGGER SCRIPT 👁️ -->
+<!-- 👁️ "W" KEYBOARD TRIGGER WITH 30-SECOND COOLDOWN 👁️ -->
 <script>
   const princyOverlay = document.getElementById('princyWatchingOverlay');
+  let princyOnCooldown = false; // 👈 Tracks whether the cooldown is active
 
   document.addEventListener('keydown', (e) => {
     // Prevent triggering if typing inside an input or textarea
     if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
 
     if (e.key === 'w' || e.key === 'W') {
-      e.preventDefault();
+      // If currently on cooldown, ignore the keypress completely
+      if (princyOnCooldown) return;
 
-      // Restart animation cleanly if pressed again
+      e.preventDefault();
+      princyOnCooldown = true; // Activate cooldown
+
+      // Restart animation cleanly
       princyOverlay.classList.remove('active');
       void princyOverlay.offsetWidth; // Force CSS reflow
       princyOverlay.classList.add('active');
 
-      // Hide fully after 4.5 seconds
+      // Hide image overlay after 4.5 seconds
       setTimeout(() => {
         princyOverlay.classList.remove('active');
       }, 4500);
+
+      // Keep the cooldown locked for a full 30 seconds (30000 milliseconds)
+      setTimeout(() => {
+        princyOnCooldown = false;
+      }, 30000);
     }
   });
 </script>
