@@ -982,6 +982,214 @@ main {
     justify-content: center;
   }
 }
+
+    /* -------------------------------------------------------------
+   SLIDING CALENDAR & CBOX SIDEBAR (KEYBOARD 'C' TRIGGERED)
+------------------------------------------------------------- */
+.calendar-cbox-drawer {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 310px;
+  height: 100vh;
+  background-color: #fff0f5;
+  background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
+  background-size: 12px 12px;
+  border-left: 3px solid #d23f77;
+  box-shadow: -8px 0 25px rgba(210, 63, 119, 0.3);
+  z-index: 10010;
+  transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: 'Georgia', serif;
+}
+
+.calendar-cbox-drawer.show {
+  right: 0;
+}
+
+.drawer-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: #d23f77;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.drawer-close-btn:hover {
+  background-color: #b02e60;
+}
+
+/* Calendar Card */
+.pink-calendar-box {
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(210, 63, 119, 0.15);
+}
+
+.cal-header {
+  background-color: #d23f77;
+  color: #ffffff;
+  text-align: center;
+  padding: 6px;
+  font-family: 'Bodoni Moda', serif;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.cal-day-label {
+  font-weight: bold;
+  color: #d23f77;
+  padding-bottom: 4px;
+}
+
+.cal-cell {
+  padding: 5px 0;
+  color: #5c0e2e;
+  border-radius: 4px;
+}
+
+.cal-cell.today {
+  background-color: #f8c5d8;
+  color: #d23f77;
+  font-weight: bold;
+  border: 1px solid #d23f77;
+}
+
+/* Cbox Container */
+.cbox-container {
+  background-color: #ffffff;
+  border: 2px solid #d23f77;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 280px;
+  box-shadow: 0 4px 10px rgba(210, 63, 119, 0.15);
+}
+
+.cbox-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #d23f77;
+  text-align: center;
+  border-bottom: 1px dashed #f0a3c2;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.cbox-messages {
+  flex: 1;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 4px;
+  margin-bottom: 10px;
+}
+
+.cbox-msg-item {
+  background-color: #fff5f8;
+  border: 1px solid #f0a3c2;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 11px;
+}
+
+.cbox-msg-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #d23f77;
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 10px;
+}
+
+.cbox-msg-time {
+  color: #a85878;
+  font-weight: normal;
+}
+
+.cbox-msg-text {
+  color: #5c0e2e;
+  word-break: break-word;
+}
+
+.cbox-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px dashed #f0a3c2;
+  padding-top: 8px;
+}
+
+.cbox-inputs input, .cbox-inputs textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff5f8;
+  border: 1px solid #f0a3c2;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 11px;
+  color: #5c0e2e;
+  font-family: inherit;
+  outline: none;
+}
+
+.cbox-inputs input:focus, .cbox-inputs textarea:focus {
+  border-color: #d23f77;
+}
+
+.cbox-send-btn {
+  background-color: #d23f77;
+  color: #ffffff;
+  border: none;
+  padding: 6px;
+  font-weight: bold;
+  font-size: 11px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cbox-send-btn:hover {
+  background-color: #b02e60;
+}
+    
   </style>
 </head>
 <body>
@@ -1553,6 +1761,189 @@ main {
     isDraggingNotepad = false;
   });
 </script>
+
+  <!-- CALENDAR & CBOX SLIDING DRAWER -->
+  <div id="calendarCboxDrawer" class="calendar-cbox-drawer">
+    <button id="closeDrawerBtn" class="drawer-close-btn" title="Close">×</button>
+    
+    <!-- Dynamic Auto-Updating Calendar -->
+    <div class="pink-calendar-box">
+      <div id="calHeader" class="cal-header">OCTOBER 2026</div>
+      <div class="cal-grid">
+        <div class="cal-day-label">S</div>
+        <div class="cal-day-label">M</div>
+        <div class="cal-day-label">T</div>
+        <div class="cal-day-label">W</div>
+        <div class="cal-day-label">T</div>
+        <div class="cal-day-label">F</div>
+        <div class="cal-day-label">S</div>
+      </div>
+      <div id="calDaysGrid" class="cal-grid"></div>
+    </div>
+
+    <!-- Cbox Chat Widget -->
+    <div class="cbox-container">
+      <div class="cbox-title">Cbox</div>
+      <div id="cboxMessages" class="cbox-messages"></div>
+      <div class="cbox-inputs">
+        <input type="text" id="cboxNameInput" placeholder="name">
+        <textarea id="cboxMsgInput" rows="2" placeholder="message"></textarea>
+        <button id="cboxSendBtn" class="cbox-send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR & CBOX SCRIPT WITH AUTOMATIC EXPIRATION & SAVED NAME -->
+  <script>
+    const calendarCboxDrawer = document.getElementById('calendarCboxDrawer');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const cboxNameInput = document.getElementById('cboxNameInput');
+    const cboxMsgInput = document.getElementById('cboxMsgInput');
+    const cboxSendBtn = document.getElementById('cboxSendBtn');
+    const cboxMessages = document.getElementById('cboxMessages');
+
+    // 1. Open / Close Drawer with "C" keypress (toggles open/closed)
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+      if (e.key === 'c' || e.key === 'C') {
+        e.preventDefault();
+        calendarCboxDrawer.classList.toggle('show');
+      }
+    });
+
+    closeDrawerBtn.addEventListener('click', () => {
+      calendarCboxDrawer.classList.remove('show');
+    });
+
+    // 2. Dynamic Auto-Updating Calendar Logic
+    function renderCalendar() {
+      const calHeader = document.getElementById('calHeader');
+      const calDaysGrid = document.getElementById('calDaysGrid');
+      
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth();
+      const todayDate = now.getDate();
+
+      const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+      calHeader.textContent = `${monthNames[month]} ${year}`;
+
+      calDaysGrid.innerHTML = '';
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const totalDays = new Date(year, month + 1, 0).getDate();
+
+      for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement('div');
+        emptyCell.className = 'cal-cell';
+        calDaysGrid.appendChild(emptyCell);
+      }
+
+      for (let day = 1; day <= totalDays; day++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'cal-cell';
+        if (day === todayDate) {
+          dayCell.classList.add('today');
+        }
+        dayCell.textContent = day;
+        calDaysGrid.appendChild(dayCell);
+      }
+    }
+
+    renderCalendar();
+
+    // 3. Saved Name Logic
+    const savedName = localStorage.getItem('princy_cbox_username');
+    if (savedName) {
+      cboxNameInput.value = savedName;
+    }
+
+    cboxNameInput.addEventListener('input', () => {
+      localStorage.setItem('princy_cbox_username', cboxNameInput.value);
+    });
+
+    // 4. Auto-Clearing Cbox Logic (messages auto-expire after 2 days)
+    const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
+
+    function loadCboxMessages() {
+      let messages = JSON.parse(localStorage.getItem('princy_cbox_messages') || '[]');
+      const now = Date.now();
+
+      // Filter out messages older than 2 days
+      const freshMessages = messages.filter(msg => (now - msg.timestamp) < TWO_DAYS_MS);
+
+      if (freshMessages.length !== messages.length) {
+        localStorage.setItem('princy_cbox_messages', JSON.stringify(freshMessages));
+      }
+
+      cboxMessages.innerHTML = '';
+      if (freshMessages.length === 0) {
+        cboxMessages.innerHTML = '<div style="color:#a85878; font-size:11px; text-align:center; margin-top:20px; font-style:italic;">No recent messages...</div>';
+        return;
+      }
+
+      freshMessages.forEach(msg => {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'cbox-msg-item';
+
+        const timeDiffHours = Math.floor((now - msg.timestamp) / (1000 * 60 * 60));
+        let timeLabel = 'just now';
+        if (timeDiffHours >= 24) {
+          timeLabel = `${Math.floor(timeDiffHours / 24)}d ago`;
+        } else if (timeDiffHours > 0) {
+          timeLabel = `${timeDiffHours}h ago`;
+        }
+
+        msgDiv.innerHTML = `
+          <div class="cbox-msg-meta">
+            <span>${escapeHTML(msg.name)}</span>
+            <span class="cbox-msg-time">${timeLabel}</span>
+          </div>
+          <div class="cbox-msg-text">${escapeHTML(msg.text)}</div>
+        `;
+        cboxMessages.appendChild(msgDiv);
+      });
+
+      cboxMessages.scrollTop = cboxMessages.scrollHeight;
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+      );
+    }
+
+    cboxSendBtn.addEventListener('click', sendMessage);
+    cboxMsgInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    function sendMessage() {
+      const name = cboxNameInput.value.trim() || 'Anonymous';
+      const text = cboxMsgInput.value.trim();
+
+      if (!text) return;
+
+      localStorage.setItem('princy_cbox_username', name);
+
+      let messages = JSON.parse(localStorage.getItem('princy_cbox_messages') || '[]');
+      messages.push({
+        name: name,
+        text: text,
+        timestamp: Date.now()
+      });
+
+      localStorage.setItem('princy_cbox_messages', JSON.stringify(messages));
+      cboxMsgInput.value = '';
+      loadCboxMessages();
+    }
+
+    loadCboxMessages();
+  </script>
   
 </body>
 </html>
