@@ -30,15 +30,65 @@
   
   <style>
 
-    /* Feed Zone Pictures Styling */
+    /* 👁️ PRINCY IS ALWAYS WATCHING ZOOM & FADE EFFECT 👁️ */
+.princy-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Allows user to keep interacting/clicking through */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.princy-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+}
+
+/* Zoom in animation (Mac OS style pop) */
+.princy-overlay.active {
+  visibility: visible;
+  animation: princyZoomFade 4.5s ease-out forwards;
+}
+
+@keyframes princyZoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.01);
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+    
+/* Feed Zone Pictures Styling */
 #blastFeed img {
-  border: 3px solid #F8C5D8; /* Light pink border color */
-  border-radius: 0px;        /* Removes rounded corners */
+  border: 3px solid #F8C5D8;
+  border-radius: 0px;
   max-height: 300px;
   max-width: 100%;
   width: auto;
-  height: 100%;
-  margin: 10px 0;
+  height: auto;
+  margin: 10px auto; /* 'auto' centers block elements horizontally */
   object-fit: contain;
   display: block;
   cursor: pointer;
@@ -1914,6 +1964,35 @@ main {
 
     loadCboxMessages();
   </script>
+
+  <!-- 👁️ PRINCY IS ALWAYS WATCHING OVERLAY 👁️ -->
+<div id="princyWatchingOverlay" class="princy-overlay">
+  <img src="princyisalwayswatching.png" alt="Princy is Always Watching">
+</div>
+
+  <!-- 👁️ "W" KEYBOARD TRIGGER SCRIPT 👁️ -->
+<script>
+  const princyOverlay = document.getElementById('princyWatchingOverlay');
+
+  document.addEventListener('keydown', (e) => {
+    // Prevent triggering if typing inside an input or textarea
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'w' || e.key === 'W') {
+      e.preventDefault();
+
+      // Restart animation cleanly if pressed again
+      princyOverlay.classList.remove('active');
+      void princyOverlay.offsetWidth; // Force CSS reflow
+      princyOverlay.classList.add('active');
+
+      // Hide fully after 4.5 seconds
+      setTimeout(() => {
+        princyOverlay.classList.remove('active');
+      }, 4500);
+    }
+  });
+</script>
   
 </body>
 </html>
