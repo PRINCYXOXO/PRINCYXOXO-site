@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRINCYXOXO</title>
 
-<!-- LINK PREVIEWS & EMBEDS -->
+
+<!-- 🌟 LINK PREVIEWS & EMBEDS 🌟 -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRINCYXOXO — You Know You Love Me">
-  <meta property="og:description" content="The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here.">
+  <meta property="og:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡.">
   <meta property="og:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta property="og:url" content="https://princyxoxo-site.vercel.app/">
 
-  <!-- LARGE IMAGE CARD EMBEDS (Discord / Twitter) -->
+
+  <!-- 🐦 LARGE IMAGE CARD EMBEDS (Discord / Twitter) 🐦 -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PRINCYXOXO — You Know You Love Me">
-  <meta name="twitter:description" content="The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here">
+  <meta name="twitter:description" content="♡ The site ABOUT your inner circle, FOR your inner circle, and BY your inner circle. Get the latest gossip here ♡">
   <meta name="twitter:image" content="https://princyxoxo-site.vercel.app/preview-Princyxoxoxo.png">
   <meta name="theme-color" content="#d23f77">
 
-  <!-- WEBSITE FAVICON ICON -->
+
+  <!-- 👑 WEBSITE FAVICON ICON 👑 -->
   <link rel="icon" type="image/png" href="crown2.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,19 +32,19 @@
   <style>
 
 /* -------------------------------------------------------------
-   CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
+   📜 CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
 ------------------------------------------------------------- */
 .retro-sidebar-tabs {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 24px;
-  background-color: #f0f0f0;
-  border-right: 1px solid #000000;
+  width: 24px; /* Slim vertical rail stuck to the left of the screen */
+  background-color: #f0f0f0; /* Light greyish white like original Mac OS IE */
+  border-right: 1px solid #000000; /* Dark line separating sidebar from site */
   display: flex;
   flex-direction: column;
-  z-index: 99999;
+  z-index: 99999; /* Stays above everything on screen */
   box-sizing: border-box;
 }
 
@@ -50,7 +53,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 120px;
+  height: 120px; /* Space for each vertical text tab */
   text-decoration: none;
   position: relative;
   transition: background-color 0.2s ease;
@@ -58,9 +61,10 @@
 }
 
 .retro-tab:hover {
-  background-color: #e0e0e0;
+  background-color: #e0e0e0; /* Subtle hover gray tint */
 }
 
+/* Diagonal separation line between each tab */
 .retro-tab::after {
   content: '';
   position: absolute;
@@ -68,27 +72,30 @@
   left: -2px;
   width: 28px;
   height: 1px;
-  background-color: #888888;
-  transform: rotate(25deg);
+  background-color: #888888; /* Diagonal divider line color */
+  transform: rotate(25deg); /* Creates the angled slant separator line */
   transform-origin: center;
 }
 
+/* Vertical text reading top-to-bottom */
 .retro-tab-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: 'Geneva', 'Georgia', sans-serif;
   font-size: 11px;
   font-weight: 600;
-  color: #111111;
+  color: #111111; /* Clean black text */
   letter-spacing: 0.5px;
   user-select: none;
   white-space: nowrap;
 }
 
+/* Push main wrapper site content right so it doesn't overlap the sidebar */
 body {
   padding-left: 24px;
 }
 
+/* Hide on mobile devices so it doesn't cover tiny mobile screens */
 @media (max-width: 768px) {
   .retro-sidebar-tabs {
     display: none;
@@ -98,11 +105,11 @@ body {
   }
 }
     
-    /* Y2K NOTEPAD STYLING */
+    /* 📝 Y2K NOTEPAD STYLING 📝 */
 .notepad-modal {
   position: fixed;
   top: 15%;
-  right: -420px;
+  right: -420px; /* Hidden off-screen to the right initially */
   width: 360px;
   height: 420px;
   background-color: #ffffff;
@@ -120,11 +127,12 @@ body {
 }
 
 .notepad-modal.show {
-  right: 30px;
+  right: 30px; /* Slides smoothly into view from the right */
   opacity: 1;
   pointer-events: auto;
 }
 
+/* 💖 Pink Top Titlebar (Draggable Handle) 💖 */
 .notepad-header {
   background-color: #d23f77;
   color: #ffffff;
@@ -149,6 +157,7 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* 🎀 Pink Close Cross Button 🎀 */
 .notepad-close-btn {
   width: 22px;
   height: 22px;
@@ -171,6 +180,7 @@ body {
   background-color: #fff0f5;
 }
 
+/* 📂 Non-clickable Menu Bar 📂 */
 .notepad-menubar {
   background-color: #fff0f5;
   border-bottom: 1px solid #f0a3c2;
@@ -187,6 +197,7 @@ body {
   cursor: default;
 }
 
+/* ✍️ White Textarea Area ✍️ */
 .notepad-body {
   flex: 1;
   display: flex;
@@ -210,7 +221,7 @@ body {
     transparent 19px,
     #ffeef4 20px
   );
-  box-sizing: border-box;
+  box-sizing: border-border-box;
 }
 
 .notepad-footer {
@@ -222,12 +233,14 @@ body {
   user-select: none;
 }
     
-    /* DOUBLE-CLICK KISS MARK STYLING */
+
+    
+    /* 💋 DOUBLE-CLICK KISS MARK STYLING 💋 */
 .kiss-stamp {
   position: fixed;
   pointer-events: none;
   z-index: 99998;
-  width: 45px;
+  width: 45px; /* Adjust size of the kiss mark */
   height: auto;
   transform: translate(-50%, -50%) scale(0.5);
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
@@ -245,15 +258,13 @@ body {
   }
 }
     
-    /* FLIP-PHONE SMS TOAST NOTIFICATION */
+    /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION 📟 */
 .spotted-toast {
   position: fixed;
-  bottom: -150px;
+  bottom: -150px; /* Hidden off-screen initially */
   right: 25px;
   width: 260px;
   background-color: #fff5f8;
-  background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
-  background-size: 16px 16px;
   border: 2px solid #d23f77;
   border-radius: 12px;
   padding: 14px 16px;
@@ -264,7 +275,7 @@ body {
 }
 
 .spotted-toast.show {
-  bottom: 25px;
+  bottom: 25px; /* Slides up neatly above the music player */
 }
 
 .spotted-header {
@@ -278,7 +289,6 @@ body {
 
 .spotted-icon {
   font-size: 16px;
-  color: #d23f77;
 }
 
 .spotted-title {
@@ -298,6 +308,31 @@ body {
   font-style: italic;
 }
 
+    .spotted-icon {
+  font-size: 16px;
+  color: #d23f77; /* Matches the hot pink header title */
+}
+    
+    /* 📟 FLIP-PHONE SMS TOAST NOTIFICATION WITH POLKA DOTS 📟 */
+.spotted-toast {
+  position: fixed;
+  bottom: -150px; /* Hidden off-screen initially */
+  right: 25px;
+  width: 260px;
+  background-color: #fff5f8;
+  /* 🌟 Light pink polka dot background pattern */
+background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
+  background-size: 16px 16px;
+  border: 2px solid #d23f77;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 25px rgba(210, 63, 119, 0.35);
+  z-index: 10008;
+  transition: bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: 'Georgia', serif;
+}
+    
+/* 🎀 PINK CLOSE BUTTON FOR TOAST 🎀 */
 .spotted-close-btn {
   position: absolute;
   top: -8px;
@@ -324,14 +359,14 @@ body {
   background-color: #b02e60;
 }
     
-    /* PINK SYMBOL CURSOR TRAIL STYLING */
+    /* 🎀 PINK SYMBOL CURSOR TRAIL STYLING 🎀 */
 .cursor-sparkle {
   position: fixed;
   pointer-events: none;
   z-index: 99999;
   font-size: 14px;
-  color: #ff69b4;
-  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6);
+  color: #ff69b4; /* 🌸 Pink color for text symbols */
+  text-shadow: 0 0 4px rgba(210, 63, 119, 0.6); /* Optional cute pink glow */
   user-select: none;
   animation: sparkleFade 1s linear forwards;
 }
@@ -346,11 +381,10 @@ body {
     transform: translate(var(--dx), var(--dy)) scale(0.3) rotate(180deg);
   }
 }
-
-    /* BURN BOOK STYLING & ANIMATION */
+    /* 📖 BURN BOOK STYLING & ANIMATION 📖 */
 .burnbook-popup {
   position: fixed;
-  bottom: -100vh;
+  bottom: -100vh; /* Hidden below the screen initially */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10006;
@@ -364,14 +398,15 @@ body {
 }
 
 .burnbook-popup img {
-  width: 520px;
+  width: 520px; /* Adjust size if needed */
   max-width: 90vw;
   height: auto;
   display: block;
   border-radius: 20px;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
+filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(210, 63, 119, 0.4));
 }
 
+/* 🎀 CUTEY PINK ROUNDED DISMISS BUTTON 🎀 */
 .burnbook-close-btn {
   position: absolute;
   top: -12px;
@@ -399,6 +434,7 @@ body {
   background-color: #b02e60;
 }
 
+/* Slide up to screen position */
 .burnbook-popup.show {
   bottom: 10%;
 }
@@ -409,12 +445,16 @@ body {
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
+      /* 💖 CUSTOM CURSOR 💖 */
       cursor: url('crown.png'), auto;
     }
 
+
+    /* Make sure links show a cute pointer cursor when hovering */
     a, button {
       cursor: url('heart.png'), pointer;
     }
+
 
 header {
   background-color: #d23f77;
@@ -424,6 +464,8 @@ header {
   overflow: hidden;
 }
 
+
+    /* 🏙 WHITE SKYLINE OVERLAY 🏙️ */
     header::before {
       content: "";
       position: absolute;
@@ -440,6 +482,8 @@ header {
       z-index: 1;
     }
 
+
+    /* 💋 FAINT PRINCYXOXO WATERMARK TEXT 💋 */
     header::after {
       content: "princyxoxo princyxoxo princyxoxo princyxoxo";
       position: absolute;
@@ -455,6 +499,7 @@ header {
       z-index: 2;
     }
 
+
     .banner-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -464,6 +509,7 @@ header {
       position: relative;
       z-index: 3;
     }
+
 
     header h1 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -479,6 +525,8 @@ header {
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
     }
 
+
+    /* Silhouette Image Styling */
     .header-silhouette {
       height: 65px;
       width: auto;
@@ -486,35 +534,40 @@ header {
       filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
     }
 
+
     .tagline {
       font-size: 28px;
       font-style: italic;
       margin: 0;
       opacity: 0.9;
       display: flex;
-      align-items: center;
-      gap: 10px;
+  align-items: center;
+  gap: 10px;
     }
 
 .kissmark-img {
-  height: 100px;
+  height: 100px; /* increase number to make it bigger */
   width: auto;
   display: inline-block;
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
 }
     
     nav {
-      background-color: transparent;
-      text-align: center;
-      padding: 10px 0;
-      flex-basis: 100%; 
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-bottom: 3px solid #d23f77; 
-      box-sizing: border-box;
-    }
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+    flex-basis: 100%; 
+  /* 🛠️ Fix: Use absolute positioning to snap perfectly to the parent box borders */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  /* 🎨 Color Change: Replace #000000 with your preferred color code (e.g., #d23f77) */
+  border-bottom: 3px solid #d23f77; 
+  
+  box-sizing: border-box;
+}
     
     nav a {
       color: #5c0e2e;
@@ -527,10 +580,12 @@ header {
       display: inline-block;
     }
 
+
     nav a:hover {
       color: #ffffff;
       background: transparent;
     }
+
 
     .wrapper {
       max-width: 1000px;
@@ -539,21 +594,22 @@ header {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-      background-color: #fceef2;
-      background-image: url('Untitled77_20261004220524.png');
-      background-repeat: repeat;
-      background-size: 100px auto;
-      border: 3px solid #000000;
-      box-sizing: border-box;
-      position: relative;
-      padding: 50px 20px 20px 20px; 
-    }
+  background-color: #fceef2; /* Light pink interior background */
+  background-image: url('Untitled77_20261004220524.png'); /* Pattern goes here now */
+  background-repeat: repeat;
+  background-size: 100px auto;
+  border: 3px solid #000000; /* Distinct black border outlining the main content area */
+  box-sizing: border-box;
+  position: relative;
+  padding: 50px 20px 20px 20px; 
+}
 
     aside {
       width: 250px;
       flex-shrink: 0;
       margin-top: 20px;
     }
+
 
     .sidebar-box {
       background-color: #f8c5d8;
@@ -562,6 +618,7 @@ header {
       margin-bottom: 20px;
       border-radius: 2px;
     }
+
 
     .sidebar-box h2 {
       font-size: 22px;
@@ -572,10 +629,11 @@ header {
     }
 
     .sidebar-heading-img {
-      max-width: 65%;
-      height: auto;
-      display: block;
-    }
+  max-width: 65%;
+  height: auto;
+  display: block;
+}
+
 
     .sidebar-box p {
       font-size: 12px;
@@ -584,12 +642,14 @@ header {
       margin: 0;
     }
 
+
     .form-box {
       background-color: #ffffff;
       border: 2px solid #d23f77;
       padding: 15px;
       border-radius: 2px;
     }
+
 
     .form-box h3 {
       font-size: 14px;
@@ -598,6 +658,7 @@ header {
       margin-top: 0;
       text-align: center;
     }
+
 
     .form-box input, .form-box textarea {
       width: 100%;
@@ -611,6 +672,7 @@ header {
       font-family: inherit;
     }
 
+
     .form-box button {
       width: 100%;
       background-color: #d23f77;
@@ -623,15 +685,18 @@ header {
       cursor: pointer;
     }
 
+
     .form-box button:hover {
       background-color: #b02e60;
     }
 
+
 main {
   flex-grow: 1;
-  width: calc(100% - 280px);
+  width: calc(100% - 280px); /* Leaves exactly 250px for the sidebar + 30px for the gap */
   box-sizing: border-box;
 }
+
 
     .ticker {
       background-color: #ffffff;
@@ -645,6 +710,7 @@ main {
       justify-content: space-between;
     }
 
+
     article {
       background-color: #ffffff;
       border: 2px solid #f0a3c2;
@@ -652,6 +718,7 @@ main {
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
+
 
     article h2 {
       font-family: 'Bodoni Moda', 'Didot', 'Bodoni MT', serif;
@@ -662,6 +729,7 @@ main {
       text-transform: lowercase;
     }
 
+
     .file-under {
       font-size: 11px;
       color: #777777;
@@ -671,12 +739,15 @@ main {
       margin-bottom: 15px;
     }
 
+
     article p {
       font-size: 14px;
       line-height: 1.6;
       color: #444444;
     }
 
+
+    /* 💖 PINK, BOLD, BODONI MODA AT NORMAL BODY TEXT SIZE (14px) 💖 */
     .rule-pink-1,
     .rule-pink-2,
     .rule-pink-3 {
@@ -686,11 +757,13 @@ main {
       color: #d23f77;
     }
 
+
     article hr {
       border: 0;
       border-top: 1px dashed #f0a3c2;
       margin: 20px 0;
     }
+
 
     .signature {
       display: block;
@@ -702,7 +775,8 @@ main {
       margin-top: 15px;
     }
 
-    /* LIGHTBOX STYLING */
+
+    /* 🔍 LIGHTBOX STYLING 🔍 */
     .lightbox {
       display: none;
       position: fixed;
@@ -789,7 +863,7 @@ main {
       right: -70px;
     }
 
-    /* FLOATING MINI MUSIC PLAYER STYLING */
+    /* 🎵 FLOATING MINI MUSIC PLAYER STYLING 🎵 */
     .music-player {
       position: fixed;
       bottom: 20px;
@@ -820,8 +894,10 @@ main {
     }
 
     .song-title {
+
       font-style: italic;
     }
+
 
     .music-player button {
       background-color: #d23f77;
@@ -835,182 +911,591 @@ main {
       border-radius: 2px;
     }
 
+
     .music-player button:hover {
       background-color: #b02e60;
     }
 
-/* -------------------------------------------------------------
-   SLIDING CALENDAR & CBOX SIDEBAR (KEYBOARD 'C' TRIGGERED)
-------------------------------------------------------------- */
-.calendar-cbox-drawer {
-  position: fixed;
-  top: 0;
-  right: -340px;
-  width: 310px;
-  height: 100vh;
-  background-color: #fff0f5;
-  background-image: radial-gradient(rgba(210, 63, 119, 0.12) 15%, transparent 16%);
-  background-size: 12px 12px;
-  border-left: 3px solid #d23f77;
-  box-shadow: -8px 0 25px rgba(210, 63, 119, 0.3);
-  z-index: 10010;
-  transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  font-family: 'Georgia', serif;
-}
 
-.calendar-cbox-drawer.show {
-  right: 0;
-}
+/* 📱 RESPONSIVE BREAKPOINT FOR MOBILE DEVICES 📱 */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow on mobile */
+  body, html {
+    overflow-x: hidden;
+  }
 
-.drawer-close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 24px;
-  height: 24px;
-  background-color: #d23f77;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-}
+  .banner-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 
-.drawer-close-btn:hover {
-  background-color: #b02e60;
-}
+  nav {
+    position: relative; /* Unfix the nav so it doesn't overlap header content on tiny screens */
+    border-bottom: none;
+    margin-bottom: 10px;
+  }
 
-/* Calendar Card */
-.pink-calendar-box {
-  background-color: #ffffff;
-  border: 2px solid #d23f77;
-  border-radius: 12px;
-  padding: 12px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 10px rgba(210, 63, 119, 0.15);
-}
+  nav a {
+    margin: 5px 8px;
+  }
 
-.cal-header {
-  background-color: #d23f77;
-  color: #ffffff;
-  text-align: center;
-  padding: 6px;
-  font-family: 'Bodoni Moda', serif;
-  font-weight: bold;
-  font-size: 14px;
-  border-radius: 6px;
-  letter-spacing: 1px;
-}
+  /* 🛠️ FIX: Make wrapper span full screen on mobile */
+  .wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-left: none;
+    border-right: none;
+    flex-direction: column;
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
 
-.cal-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 11px;
-}
+  main, aside {
+    width: 100% !important;
+  }
 
-.cal-day-label {
-  font-weight: bold;
-  color: #d23f77;
-  padding-bottom: 4px;
-}
+  header::after {
+    font-size: 30px; /* Shrink watermark slightly so it doesn't break header layout */
+  }
 
-.cal-cell {
-  padding: 5px 0;
-  color: #5c0e2e;
-  border-radius: 4px;
-}
+  /* Make floating desktop elements responsive on mobile screens */
+  .notepad-modal {
+    width: 90vw !important;
+    max-width: 360px;
+    right: -100vw;
+  }
+  
+  .notepad-modal.show {
+    right: 5vw !important; /* Centers the notepad nicely on phone screens */
+  }
 
-.cal-cell.today {
-  background-color: #f8c5d8;
-  color: #d23f77;
-  font-weight: bold;
-  border: 1px solid #d23f77;
-}
+  .spotted-toast {
+    width: 85vw !important;
+    right: 7.5vw !important;
+  }
 
-/* Cbox Container */
-.cbox-container {
-  background-color: #ffffff;
-  border: 2px solid #d23f77;
-  border-radius: 12px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-height: 280px;
-  box-shadow: 0 4px 10px rgba(210, 63, 119, 0.15);
+  .music-player {
+    left: 20px;
+    right: 20px;
+    justify-content: center;
+  }
 }
+  </style>
+</head>
+<body>
 
-.cbox-title {
-  font-family: 'Bodoni Moda', serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #d23f77;
-  text-align: center;
-  border-bottom: 1px dashed #f0a3c2;
-  padding-bottom: 6px;
-  margin-bottom: 8px;
-}
 
-.cbox-messages {
-  flex: 1;
-  max-height: 220px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-right: 4px;
-  margin-bottom: 10px;
-}
+  <header>
+    <div class="banner-container">
+      <h1>
+        <img src="silhouette.png" alt="silhouette" class="header-silhouette">princyxoxo
+      </h1>
+<p class="tagline">
+  ...you know you love me
+  <img src="kissmark.png" alt="kiss mark" class="kissmark-img">
+</p>
+    </div>
+  </header>
 
-.cbox-msg-item {
-  background-color: #fff5f8;
-  border: 1px solid #f0a3c2;
-  border-radius: 6px;
-  padding: 6px 8px;
-  font-size: 11px;
-}
 
-.cbox-msg-meta {
-  display: flex;
-  justify-content: space-between;
-  color: #d23f77;
-  font-weight: bold;
-  margin-bottom: 3px;
-  font-size: 10px;
-}
+  <div class="wrapper">
 
-.cbox-msg-time {
-  color: #a85878;
-  font-weight: normal;
-}
+<!-- 📜 RETRO SIDEBAR TABS 📜 -->
+    <div class="retro-sidebar-tabs">
+      <a href="couture.html" class="retro-tab">
+        <span class="retro-tab-text">The Couture Closet</span>
+      </a>
+      <a href="history.html" class="retro-tab">
+        <span class="retro-tab-text">History</span>
+      </a>
+      <a href="favourites.html" class="retro-tab">
+        <span class="retro-tab-text">Favourites</span>
+      </a>
+      <a href="cutieweekly.html" class="retro-tab">
+        <span class="retro-tab-text">Cutie Weekly</span>
+      </a>
+    </div>
+    
+<nav>
+    <a href="index.html">Home</a>
+    <a href="rumours.html">Rumours</a>
+    <a href="posts.html">Posts</a>
+    <a href="pics.html">Pics</a>
+    <a href="princyxoxo.html">princyxoxo</a>
+    <a href="links.html">Links</a>
+    <a href="more.html">More</a>
+    <a href="princyslair.html">Princy's Lair</a>
+  </nav>
+  
+    <aside>
+      <div class="sidebar-box">
+        <h2><img src="welcome2.png" alt="Welcome" class="sidebar-heading-img"></h2>
+        <p>Welcome to PrincyXOXO!<br>— The Site ABOUT your inner circle, FOR your inner circle, and BY your inner circle!</p>
+      </div>
 
-.cbox-msg-text {
-  color: #5c0e2e;
-  word-break: break-word;
-}
 
-.cbox-inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  border-top: 1px dashed #f0a3c2;
-  padding-top: 8px;
-}
+      <div class="sidebar-box">
+        <h2><img src="gossip2.png" alt="Gossip" class="sidebar-heading-img"></h2>
+        <p>The latest and greatest 411 on all the 'in' people.</p>
+      </div>
 
-.cbox-inputs input, .cbox-inputs textarea {
-  width:
+
+      <!-- Visitor Submit Gossip Form -->
+      <div class="form-box">
+        <h3>Submit Gossip</h3>
+        <form action="https://formspree.io/f/xljgrznq" method="POST" id="gossipForm">
+          <input type="text" name="subject" required placeholder="Who is this about?">
+          <textarea name="message" required rows="3" placeholder="Give us the dirty details..."></textarea>
+          <button type="submit">Send to Princy</button>
+        </form>
+      </div>
+    </aside>
+
+
+    <main>
+      <div class="ticker">
+        <span>Reason #643 Why We Love This Site</span>
+        <span>Main • Welcome Post</span>
+      </div>
+
+
+    <!-- 👑 THE FEED ZONE: TYPE YOUR POSTS DIRECTLY BELOW THIS LINE -->
+      <section id="blastFeed">
+
+  
+
+      </section>
+    </main>
+  </div>
+
+  <!-- 🔍 LIGHTBOX HTML CONTAINER 🔍 -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content-wrapper">
+      <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+      <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
+      <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+      <button class="lightbox-close" id="closeLightbox">×</button>
+    </div>
+  </div>
+
+  <!-- 🎵 FLOATING MINI MUSIC PLAYER HTML 🎵 -->
+  <div class="music-player">
+    <div class="player-info">
+      <span class="music-icon">♫</span>
+      <span class="song-title">to my crush</span>
+    </div>
+    <button id="playBtn" onclick="toggleAudio()">▶ play</button>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- 🎼 PLAYBACK CONTROLLER SCRIPT 🎼 -->
+  <script>
+    const audio = document.getElementById('bgMusic');
+    const btn = document.getElementById('playBtn');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTime = localStorage.getItem('musicTime');
+      const isPlaying = localStorage.getItem('musicPlaying') === 'true';
+
+      if (savedTime) {
+        audio.currentTime = parseFloat(savedTime);
+      }
+
+      if (isPlaying) {
+        audio.play().then(() => {
+          btn.textContent = '❚❚ pause';
+        }).catch(() => {
+          btn.textContent = '▶ play';
+        });
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      localStorage.setItem('musicTime', audio.currentTime);
+    });
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = '❚❚ pause';
+        localStorage.setItem('musicPlaying', 'true');
+      } else {
+        audio.pause();
+        btn.textContent = '▶ play';
+        localStorage.setItem('musicPlaying', 'false');
+      }
+    }
+  </script>
+
+  <!-- 📸 CORRRECTED GALLERY LINK LIGHTBOX CONTROLLER SCRIPT 📸 -->
+  <script>
+    const galleryLinks = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeLightbox');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+
+    let currentIndex = 0;
+
+    // Connect page elements to the overlay system
+    galleryLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // ✋ Keeps page on /princyslair.html instead of changing pages
+        currentIndex = index;
+        updateLightboxContent();
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    function updateLightboxContent() {
+      const currentLink = galleryLinks[currentIndex];
+      if (!currentLink) return;
+      
+      const targetImg = currentLink.querySelector('img');
+      if (targetImg) {
+        lightboxImg.src = targetImg.src;
+        lightboxImg.alt = targetImg.alt || '';
+      }
+    }
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (galleryLinks.length === 0) return;
+      currentIndex = (currentIndex === 0) ? galleryLinks.length - 1 : currentIndex - 1;
+      updateLightboxContent();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (galleryLinks.length === 0) return;
+      currentIndex = (currentIndex === galleryLinks.length - 1) ? 0 : currentIndex + 1;
+      updateLightboxContent();
+    });
+  </script>
+
+  <!-- 📖 DRAGGABLE BURN BOOK POPUP 📖 -->
+<div id="burnBookPopup" class="burnbook-popup">
+  <button id="closeBurnBook" class="burnbook-close-btn" title="Close">×</button>
+  <img src="burnbook.png" alt="Burn Book Secrets" id="burnBookImg" draggable="false">
+</div>
+
+  <script>
+  // 🌟 KONAMI CODE SEQUENCE
+  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let konamiIndex = 0;
+
+  const burnBook = document.getElementById('burnBookPopup');
+  const closeBurnBookBtn = document.getElementById('closeBurnBook');
+
+  // Keydown listener for Konami Code sequence
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    const requiredKey = konamiCode[konamiIndex].length === 1 ? konamiCode[konamiIndex].toLowerCase() : konamiCode[konamiIndex];
+
+    if (key === requiredKey) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        triggerBurnBook();
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
+
+  // 🚀 SLIDE UP & RESET TO ORIGINAL POSITION
+  function triggerBurnBook() {
+    // Reset custom dragged positions so it always slides up from the center
+    burnBook.style.top = '';
+    burnBook.style.left = '50%';
+    burnBook.style.transform = 'translateX(-50%)';
+    burnBook.style.bottom = ''; // Clear inline bottom
+    burnBook.style.transition = 'bottom 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    
+    burnBook.classList.add('show');
+  }
+
+  // ❌ CLOSE BUTTON DISMISS (FIXED)
+  closeBurnBookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // 1. Restore smooth transition back down
+    burnBook.style.transition = 'bottom 0.5s ease-in-out';
+    
+    // 2. Clear inline top/left/transform added while dragging
+    burnBook.style.top = '';
+    burnBook.style.left = '50%';
+    burnBook.style.transform = 'translateX(-50%)';
+    burnBook.style.bottom = ''; // Let CSS take over (bottom: -100vh)
+
+    // 3. Remove show class
+    burnBook.classList.remove('show');
+  });
+
+  // 🖱️ DRAGGABLE FUNCTIONALITY
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  burnBook.addEventListener('mousedown', (e) => {
+    // ✋ Don't start dragging if the user clicked on the close button
+    if (e.target === closeBurnBookBtn || closeBurnBookBtn.contains(e.target)) return;
+
+    isDragging = true;
+    burnBook.style.transition = 'none';
+
+    const rect = burnBook.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+
+    burnBook.style.transform = 'none';
+    burnBook.style.left = rect.left + 'px';
+    burnBook.style.top = rect.top + 'px';
+    burnBook.style.bottom = 'auto';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    burnBook.style.left = (e.clientX - offsetX) + 'px';
+    burnBook.style.top = (e.clientY - offsetY) + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+</script>
+
+    <script>
+  // 💖 PINK SYMBOLS TRAIL SCRIPT 💖
+  const trailSymbols = ['✦', '✧', '♡', '₊˚⊹', '⊹ ࣪ ', ' ˖ ˚', '౨ৎ'];
+  let lastX = 0;
+  let lastY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    // Only spawn a symbol if mouse moved at least 15px
+    const distance = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+    if (distance < 15) return;
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    const sparkle = document.createElement('span');
+    sparkle.className = 'cursor-sparkle';
+    
+    // Pick a random symbol from the list
+    sparkle.textContent = trailSymbols[Math.floor(Math.random() * trailSymbols.length)];
+    
+    // Position at mouse coordinates
+    sparkle.style.left = `${e.clientX}px`;
+    sparkle.style.top = `${e.clientY}px`;
+
+    // Random drift directions
+    const dx = (Math.random() - 0.5) * 40;
+    const dy = Math.random() * 50 + 20;
+    sparkle.style.setProperty('--dx', `${dx}px`);
+    sparkle.style.setProperty('--dy', `${dy}px`);
+
+    // Slightly randomize size
+    const size = Math.floor(Math.random() * 10) + 12;
+    sparkle.style.fontSize = `${size}px`;
+
+    document.body.appendChild(sparkle);
+
+    // Remove element after animation finishes
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+  });
+</script>
+
+  <!-- 📟 SPOTTED! FLIP-PHONE SMS TOAST NOTIFICATION 📟 -->
+<div id="spottedToast" class="spotted-toast">
+  <button id="closeSpotted" class="spotted-close-btn" title="Close">×</button>
+  <div class="spotted-header">
+    <span class="spotted-icon">♡</span>
+    <span class="spotted-title">New Gossip Alert!</span>
+  </div>
+  <div class="spotted-body">
+    <p>Spotted: Someone sitting at this screen for way too long...</p>
+  </div>
+</div>
+  
+  <script>
+  // 📟 SPOTTED TOAST 3-MINUTE TIMER SCRIPT 📟
+  const spottedToast = document.getElementById('spottedToast');
+  const closeSpottedBtn = document.getElementById('closeSpotted');
+
+  // Trigger after 3 minutes (180,000 milliseconds)
+  // Tip: Change 180000 to 5000 (5 seconds) temporarily if you want to test it instantly!
+  setTimeout(() => {
+    spottedToast.classList.add('show');
+  }, 180000);
+
+  // Close / dismiss notification
+  closeSpottedBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    spottedToast.classList.remove('show');
+  });
+</script>
+
+  <script>
+  // 💋 DOUBLE-CLICK KISS STAMP SCRIPT 💋
+  document.addEventListener('dblclick', (e) => {
+    // Prevent spawning if double-clicking inside interactive inputs/textareas
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    const kiss = document.createElement('img');
+    kiss.src = 'kissmark.png'; // Uses your existing kissmark image
+    kiss.className = 'kiss-stamp';
+
+    // Position exactly where the user double-clicked
+    kiss.style.left = `${e.clientX}px`;
+    kiss.style.top = `${e.clientY}px`;
+
+    // Give it a cute random tilt (-25deg to +25deg)
+    const randomRotation = (Math.random() - 0.5) * 50;
+    kiss.style.setProperty('--rot', `${randomRotation}deg`);
+
+    document.body.appendChild(kiss);
+
+    // Remove element from DOM after the 1.5s animation finishes
+    setTimeout(() => {
+      kiss.remove();
+    }, 1500);
+  });
+</script>
+
+
+  <!-- 📝 Y2K SECRET NOTEPAD MODAL 📝 -->
+<div id="notepadModal" class="notepad-modal">
+  <div class="notepad-header">
+    <div class="notepad-title">
+      <span>PrincyXOXO - Notepad</span>
+    </div>
+    <button id="closeNotepad" class="notepad-close-btn" title="Close">×</button>
+  </div>
+  <div class="notepad-menubar">
+    <span>File</span>
+    <span>Edit</span>
+    <span>Format</span>
+    <span>View</span>
+    <span>Help</span>
+  </div>
+  <div class="notepad-body">
+    <textarea 
+      id="notepadText" 
+      maxlength="900" 
+      placeholder="Type your secret gossip here..."
+      spellcheck="false"
+    ></textarea>
+    <div class="notepad-footer">
+      <span id="notepadCharCount">0 / 900</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 📝 "N" KEYBOARD TRIGGER, DRAGGABLE & AUTO-SAVING NOTEPAD SCRIPT 📝
+  const notepadModal = document.getElementById('notepadModal');
+  const closeNotepadBtn = document.getElementById('closeNotepad');
+  const notepadText = document.getElementById('notepadText');
+  const notepadCharCount = document.getElementById('notepadCharCount');
+  const notepadHeader = document.querySelector('.notepad-header');
+
+  // 💾 1. LOAD SAVED GOSSIP FROM LOCALSTORAGE ON PAGE LOAD 💾
+  const savedGossip = localStorage.getItem('princy_notepad_text');
+  if (savedGossip !== null) {
+    notepadText.value = savedGossip;
+    notepadCharCount.textContent = `${savedGossip.length} / 900`;
+  }
+
+  // 💾 2. AUTO-SAVE EVERY TIME THE USER TYPES 💾
+  notepadText.addEventListener('input', () => {
+    const currentText = notepadText.value;
+    notepadCharCount.textContent = `${currentText.length} / 900`;
+    localStorage.setItem('princy_notepad_text', currentText);
+  });
+
+  // ⌨️ 3. Listen for "N" keypress (Safe-guarded so it doesn't trigger inside inputs)
+  document.addEventListener('keydown', (e) => {
+    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+    if (e.key === 'n' || e.key === 'N') {
+      e.preventDefault();
+      
+      notepadModal.style.top = '15%';
+      notepadModal.style.left = '';
+      notepadModal.style.right = '30px';
+      notepadModal.style.transition = 'right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease';
+      
+      notepadModal.classList.add('show');
+      setTimeout(() => notepadText.focus(), 300);
+    }
+  });
+
+  // 🎀 4. Close Notepad button
+  closeNotepadBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    notepadModal.style.transition = 'right 0.5s ease-in-out, opacity 0.3s ease';
+    notepadModal.style.right = '-420px';
+    notepadModal.classList.remove('show');
+  });
+
+  // 🖐️ 5. Drag and Drop Functionality
+  let isDraggingNotepad = false;
+  let nOffsetX = 0;
+  let nOffsetY = 0;
+
+  notepadHeader.addEventListener('mousedown', (e) => {
+    if (e.target === closeNotepadBtn || closeNotepadBtn.contains(e.target)) return;
+
+    isDraggingNotepad = true;
+    notepadModal.style.transition = 'none';
+
+    const rect = notepadModal.getBoundingClientRect();
+    nOffsetX = e.clientX - rect.left;
+    nOffsetY = e.clientY - rect.top;
+
+    notepadModal.style.left = rect.left + 'px';
+    notepadModal.style.top = rect.top + 'px';
+    notepadModal.style.right = 'auto';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDraggingNotepad) return;
+    notepadModal.style.left = (e.clientX - nOffsetX) + 'px';
+    notepadModal.style.top = (e.clientY - nOffsetY) + 'px';
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDraggingNotepad = false;
+  });
+</script>
+  
+</body>
+</html>
+
+
+
+
