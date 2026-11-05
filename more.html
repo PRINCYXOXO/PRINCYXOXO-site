@@ -30,6 +30,18 @@
   
   <style>
 
+            /* Custom Pink Text Highlight */
+::selection {
+  background-color: #FEEDF3;
+  color: #000000; /* Keeps the text a dark pink so it's readable against the light pink background */
+}
+
+/* Mozilla Firefox Support */
+::-moz-selection {
+  background-color: #FEEDF3;
+  color: #000000;
+}
+    
     /* Container for the logo to handle spacing and centering */
 .footer-logo-container {
     width: 100%;
