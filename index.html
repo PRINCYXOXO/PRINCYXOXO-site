@@ -28,6 +28,30 @@
   
   <style>
 
+    /* Container for the logo to handle spacing and centering */
+.footer-logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Creates a good amount of space below your main box */
+    padding-top: 60px;    
+    /* Creates breathing room between the logo and the very bottom of the screen */
+    padding-bottom: 40px; 
+    /* Ensures the background stays transparent so the pink shows through */
+    background: transparent; 
+}
+
+/* Styling for the logo itself */
+.footer-logo {
+    /* Makes the logo size relative to the screen size (adjust % as needed) */
+    max-width: 15%; 
+    height: auto;
+    /* Ensures no white background is forced by CSS */
+    background: transparent; 
+}
+
+    
 /* -------------------------------------------------------------
    📜 CLASSIC MAC OS IE SIDEBAR (FAR-LEFT FULL SCREEN RAIL)
 ------------------------------------------------------------- */
@@ -1840,6 +1864,12 @@ header {
 
     loadCboxMessages();
   </script>
+
+  <!-- Footer Logo Section -->
+<div class="footer-logo-container">
+    <img src="prettiestgina.png" alt="Logo" class="footer-logo">
+</div>
+
   
 </body>
 </html>
