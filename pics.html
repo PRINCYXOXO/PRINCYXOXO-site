@@ -2000,9 +2000,18 @@ filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(2
           timeLabel = `${timeDiffHours}h ago`;
         }
 
+        // Check if the sender name matches the secret alias password
+        let displayNameHTML;
+        if (msg.name === '1::princyxoxo::1') {
+          // #ff9cc2 is a lovely soft, light pastel pink that fits your aesthetic perfectly
+          displayNameHTML = '<span style="color: #ff9cc2; font-weight: bold;">princyxoxo ♡ mrs gossip</span>';
+        } else {
+          displayNameHTML = escapeHTML(msg.name);
+        }
+
         msgDiv.innerHTML = `
           <div class="cbox-msg-meta">
-            <span>${escapeHTML(msg.name)}</span>
+            <span>${displayNameHTML}</span>
             <span class="cbox-msg-time">${timeLabel}</span>
           </div>
           <div class="cbox-msg-text">${escapeHTML(msg.text)}</div>
@@ -2049,6 +2058,7 @@ filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35)) drop-shadow(0 0 10px rgba(2
 
     loadCboxMessages();
   </script>
+
 
   <!-- Footer Logo Section -->
 <div class="footer-logo-container">
